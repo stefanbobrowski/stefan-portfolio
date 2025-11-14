@@ -1,0 +1,25 @@
+# Global ignores
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Node modules everywhere
+node_modules/
+
+# Logs
+*.log
+
+# Root env
+.env
+
+# JetBrains / VS Code junk
+.idea/
+.vscode/
+
+# System
+*.tmp
+*.swp

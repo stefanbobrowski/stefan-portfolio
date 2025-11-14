@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    /* Node 20 + TS 5 recommended settings */
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+
+    /* File structure */
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    /* Enable strict mode */
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+
+    /* Source maps */
+    "sourceMap": true,
+
+    /* Node environment */
+    "types": ["node"],
+
+    /* Useful */
+    "resolveJsonModule": true
+  },
+
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
