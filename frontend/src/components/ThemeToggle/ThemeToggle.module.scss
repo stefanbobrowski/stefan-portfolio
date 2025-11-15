@@ -1,0 +1,12 @@
+.toggle {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition-theme);
+
+  &:hover {
+    background: var(--surface);
+  }
+}

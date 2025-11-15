@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  transition: var(--transition-theme);
+}
+
+.brand {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+
+  a {
+    color: var(--text);
+    text-decoration: none;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+    transition: 0.2s ease;
+
+    &.active {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@use './variables' as v;
+
+/* -------------------------- */
+/* LIGHT THEME                */
+/* -------------------------- */
+:root {
+  /* Core colors */
+  --bg: #{v.$color-bg};
+  --bg-alt: #f5f7fa;
+  --surface: #ffffff;
+  --surface-alt: #f0f1f3;
+
+  --text: #{v.$color-text};
+  --text-muted: #555;
+  --border: #dce0e5;
+
+  /* Accent */
+  --accent: #{v.$color-accent};
+  --accent-hover: #{v.$color-accent-hover};
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.12);
+
+  /* Transition */
+  --transition-theme: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* -------------------------- */
+/* DARK THEME                 */
+/* -------------------------- */
+[data-theme='dark'] {
+  --bg: #0d0f12; /* deep slate */
+  --bg-alt: #14171c;
+  --surface: #1a1d23;
+  --surface-alt: #22262e;
+
+  --text: #f5f5f5;
+  --text-muted: #bbbbbb;
+  --border: #2d3035;
+
+  --accent: #{v.$color-accent};
+  --accent-hover: #{v.$color-accent-hover};
+
+  /* Shadows for dark mode — subtle but visible */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.6);
+}

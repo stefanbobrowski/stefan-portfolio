@@ -1,0 +1,24 @@
+{
+  "name": "stefan-portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefanbobrowski/stefan-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stefanbobrowski/stefan-portfolio/issues"
+  },
+  "homepage": "https://github.com/stefanbobrowski/stefan-portfolio#readme",
+  "description": "",
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}
