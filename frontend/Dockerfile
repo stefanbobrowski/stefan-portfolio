@@ -1,3 +1,4 @@
+# ---------- BUILD STAGE ----------
 FROM node:22 AS builder
 WORKDIR /app
 
@@ -7,6 +8,7 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
+# ---------- RUNTIME STAGE ----------
 FROM node:22
 WORKDIR /app
 

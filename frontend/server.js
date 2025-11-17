@@ -9,10 +9,11 @@ console.log('🚀 Frontend container starting…');
 const distPath = path.join(__dirname, 'dist');
 console.log('📂 Serving dist from:', distPath);
 
+// Serve static assets
 app.use(express.static(distPath));
 
-// Express 5 wildcard MUST use /*
-app.get('/*', (req, res) => {
+// Express 5 wildcard route
+app.get('*', (req, res) => {
   res.sendFile(path.join(distPath, 'index.html'));
 });
 
