@@ -11,8 +11,8 @@ console.log('📂 Serving dist from:', distPath);
 
 app.use(express.static(distPath));
 
-// Express 5: correct wildcard syntax
-app.get('(.*)', (req, res) => {
+// NEW EXPRESS 5 WILDCARD SYNTAX
+app.get('/{*splat}', (req, res) => {
   res.sendFile(path.join(distPath, 'index.html'));
 });
 
