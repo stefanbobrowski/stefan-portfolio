@@ -21,7 +21,7 @@ steps:
       - '-c'
       - |
         echo "🚀 Uploading frontend to GCS..."
-        gsutil -m rsync -r ./frontend/dist gs://stefan-portfolio-frontend
+        gsutil -m rsync -d -r ./frontend/dist gs://stefan-portfolio-frontend
 
   # -------------------------------
   # 3) Build BACKEND via Node 22
