@@ -1,43 +1,35 @@
 steps:
   # -------------------------------
-  # 1) Build FRONTEND with Node 22
+  # 1) Build FRONTEND Docker image
   # -------------------------------
-  - name: 'node:22.14'
-    dir: 'frontend'
-    entrypoint: npm
-    args: ['ci']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/portfolio-frontend', './frontend']
 
-  - name: 'node:22.14'
-    dir: 'frontend'
-    entrypoint: npm
-    args: ['run', 'build']
+  # -------------------------------
+  # 2) Push FRONTEND image
+  # -------------------------------
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/portfolio-frontend']
 
-  # ---------------------------------
-  # 2) Upload dist/ → Cloud Storage
-  # ---------------------------------
+  # -------------------------------
+  # 3) Deploy FRONTEND to Cloud Run
+  # -------------------------------
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: bash
+    entrypoint: gcloud
     args:
-      - '-c'
-      - |
-        echo "🚀 Uploading frontend to GCS..."
-        gsutil -m rsync -d -r ./frontend/dist gs://stefan-portfolio-frontend
+      [
+        'run',
+        'deploy',
+        'portfolio-frontend',
+        '--image=gcr.io/$PROJECT_ID/portfolio-frontend',
+        '--region=us-central1',
+        '--platform=managed',
+        '--allow-unauthenticated',
+        '--port=8080',
+      ]
 
   # -------------------------------
-  # 3) Build BACKEND via Node 22
-  # -------------------------------
-  - name: 'node:22.14'
-    dir: 'backend'
-    entrypoint: npm
-    args: ['ci']
-
-  - name: 'node:22.14'
-    dir: 'backend'
-    entrypoint: npm
-    args: ['run', 'build']
-
-  # -------------------------------
-  # 4) Deploy backend → Cloud Run
+  # 4) Deploy BACKEND (source deploy)
   # -------------------------------
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
