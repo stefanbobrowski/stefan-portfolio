@@ -1,25 +1,21 @@
-import express from 'express';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-console.log('💡 Starting frontend container...');
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-console.log('📁 __dirname = ', __dirname);
-console.log('📁 Serving dist from: ', path.join(__dirname, 'dist'));
+const express = require('express');
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 8080;
 
-app.use(express.static(path.join(__dirname, 'dist')));
+console.log('🚀 Frontend container starting…');
 
-app.get('*', (req, res) => {
-  console.log('➡️  Serving index.html');
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+const distPath = path.join(__dirname, 'dist');
+console.log('📂 Serving dist from:', distPath);
+
+app.use(express.static(distPath));
+
+// Express 5 wildcard MUST use /*
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(distPath, 'index.html'));
 });
 
 app.listen(port, () => {
-  console.log(`🚀 Frontend running on port ${port}`);
+  console.log(`🔥 Frontend running on port ${port}`);
 });
