@@ -1,0 +1,46 @@
+.stefanAISection {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.leftSide {
+  position: relative;
+  width: 260px;
+}
+
+.botCard {
+  // background: #0f0f0f;
+  border-radius: 16px;
+  position: relative;
+  // box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+}
+
+.botPointer {
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid #0f0f0f;
+}
+
+.presetButtons {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.presetButtons button {
+  background: #222;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  color: white;
+  cursor: pointer;
+  text-align: left;
+}

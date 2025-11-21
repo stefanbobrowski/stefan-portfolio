@@ -1,0 +1,31 @@
+{
+  "name": "Stefan Bobrowski",
+  "title": "Senior Frontend / Full-Stack Developer",
+  "summary": "Full-stack engineer with 10+ years of experience building React, TypeScript, Node.js, and cloud-native systems on Google Cloud Platform. Strong focus on performance, developer experience, and scalable architectures.",
+  "experience": [
+    {
+      "company": "Sharper Image",
+      "role": "Senior Frontend Developer",
+      "period": "2023–2024",
+      "summary": "Built modern customer-facing UI features using React and TypeScript."
+    },
+    {
+      "company": "The Home Depot",
+      "role": "Lead UI Engineer",
+      "period": "2019–2023",
+      "summary": "Owned large-scale UI architecture and design system work across major shopping flows."
+    }
+  ],
+  "projects": [
+    "GGList",
+    "Upload Center",
+    "Stock AI Analysis",
+    "Nerd by Day, Nerd by Night",
+    "Soul Garden",
+    "Trinity Raiders"
+  ],
+  "skills": {
+    "primary": ["React", "TypeScript", "GCP", "Node.js"],
+    "secondary": ["3D visualization", "Three.js", "Data analysis", "CI/CD pipelines"]
+  }
+}

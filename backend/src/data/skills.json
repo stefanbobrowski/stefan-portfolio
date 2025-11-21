@@ -1,0 +1,88 @@
+{
+  "frontend": {
+    "color": "#5A90A8",
+    "skills": {
+      "languages": ["JavaScript", "TypeScript"],
+      "frameworks": ["React", "Next.js", "Vite"],
+      "state_management": ["Zustand", "Redux", "Context API"],
+      "styles": ["SASS/SCSS", "CSS Modules", "Responsive Design", "WCAG Accessibility"],
+      "testing": ["React Testing Library", "Jest"]
+    }
+  },
+
+  "backend": {
+    "color": "#C79A5B",
+    "skills": {
+      "languages": ["JavaScript", "TypeScript"],
+      "frameworks": ["Express"],
+      "patterns": ["REST", "SSR", "Authentication", "Microservices"]
+    }
+  },
+
+  "cloud": {
+    "color": "#6A8F6E",
+    "skills": {
+      "platforms": ["Google Cloud Platform"],
+      "compute": ["Cloud Run"],
+      "storage": ["Cloud Storage", "Artifact Registry"],
+      "databases": ["Cloud SQL (PostgreSQL)", "BigQuery"],
+      "security": ["IAM", "WIF"],
+      "ai": ["Vertex AI", "Gemini 2.5"],
+      "ci_cd": ["Cloud Build"],
+      "infrastructure": ["Docker", "Kubernetes"]
+    }
+  },
+
+  "database": {
+    "color": "#8C6A9E",
+    "skills": {
+      "sql": ["PostgreSQL", "MySQL"],
+      "nosql": ["MongoDB", "Redis"],
+      "concepts": ["Data Modeling", "Query Optimization"]
+    }
+  },
+
+  "security": {
+    "color": "#A06060",
+    "skills": {
+      "backend_security": ["Helmet", "CORS", "Rate Limiting"],
+      "frontend_security": ["reCAPTCHA v3"],
+      "auth": ["OAuth 2.0", "JWT"]
+    }
+  },
+
+  "devops": {
+    "color": "#4F739B",
+    "skills": {
+      "tools": ["Docker", "GitHub Actions"],
+      "processes": ["CI/CD Pipelines", "Automated Deployments"]
+    }
+  },
+
+  "tooling": {
+    "color": "#BBA85C",
+    "skills": {
+      "version_control": ["Git", "GitHub"],
+      "editors": ["VS Code"],
+      "design_tools": ["Figma", "Adobe Premiere", "Photoshop"],
+      "build_tools": ["Vite", "Webpack", "Parcel"]
+    }
+  },
+
+  "ai_tools": {
+    "color": "#4B817C",
+    "skills": {
+      "llms": ["Gemini 2.5", "ChatGPT", "GitHub Copilot"],
+      "use_cases": ["AI-assisted development", "Text Analysis", "Image Analysis"]
+    }
+  },
+
+  "game_dev": {
+    "color": "#6B5FA3",
+    "skills": {
+      "engines": ["Unreal Engine 5"],
+      "web_tech": ["Three.js", "React Three Fiber"],
+      "concepts": ["Pathfinding", "Grid Systems", "Sim AI"]
+    }
+  }
+}

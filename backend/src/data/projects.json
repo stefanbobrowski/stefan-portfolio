@@ -1,0 +1,57 @@
+[
+  {
+    "title": "GGList",
+    "year": 2025,
+    "description": "Pokémon card favorites & rating site using Google OAuth, Cloud SQL, and a full Vite + Node.js stack",
+    "tech": ["React 19", "Vite", "Cloud Run", "Postgres", "OAuth2", "Chart.js"],
+    "highlights": [
+      "Built full-stack GCP architecture",
+      "Protected backend API with JWT + rate-limits",
+      "Favorites and voting with user-level Postgres data"
+    ]
+  },
+  {
+    "title": "Upload Center",
+    "year": 2025,
+    "description": "A GCP-native file analysis app with JSON upload → BigQuery ingestion → Vertex AI text analysis",
+    "tech": ["React", "Node.js", "Cloud Run", "BigQuery", "Cloud Storage", "Gemini API"],
+    "highlights": [
+      "Streaming JSON uploads to Cloud Storage",
+      "BigQuery load jobs for dataset analysis",
+      "Gemini text summarization and extraction"
+    ]
+  },
+  {
+    "title": "Stock AI Analysis",
+    "year": 2025,
+    "description": "A stock ticker + AI sentiment & pattern analyzer built on Cloud Run with WIF GitHub Actions",
+    "tech": ["Node.js", "Vite", "Cloud Run", "BigQuery", "Gemini API"],
+    "highlights": [
+      "Full CI/CD with WIF",
+      "BigQuery public dataset queries",
+      "Vertex AI reasoning over stock data"
+    ]
+  },
+  {
+    "title": "Nerd by Day, Nerd by Night",
+    "year": 2025,
+    "description": "Brand + merch project with a custom e-commerce stack on GCP",
+    "tech": ["Vite", "React", "Stripe (planned)", "Cloud SQL", "Cloud Run"],
+    "highlights": [
+      "Custom authentication",
+      "Merch store planning",
+      "Brand identity + full-stack implementation"
+    ]
+  },
+  {
+    "title": "Trinity Raiders",
+    "year": 2025,
+    "description": "A card-based roguelike using React 19 + Zustand with a 3-party combat system",
+    "tech": ["React 19", "Zustand", "TypeScript"],
+    "highlights": [
+      "Custom card engine",
+      "Battle phase, upgrade phase, and persistent state",
+      "Complex team synergy logic"
+    ]
+  }
+]
