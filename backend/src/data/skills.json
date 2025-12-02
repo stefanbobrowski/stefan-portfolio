@@ -1,88 +1,112 @@
 {
   "frontend": {
-    "color": "#5A90A8",
-    "skills": {
-      "languages": ["JavaScript", "TypeScript"],
-      "frameworks": ["React", "Next.js", "Vite"],
-      "state_management": ["Zustand", "Redux", "Context API"],
-      "styles": ["SASS/SCSS", "CSS Modules", "Responsive Design", "WCAG Accessibility"],
-      "testing": ["React Testing Library", "Jest"]
-    }
+    "color": "#3F5563",
+    "skills": [
+      { "name": "JavaScript", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+      { "name": "TypeScript", "url": "https://www.typescriptlang.org/" },
+      { "name": "React", "url": "https://react.dev/" },
+      { "name": "Vite", "url": "https://vitejs.dev/" },
+      { "name": "Astro", "url": "https://astro.build/" },
+      { "name": "Zustand", "url": "https://zustand-demo.pmnd.rs/" },
+      { "name": "SASS/SCSS", "url": "https://sass-lang.com/" },
+      { "name": "CSS Modules", "url": "https://github.com/css-modules/css-modules" },
+      {
+        "name": "Responsive Design",
+        "url": "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design"
+      },
+      { "name": "WCAG Accessibility", "url": "https://www.w3.org/WAI/standards-guidelines/wcag/" }
+    ]
   },
 
   "backend": {
-    "color": "#C79A5B",
-    "skills": {
-      "languages": ["JavaScript", "TypeScript"],
-      "frameworks": ["Express"],
-      "patterns": ["REST", "SSR", "Authentication", "Microservices"]
-    }
+    "color": "#7A5E32",
+    "skills": [
+      { "name": "Node.js", "url": "https://nodejs.org/" },
+      { "name": "Express", "url": "https://expressjs.com/" },
+      { "name": "REST APIs", "url": "https://restfulapi.net/" }
+    ]
   },
 
   "cloud": {
-    "color": "#6A8F6E",
-    "skills": {
-      "platforms": ["Google Cloud Platform"],
-      "compute": ["Cloud Run"],
-      "storage": ["Cloud Storage", "Artifact Registry"],
-      "databases": ["Cloud SQL (PostgreSQL)", "BigQuery"],
-      "security": ["IAM", "WIF"],
-      "ai": ["Vertex AI", "Gemini 2.5"],
-      "ci_cd": ["Cloud Build"],
-      "infrastructure": ["Docker", "Kubernetes"]
-    }
-  },
-
-  "database": {
-    "color": "#8C6A9E",
-    "skills": {
-      "sql": ["PostgreSQL", "MySQL"],
-      "nosql": ["MongoDB", "Redis"],
-      "concepts": ["Data Modeling", "Query Optimization"]
-    }
+    "color": "#445A45",
+    "skills": [
+      { "name": "Google Cloud Platform", "url": "https://cloud.google.com/" },
+      { "name": "Cloud Run", "url": "https://cloud.google.com/run" },
+      { "name": "Cloud Storage", "url": "https://cloud.google.com/storage" },
+      { "name": "Artifact Registry", "url": "https://cloud.google.com/artifact-registry" },
+      { "name": "Cloud SQL", "url": "https://cloud.google.com/sql" },
+      { "name": "BigQuery", "url": "https://cloud.google.com/bigquery" },
+      { "name": "Vertex AI", "url": "https://cloud.google.com/vertex-ai" }
+    ]
   },
 
   "security": {
-    "color": "#A06060",
-    "skills": {
-      "backend_security": ["Helmet", "CORS", "Rate Limiting"],
-      "frontend_security": ["reCAPTCHA v3"],
-      "auth": ["OAuth 2.0", "JWT"]
-    }
+    "color": "#684040",
+    "skills": [
+      { "name": "IAM", "url": "https://cloud.google.com/iam" },
+      {
+        "name": "WIF (Workload Identity Federation)",
+        "url": "https://cloud.google.com/iam/docs/workload-identity-federation"
+      },
+      { "name": "Helmet", "url": "https://helmetjs.github.io/" },
+      { "name": "CORS", "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" },
+      { "name": "Rate Limiting", "url": "https://express-rate-limit.mintlify.app" },
+      { "name": "reCAPTCHA v3", "url": "https://developers.google.com/recaptcha/docs/v3" },
+      { "name": "OAuth 2.0", "url": "https://oauth.net/2/" },
+      { "name": "JWT", "url": "https://jwt.io/" }
+    ]
   },
 
   "devops": {
-    "color": "#4F739B",
-    "skills": {
-      "tools": ["Docker", "GitHub Actions"],
-      "processes": ["CI/CD Pipelines", "Automated Deployments"]
-    }
+    "color": "#2E4157",
+    "skills": [
+      { "name": "Git", "url": "https://git-scm.com/" },
+      { "name": "GitHub", "url": "https://github.com/" },
+      { "name": "GitHub Actions", "url": "https://github.com/features/actions" },
+      { "name": "Docker", "url": "https://www.docker.com/" },
+      { "name": "Cloud Build", "url": "https://cloud.google.com/build" },
+      { "name": "Kubernetes", "url": "https://kubernetes.io/" }
+    ]
   },
 
-  "tooling": {
-    "color": "#BBA85C",
-    "skills": {
-      "version_control": ["Git", "GitHub"],
-      "editors": ["VS Code"],
-      "design_tools": ["Figma", "Adobe Premiere", "Photoshop"],
-      "build_tools": ["Vite", "Webpack", "Parcel"]
-    }
+  "design": {
+    "color": "#746B38",
+    "skills": [
+      { "name": "Figma", "url": "https://www.figma.com/" },
+      { "name": "Adobe Photoshop", "url": "https://www.adobe.com/products/photoshop.html" },
+      { "name": "Adobe Premiere Pro", "url": "https://www.adobe.com/products/premiere.html" }
+    ]
+  },
+
+  "visualization": {
+    "color": "#3A5A67",
+    "skills": [
+      { "name": "Three.js", "url": "https://threejs.org/" },
+      { "name": "React Three Fiber", "url": "https://docs.pmnd.rs/react-three-fiber" },
+      { "name": "D3.js", "url": "https://d3js.org/" },
+      { "name": "Chart.js", "url": "https://www.chartjs.org/" },
+      { "name": "Recharts", "url": "https://recharts.org/" },
+      {
+        "name": "HTML5 Canvas",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API"
+      },
+      { "name": "WebGL", "url": "https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" }
+    ]
   },
 
   "ai_tools": {
-    "color": "#4B817C",
-    "skills": {
-      "llms": ["Gemini 2.5", "ChatGPT", "GitHub Copilot"],
-      "use_cases": ["AI-assisted development", "Text Analysis", "Image Analysis"]
-    }
+    "color": "#32514D",
+    "skills": [
+      { "name": "Gemini 2.5", "url": "https://ai.google.dev/" },
+      { "name": "ChatGPT", "url": "https://openai.com/chatgpt" },
+      { "name": "GitHub Copilot", "url": "https://github.com/features/copilot" }
+    ]
   },
 
   "game_dev": {
-    "color": "#6B5FA3",
-    "skills": {
-      "engines": ["Unreal Engine 5"],
-      "web_tech": ["Three.js", "React Three Fiber"],
-      "concepts": ["Pathfinding", "Grid Systems", "Sim AI"]
-    }
+    "color": "#443C66",
+    "skills": [
+      { "name": "Unreal Engine 5", "url": "https://www.unrealengine.com/en-US/unreal-engine-5" }
+    ]
   }
 }

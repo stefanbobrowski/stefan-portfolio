@@ -1,48 +1,45 @@
 @use './variables' as v;
 
-/* -------------------------- */
-/* LIGHT THEME                */
-/* -------------------------- */
 :root {
-  /* Core colors */
-  --bg: #{v.$color-bg};
-  --bg-alt: #f5f7fa;
-  --surface: #ffffff;
-  --surface-alt: #f0f1f3;
+  /* Light Theme */
+  --bg: #d9e3fc;
+  --bg-alt: #ff0000;
 
-  --text: #{v.$color-text};
-  --text-muted: #555;
-  --border: #dce0e5;
+  --surface: #7988aa;
+  --surface-alt: #1a1d23;
 
-  /* Accent */
-  --accent: #{v.$color-accent};
-  --accent-hover: #{v.$color-accent-hover};
+  --text: #111418; /* Slight navy tint */
+  --text-muted: #d2dbf1;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.12);
+  --border: #363d4e;
 
-  /* Transition */
-  --transition-theme: background-color 0.25s ease, color 0.25s ease;
+  /* Gold unified accent system */
+  --accent: #{v.$gold-600};
+  --accent-hover: #{v.$gold-500};
+  --accent-bg: rgba(255, 187, 0, 0.08);
+  --accent-border: rgba(255, 187, 0, 0.3);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.07);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
-/* -------------------------- */
-/* DARK THEME                 */
-/* -------------------------- */
 [data-theme='dark'] {
-  --bg: #0d0f12; /* deep slate */
+  --bg: #0d0f12;
   --bg-alt: #14171c;
-  --surface: #1a1d23;
-  --surface-alt: #22262e;
 
-  --text: #f5f5f5;
-  --text-muted: #bbbbbb;
+  --surface: #1a1d23;
+  --surface-alt: #7988aa;
+
+  --text: #fffae5;
+  --text-muted: #b6b9c0;
+
   --border: #2d3035;
 
-  --accent: #{v.$color-accent};
-  --accent-hover: #{v.$color-accent-hover};
+  --accent: #{v.$gold-600};
+  --accent-hover: #{v.$gold-500};
+  --accent-bg: rgba(255, 187, 0, 0.1);
+  --accent-border: rgba(255, 187, 0, 0.4);
 
-  /* Shadows for dark mode */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.6);
 }

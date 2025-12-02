@@ -1,12 +1,12 @@
 .toggle {
-  background: var(--surface-alt);
-  border: 1px solid var(--border);
   padding: 8px 12px;
+  border: 1px solid var(--border);
   border-radius: 6px;
+  background: var(--surface-alt);
   cursor: pointer;
   transition: var(--transition-theme);
 
-  &:hover {
-    background: var(--surface);
-  }
+  // &:hover {
+  //   background: color.adjust(var(--surface-alt), $lightness: 2%);
+  // }
 }

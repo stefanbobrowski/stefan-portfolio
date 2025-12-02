@@ -1,10 +1,4 @@
-// Colors
-$color-bg: #e6e6e6;
-$color-text: #121212;
-$color-accent: #3a6bff;
-$color-accent-hover: #2f59d1;
-
-// Font stack
+// Pure SCSS variables (NOT theme-dependent)
 $font-main:
   'Inter',
   -apple-system,
@@ -12,10 +6,18 @@ $font-main:
   'Segoe UI',
   sans-serif;
 
-// Spacing
+// Spacing scale
 $space-1: 4px;
 $space-2: 8px;
 $space-3: 12px;
 $space-4: 16px;
 $space-5: 24px;
 $space-6: 32px;
+
+// Optional: base palette (not the theme)
+$blue-500: #00e6ff;
+$blue-600: #00e6ff;
+$gold-500: #ffdf75;
+$gold-600: #ffaa00;
+
+// Functions or mixins can go here too

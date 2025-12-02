@@ -1,5 +1,11 @@
 @use './reset';
 @use './themes';
+@use './variables' as v;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px;
+}
 
 html,
 body {
@@ -7,7 +13,7 @@ body {
   height: 100%;
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', sans-serif;
+  font-family: #{v.$font-main};
   transition: var(--transition-theme);
 }
 
@@ -16,4 +22,16 @@ body {
   min-height: 100vh;
   background: var(--bg);
   color: var(--text);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  &:hover {
+    color: var(--accent-hover);
+  }
+}
+
+p {
+  max-width: 600px;
 }

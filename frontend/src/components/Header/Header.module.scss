@@ -1,7 +1,12 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   border-bottom: 1px solid var(--border);
   background: var(--surface);
   transition: var(--transition-theme);
+  z-index: 10000;
 }
 
 .headerInner {
@@ -11,7 +16,7 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 1rem;
-  outline: 1px solid var(--text-muted);
+  // outline: 1px solid var(--accent);
 }
 
 .brand {
@@ -38,7 +43,7 @@
 
 .nav {
   display: flex;
-  gap: 20px;
+  gap: 50px;
 
   a {
     color: var(--text);
@@ -46,10 +51,5 @@
     padding: 4px 0;
     border-bottom: 2px solid transparent;
     transition: 0.2s ease;
-
-    &.active {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
   }
 }

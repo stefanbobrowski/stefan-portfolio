@@ -29,17 +29,17 @@
 }
 
 .presetButtons {
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 20px;
 }
 
 .presetButtons button {
-  background: #222;
   padding: 10px 14px;
   border-radius: 8px;
   border: 1px solid #333;
+  background: #222;
   color: white;
   cursor: pointer;
   text-align: left;

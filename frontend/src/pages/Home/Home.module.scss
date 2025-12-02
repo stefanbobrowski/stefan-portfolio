@@ -1,7 +1,29 @@
 .homeWrapper {
-  display: flex;
   width: 100%;
-  padding: 1rem;
-  gap: 1rem;
-  box-sizing: border-box;
+}
+
+.introSection {
+  display: flex;
+
+  & > * {
+    flex: 1;
+  }
+}
+
+.stefanBio {
+  h1,
+  h2,
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+.sectionHeader {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text);
+  border-left: 4px solid #555;
+  padding-left: 12px;
 }

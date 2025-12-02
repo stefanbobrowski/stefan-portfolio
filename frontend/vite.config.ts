@@ -1,13 +1,19 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { resolve } from 'path';
 
 export default defineConfig({
-  base: './',
   plugins: [react()],
-  assetsInclude: ['**/*.glb', '**/*.gltf'],
-  server: {
-    proxy: {
-      '/api': 'http://localhost:8080',
+  resolve: {
+    alias: {
+      three: resolve('./node_modules/three'),
     },
+    dedupe: ['three'],
+  },
+  optimizeDeps: {
+    include: ['three', 'three-stdlib'],
+  },
+  ssr: {
+    noExternal: ['three', 'three-stdlib'],
   },
 });

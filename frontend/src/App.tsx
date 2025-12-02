@@ -1,6 +1,6 @@
 import { RootLayout } from './layouts/RootLayout';
 import { Home } from './pages/Home/Home';
-import { Projects } from './pages/Projects/Projects';
+import Projects from './pages/Projects/Projects';
 import { About } from './pages/About/About';
 import { Routes, Route } from 'react-router-dom';
 

@@ -1,42 +1,53 @@
 import { useState, useEffect } from 'react';
+import type { SkillsJson } from '../../types/skills';
 import styles from './SkillBoard.module.scss';
 
-type SkillCategory = {
-  color: string;
-  skills: Record<string, string[]>;
-};
+function handleMouseEnter(e: React.MouseEvent<HTMLSpanElement>) {
+  e.currentTarget.classList.remove('reverse');
+}
 
-type SkillsJson = Record<string, SkillCategory>;
+function handleMouseLeave(e: React.MouseEvent<HTMLSpanElement>) {
+  e.currentTarget.classList.add('reverse');
+}
 
 export default function SkillBoard() {
-  const [skills, setSkills] = useState<SkillsJson | null>(null);
+  const [skillsData, setSkillsData] = useState<SkillsJson | null>(null);
 
   useEffect(() => {
     fetch('/api/skills')
       .then(res => res.json())
-      .then((data: SkillsJson) => setSkills(data));
+      .then(data => setSkillsData(data.skills || data));
   }, []);
 
-  if (!skills) return <div>Loading...</div>;
+  if (!skillsData) return <div className={styles.loading}>Loading...</div>;
 
   return (
     <div className={styles.skillBoard}>
-      {Object.entries(skills).map(([category, data]) => (
-        <section key={category} className={styles.categorySection}>
-          <h2 style={{ borderColor: data.color }}>{category.toUpperCase()}</h2>
+      {Object.entries(skillsData).map(([category, data]) => (
+        <section
+          key={category}
+          className={styles.categorySection}
+          style={{ borderColor: data.color, backgroundColor: data.color + '90' }}
+        >
+          <h2 className={styles.categoryTitle} style={{ color: data.color }}>
+            {category.toUpperCase()}
+          </h2>
 
           <div className={styles.brickContainer}>
-            {Object.entries(data.skills).flatMap(([_, arr]) =>
-              arr.map(skill => (
-                <span
-                  key={skill}
-                  className={styles.skillBrick}
-                  style={{ backgroundColor: data.color }}
-                >
-                  {skill}
-                </span>
-              ))
-            )}
+            {data.skills.map(skill => (
+              <a
+                key={skill.name}
+                href={skill.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.skillBrick}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                style={{ '--brick-color': data.color } as React.CSSProperties}
+              >
+                {skill.name}
+              </a>
+            ))}
           </div>
         </section>
       ))}
