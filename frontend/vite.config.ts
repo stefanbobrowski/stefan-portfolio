@@ -16,4 +16,12 @@ export default defineConfig({
   ssr: {
     noExternal: ['three', 'three-stdlib'],
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+      },
+    },
+  },
 });

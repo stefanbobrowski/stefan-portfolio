@@ -1,0 +1,188 @@
+@use '../../styles/variables' as v;
+
+.header {
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+    color: v.$gold-500;
+    text-align: center;
+  }
+
+  p {
+    margin-top: 0.8rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+  }
+}
+
+.projectsGrid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.card {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.thumb {
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background: #0e1720;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.25s ease;
+  }
+
+  .loadingThumb {
+    background: var(--surface-alt);
+  }
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
+  }
+
+  .year {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+}
+
+.meta {
+  margin: 0.4rem 0 1rem 0;
+  font-size: 0.9rem;
+
+  .badge {
+    display: inline-block;
+    padding: 0.15rem 0.55rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    margin-right: 0.4rem;
+    background: v.$gold-600;
+    color: #111;
+  }
+
+  .status {
+    background: var(--surface-alt);
+    color: var(--text);
+  }
+}
+
+.description {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+
+  span {
+    background: var(--surface-alt);
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+}
+
+.highlights {
+  margin-bottom: 1rem;
+
+  li {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+  }
+}
+
+.links {
+  margin-top: auto;
+  display: flex;
+  gap: 0.6rem;
+
+  a {
+    flex: 1;
+    text-align: center;
+    padding: 0.45rem 0.7rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: #111;
+    background-color: v.$gold-500;
+    transition: background-color 0.15s;
+
+    &:hover {
+      background-color: v.$gold-600;
+    }
+  }
+
+  .github {
+    background-color: var(--surface-alt);
+    color: var(--text);
+
+    &:hover {
+      background-color: var(--surface);
+    }
+  }
+}
+
+// Desktop (StefanOS) variant styles
+.desktopContainer {
+  padding: 20px;
+}
+
+.desktopGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.desktopLoading,
+.pageLoading {
+  padding: 20px;
+  text-align: center;
+  color: var(--text-muted);
+}

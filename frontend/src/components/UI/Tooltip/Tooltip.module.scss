@@ -1,0 +1,14 @@
+.tooltip {
+  position: fixed;
+  /* move tooltip slightly down and to the right of cursor so it doesn't block clicks */
+  transform: translate(8px, 18px);
+  pointer-events: none;
+  background: rgba(10, 10, 18, 0.9);
+  color: #ffd676;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(255, 215, 130, 0.4);
+  backdrop-filter: blur(3px);
+  z-index: 9999;
+}

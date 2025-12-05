@@ -16,7 +16,7 @@
       "live": "https://gglist-frontend-177352903615.us-central1.run.app/",
       "github": "https://github.com/stefanbobrowski/gglist"
     },
-    "thumbnail": "/images/projects/gglist.png"
+    "thumbnail": "/projectThumbs/project-thumb-pokemon.png"
   },
   {
     "title": "Upload Center",
@@ -35,7 +35,7 @@
       "live": "https://upload-center-177749780343.us-central1.run.app/",
       "github": "https://github.com/stefanbobrowski/upload-center"
     },
-    "thumbnail": "/images/projects/upload-center.png"
+    "thumbnail": "/projectThumbs/project-thumb-cloud-playground.png"
   },
   {
     "title": "Nerd by Day, Nerd by Night",

@@ -1,0 +1,88 @@
+.controller {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 170px;
+  border-width: 4px;
+  border-top-width: 12px;
+  border-style: solid;
+  border-image: linear-gradient(to right, #b3b3b3, #333) 1;
+  background-color: #000;
+
+  .build-worker-button {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 1px solid rgba(129, 228, 129, 0.75);
+    outline: 1px solid gray;
+    background-color: transparent;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .tooltip {
+    position: absolute;
+    right: 0;
+    bottom: 103%;
+    z-index: 2;
+    width: 200px;
+    padding: 0.75rem;
+    border: 1px solid rgba(129, 228, 129, 0.75);
+    border-radius: 2px;
+    outline: 1px solid gray;
+    color: rgb(193, 230, 193);
+    background-color: rgba(rgb(12, 51, 12), 0.75);
+
+    p {
+      margin-bottom: 10px;
+      font-size: 12.5px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    .tooltip-title {
+      font-weight: bold;
+    }
+
+    .tooltip-cost {
+      display: flex;
+      align-items: center;
+
+      .tooltip-icon {
+        width: 15px;
+        margin: 0 4px 0 0;
+        img {
+          width: 100%;
+        }
+      }
+
+      span {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.controller-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 3px;
+  width: 100%;
+  height: 100%;
+  padding: 12px 6px;
+
+  .grid-item {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #111;
+    font-size: 30px;
+    text-align: center;
+  }
+}

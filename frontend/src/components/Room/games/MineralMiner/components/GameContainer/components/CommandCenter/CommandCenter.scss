@@ -1,0 +1,46 @@
+.command-center-container {
+  position: absolute;
+  top: 110px;
+  left: 0;
+  right: 0;
+  width: 250px;
+  margin: auto;
+  border: 2px solid #00d700;
+  border-radius: 50%;
+
+  .command-center {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: rgba(29, 255, 0, 0.1);
+  }
+
+  .cc-border {
+    position: absolute;
+    top: -4px;
+    left: -6px;
+    z-index: 3;
+    display: block;
+    width: 258px;
+    height: 258px;
+    margin: auto;
+    border-radius: 50%;
+
+    &:hover {
+      border: 2px dashed #00d700;
+      animation: rotate 30s linear infinite;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

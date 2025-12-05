@@ -14,12 +14,40 @@ export default function SkillBoard() {
   const [skillsData, setSkillsData] = useState<SkillsJson | null>(null);
 
   useEffect(() => {
-    fetch('/api/skills')
-      .then(res => res.json())
-      .then(data => setSkillsData(data.skills || data));
+    (async () => {
+      try {
+        const res = await fetch('/api/skills');
+        const ct = res.headers.get('content-type') || '';
+        if (!res.ok) {
+          const text = await res.text();
+          throw new Error(`Server error: ${res.status} - ${text}`);
+        }
+
+        if (ct.includes('application/json')) {
+          const data = await res.json();
+          setSkillsData(data.skills || data);
+        } else {
+          const text = await res.text();
+          // Received HTML (likely 404 or proxy page). Surface helpful message instead of trying to parse.
+          console.warn('Expected JSON but got:', text.slice(0, 200));
+          setSkillsData({ error: `Unexpected response from server.` } as any);
+        }
+      } catch (err: any) {
+        console.error('Failed to load skills:', err);
+        setSkillsData({ error: err.message || 'Failed to load skills' } as any);
+      }
+    })();
   }, []);
 
   if (!skillsData) return <div className={styles.loading}>Loading...</div>;
+
+  if ((skillsData as any).error) {
+    return (
+      <div className={styles.loading} style={{ color: '#f7b2a0' }}>
+        Error loading skills: {(skillsData as any).error}
+      </div>
+    );
+  }
 
   return (
     <div className={styles.skillBoard}>

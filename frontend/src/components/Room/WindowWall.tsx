@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function WindowWall() {
   return (
     <group position={[0, 3.5, -12]}>
@@ -48,6 +50,7 @@ export default function WindowWall() {
           emissiveIntensity={0.04}
         />
       </mesh>
+      {/* (glass intentionally removed — view is unobstructed) */}
     </group>
   );
 }

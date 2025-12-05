@@ -5,6 +5,9 @@ import { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
 import { RectAreaLightUniformsLib } from 'three/examples/jsm/lights/RectAreaLightUniformsLib.js';
 import CityBackground from './CityBackground';
 import RoomBox from './RoomBox';
+import Tooltip from '../UI/Tooltip/Tooltip';
+import Modal from '../UI/Modal/Modal';
+import SleepOverlay from './SleepOverlay';
 
 import styles from './Room.module.scss';
 
@@ -18,14 +21,28 @@ export default function Room() {
       <Canvas
         shadows
         camera={{
-          position: [-0.5, 6, 12],
+          position: [0, 6, 12.2],
           fov: 40,
         }}
       >
         {/* Soft overall fill tying the room together */}
-        <hemisphereLight intensity={0.55} skyColor={'#ff77cc'} groundColor={'#2d0f3a'} />
+        <hemisphereLight intensity={0.6} skyColor={'#ff77cc'} groundColor={'#2d0f3a'} />
         {/* Gentle directional from the window side */}
-        <directionalLight intensity={0.8} position={[0, 6, -12]} color="#ff9adf" castShadow />
+        <directionalLight
+          intensity={0.8}
+          position={[0, 6, -12]}
+          color="#ff9adf"
+          castShadow
+          shadow-mapSize-width={2048}
+          shadow-mapSize-height={2048}
+          shadow-camera-left={-12}
+          shadow-camera-right={12}
+          shadow-camera-top={10}
+          shadow-camera-bottom={-10}
+          shadow-camera-near={0.5}
+          shadow-camera-far={25}
+          shadow-bias={-0.0001}
+        />
         <CityBackground />
         <RoomBox />
         <OrbitControls
@@ -51,6 +68,9 @@ export default function Room() {
           maxAzimuthAngle={Math.PI / 6}
         />
       </Canvas>
+      <Tooltip />
+      <Modal />
+      <SleepOverlay />
     </div>
   );
 }

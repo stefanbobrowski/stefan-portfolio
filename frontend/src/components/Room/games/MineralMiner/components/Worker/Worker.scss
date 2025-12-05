@@ -1,0 +1,267 @@
+.workers-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+}
+
+.worker {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  z-index: 5;
+  width: 30px;
+  box-shadow: 2px 2px 1px 0px rgba(#000, 0.5);
+  animation-name: mine, carryMineral;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+
+  &:nth-of-type(8n + 1) {
+    animation-name: carryMineral, angle1;
+  }
+  &:nth-of-type(8n + 2) {
+    animation-name: carryMineral, angle2;
+  }
+  &:nth-of-type(8n + 3) {
+    animation-name: carryMineral, angle3;
+  }
+  &:nth-of-type(8n + 4) {
+    animation-name: carryMineral, angle4;
+  }
+  &:nth-of-type(8n + 5) {
+    animation-name: carryMineral, angle5;
+  }
+  &:nth-of-type(8n + 6) {
+    animation-name: carryMineral, angle6;
+  }
+  &:nth-of-type(8n + 7) {
+    animation-name: carryMineral, angle7;
+  }
+  &:nth-of-type(8n + 8) {
+    animation-name: carryMineral, angle8;
+  }
+
+  .carried-mineral {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: 10px;
+    height: 10px;
+    margin: auto;
+    background-image: none;
+    background-size: 100%;
+    background-position: center;
+    opacity: 0;
+    animation-name: getCarried;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    @keyframes getCarried {
+      0% {
+        opacity: 0;
+      }
+      29% {
+        background-image: none;
+      }
+      30% {
+        left: 0;
+        right: auto;
+        background-image: url('../../assets/sparks.gif');
+        opacity: 1;
+      }
+      59% {
+        left: 0;
+        right: auto;
+        background-image: url('../../assets/sparks.gif');
+      }
+      60% {
+        left: auto;
+        right: 0;
+        background-image: url('../../assets/minerals.jpg');
+      }
+
+      100% {
+        background-image: url('../../assets/minerals.jpg');
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@keyframes angle1 {
+  0% {
+    left: -40px;
+    top: 25px;
+  }
+  30% {
+    left: -100px;
+    top: -40px;
+  }
+  70% {
+    left: -100px;
+    top: -40px;
+  }
+  100% {
+    left: -40px;
+    top: 25px;
+  }
+}
+
+@keyframes angle2 {
+  0% {
+    left: -30px;
+    top: 20px;
+  }
+  30% {
+    left: -70px;
+    top: -70px;
+  }
+  70% {
+    left: -70px;
+    top: -70px;
+  }
+  100% {
+    left: -30px;
+    top: 20px;
+  }
+}
+
+@keyframes angle3 {
+  0% {
+    left: -15px;
+    top: 20px;
+  }
+  30% {
+    left: -33px;
+    top: -80px;
+  }
+  70% {
+    left: -33px;
+    top: -80px;
+  }
+  100% {
+    left: -15px;
+    top: 20px;
+  }
+}
+
+@keyframes angle4 {
+  0% {
+    left: 5px;
+    top: 15px;
+  }
+  30% {
+    left: 5px;
+    top: -90px;
+  }
+  70% {
+    left: 5px;
+    top: -90px;
+  }
+  100% {
+    left: 5px;
+    top: 15px;
+  }
+}
+
+@keyframes angle5 {
+  0% {
+    left: 25px;
+    top: 15px;
+  }
+  30% {
+    left: 42px;
+    top: -80px;
+  }
+  70% {
+    left: 42px;
+    top: -80px;
+  }
+  100% {
+    left: 25px;
+    top: 15px;
+  }
+}
+
+@keyframes angle6 {
+  0% {
+    left: 42px;
+    top: 22px;
+  }
+  30% {
+    left: 78px;
+    top: -67px;
+  }
+  70% {
+    left: 78px;
+    top: -67px;
+  }
+  100% {
+    left: 42px;
+    top: 22px;
+  }
+}
+
+@keyframes angle7 {
+  0% {
+    left: 55px;
+    top: 30px;
+  }
+  30% {
+    left: 108px;
+    top: -40px;
+  }
+  70% {
+    left: 108px;
+    top: -40px;
+  }
+  100% {
+    left: 55px;
+    top: 30px;
+  }
+}
+
+@keyframes angle7 {
+  0% {
+    left: 55px;
+    top: 45px;
+  }
+  30% {
+    left: 105px;
+    top: -40px;
+  }
+  70% {
+    left: 105px;
+    top: -40px;
+  }
+  100% {
+    left: 55px;
+    top: 45px;
+  }
+}
+
+@keyframes angle8 {
+  0% {
+    left: 65px;
+    top: 65px;
+  }
+  30% {
+    left: 130px;
+    top: -10px;
+  }
+  70% {
+    left: 130px;
+    top: -10px;
+  }
+  100% {
+    left: 65px;
+    top: 65px;
+  }
+}
