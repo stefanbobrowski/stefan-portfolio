@@ -6,11 +6,19 @@ import DesktopWindow from './DesktopWindow';
 export default function Desk() {
   const { showTooltip, hideTooltip, openModal } = useUIStore();
 
+  // Load keyboard texture
+  const keyboardTexture = useMemo(() => {
+    const loader = new THREE.TextureLoader();
+    return loader.load('/keyboard.jpg');
+  }, []);
+
   const desktopSound = useRef<HTMLAudioElement | null>(null);
   const monitorSound = useRef<HTMLAudioElement | null>(null);
 
   const [pcHover, setPcHover] = useState(false);
   const [monitor1Hover, setMonitor1Hover] = useState(false);
+  const [keyboardHover, setKeyboardHover] = useState(false);
+  const [mouseHover, setMouseHover] = useState(false);
 
   const monitorTex = useMemo(() => {
     const w = 512;
@@ -54,10 +62,10 @@ export default function Desk() {
   }, []);
 
   useEffect(() => {
-    desktopSound.current = new Audio('/click-1.mp3');
+    desktopSound.current = new Audio('/sounds/click-1.mp3');
     desktopSound.current.volume = 0.6;
 
-    monitorSound.current = new Audio('/click-2.mp3');
+    monitorSound.current = new Audio('/sounds/click-2.mp3');
     monitorSound.current.volume = 0.6;
   }, []);
 
@@ -155,14 +163,20 @@ export default function Desk() {
             <div>
               <h2>Stefan's PC Specs</h2>
               <ul>
-                <li>CPU: AMD Ryzen 7 5800X 3.80GHz</li>
-                <li>GPU: NVIDIA GeForce RTX 3070 Ti</li>
-                <li>RAM: 32GB DDR4 3200 RGB</li>
+                <li>
+                  <b>CPU:</b> AMD Ryzen 7 5800X 3.80GHz
+                </li>
+                <li>
+                  <b>GPU:</b> NVIDIA GeForce RTX 3070 Ti
+                </li>
+                <li>
+                  <b>RAM:</b> 32GB DDR4 3200 RGB
+                </li>
               </ul>
-              SteelSeries Apex 3 RGB Gaming Keyboard Audeze Maxwell Wireless Gaming Headset Skytech
+              {/* SteelSeries Apex 3 RGB Gaming Keyboard Audeze Maxwell Wireless Gaming Headset Skytech
               Chronos Gaming PC Desktop CPU: AMD Ryzen 7 5800X 3.80GHz GPU: NVIDIA GeForce RTX 3070
               Ti RAM: 32GB DDR4 3200 RGB Monitor: Sceptre 34-Inch Curved Ultrawide - 3440 x Mouse:
-              Logitech G PRO X SUPERLIGHT
+              Logitech G PRO X SUPERLIGHT */}
             </div>
           );
           if (desktopSound.current) desktopSound.current.play();
@@ -179,21 +193,74 @@ export default function Desk() {
       </mesh>
 
       {/* Keyboard */}
-      <mesh position={[-0.7, 2.35, 0.5]} castShadow>
-        <boxGeometry args={[1.8, 0.06, 0.7]} />
-        <meshStandardMaterial color="#0a0a0a" roughness={0.6} metalness={0.1} />
+      <mesh
+        position={[-0.5, 2.35, 0.7]}
+        rotation={[0, -0.1, 0]}
+        castShadow
+        onPointerOver={(e: React.PointerEvent<HTMLElement>) => {
+          document.body.style.cursor = 'pointer';
+          setKeyboardHover(true);
+          showTooltip('SteelSeries Apex 3 RGB Gaming Keyboard', e.clientX, e.clientY);
+        }}
+        onPointerMove={(e: React.PointerEvent<HTMLElement>) => {
+          showTooltip('SteelSeries Apex 3 RGB Gaming Keyboard', e.clientX, e.clientY);
+        }}
+        onPointerOut={() => {
+          document.body.style.cursor = 'default';
+          setKeyboardHover(false);
+          hideTooltip();
+        }}
+      >
+        <boxGeometry args={[1.9, 0.08, 0.8]} />
+        {[0, 1, 2, 3, 4, 5].map(face => (
+          <meshStandardMaterial
+            key={face}
+            attach={`material-${face}`}
+            color="#000"
+            roughness={0.6}
+            metalness={0.1}
+            map={keyboardTexture}
+            emissive={keyboardHover ? '#ffb86b' : '#000'}
+            emissiveIntensity={keyboardHover ? 0.5 : 0.12}
+          />
+        ))}
       </mesh>
 
       {/* Mouse */}
-      <group position={[0.9, 2.35, 0.2]}>
-        <mesh castShadow>
-          <boxGeometry args={[0.36, 0.12, 0.6]} />
-          <meshStandardMaterial color="#0a0a0a" roughness={0.4} metalness={0.05} />
+      <group position={[1.2, 2.376, 0.7]}>
+        <mesh
+          castShadow
+          onPointerOver={(e: React.PointerEvent<HTMLElement>) => {
+            document.body.style.cursor = 'pointer';
+            setMouseHover(true);
+            showTooltip('Logitech G PRO X SUPERLIGHT Mouse', e.clientX, e.clientY);
+          }}
+          onPointerMove={(e: React.PointerEvent<HTMLElement>) => {
+            showTooltip('Logitech G PRO X SUPERLIGHT Mouse', e.clientX, e.clientY);
+          }}
+          onPointerOut={() => {
+            document.body.style.cursor = 'default';
+            setMouseHover(false);
+            hideTooltip();
+          }}
+        >
+          <boxGeometry args={[0.32, 0.1, 0.7]} />
+          <meshStandardMaterial
+            color="#0a0a0a"
+            roughness={0.4}
+            metalness={0.05}
+            emissive={mouseHover ? '#ffb86b' : '#000'}
+            emissiveIntensity={mouseHover ? 0.5 : 0.12}
+          />
         </mesh>
         {/* Scroll wheel */}
         <mesh position={[0, 0.065, -0.05]} rotation={[Math.PI / 2, 0, 0]}>
           <cylinderGeometry args={[0.025, 0.025, 0.05, 16]} />
-          <meshStandardMaterial color="#1a1a1a" roughness={0.5} />
+          <meshStandardMaterial
+            color="#1a1a1a"
+            roughness={0.5}
+            emissive={mouseHover ? '#ffb86b' : '#000'}
+          />
         </mesh>
       </group>
 

@@ -1,5 +1,5 @@
 .modalBackdrop {
-  position: fixed;
+  position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(4px);
@@ -13,15 +13,20 @@
   background: #0c0f16;
   padding: 1.5rem;
   border-radius: 10px;
-  width: auto;
-  max-width: 95vw;
-  max-height: 95vh;
+  width: 90%;
+  height: 90%;
+  max-width: 90vw;
+  max-height: 80vh;
   box-sizing: border-box;
   overflow: auto;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 215, 130, 0.4);
   position: relative;
-  top: 90px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: #fff;
 }
 
 .modalClose {

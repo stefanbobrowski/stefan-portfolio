@@ -10,6 +10,7 @@ import LightSwitch from './LightSwitch';
 import Cat from './Cat';
 import NeonSign from './NeonSign';
 import Poster from './Poster';
+import BookShelf from './BookShelf';
 
 export default function RoomBox() {
   return (
@@ -117,6 +118,9 @@ export default function RoomBox() {
 
       {/* Light switch on right wall */}
       <LightSwitch position={[9.975, 4.2, -3]} />
+
+      {/* BookShelf on right wall */}
+      <BookShelf />
     </group>
   );
 }

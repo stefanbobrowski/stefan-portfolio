@@ -1,9 +1,14 @@
 .roomContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   max-width: 1440px;
+  aspect-ratio: 16 / 10;
+  max-height: calc(100vh - 120px); // adjust 120px to your header+footer height
   margin: 0 auto;
-  padding: 1rem;
-  height: 1080px; // or full viewport if you want
+  // padding: 1rem;
   border: 2px solid #222; // debug
   background: #0a0a0a;
   border-radius: 12px;

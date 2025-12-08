@@ -48,8 +48,8 @@ export default function DesktopWindow() {
   return (
     <div
       style={{
-        width: '75vw',
-        height: '75vh',
+        width: '100%',
+        height: '100%',
         background: '#0f1724',
         color: '#e6eef6',
         borderRadius: 8,

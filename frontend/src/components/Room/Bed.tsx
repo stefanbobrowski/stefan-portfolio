@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useUIStore } from '../../store/uiStore';
 import type { ThreeElements } from '@react-three/fiber';
 
 type BedProps = ThreeElements['group'] & {
@@ -7,17 +8,21 @@ type BedProps = ThreeElements['group'] & {
 };
 
 export default function Bed({ onBedHover, onBedClick, ...props }: BedProps) {
+  const { showTooltip, hideTooltip } = useUIStore();
+
   const [blanketHover, setBlanketHover] = useState(false);
 
   const handlePointerOver = (setter: (val: boolean) => void) => (e: any) => {
     e.stopPropagation();
     setter(true);
+    showTooltip('Rest', e.clientX, e.clientY);
     onBedHover?.(true);
   };
 
   const handlePointerOut = (setter: (val: boolean) => void) => (e: any) => {
     e.stopPropagation();
     setter(false);
+    hideTooltip();
     onBedHover?.(false);
   };
 
@@ -45,6 +50,9 @@ export default function Bed({ onBedHover, onBedClick, ...props }: BedProps) {
         position={[0, 1.75, 0.63]}
         onPointerOver={handlePointerOver(setBlanketHover)}
         onPointerOut={handlePointerOut(setBlanketHover)}
+        onPointerMove={(e: React.PointerEvent<HTMLElement>) => {
+          showTooltip(`Rest`, e.clientX, e.clientY);
+        }}
         onClick={handleClick}
         castShadow
       >

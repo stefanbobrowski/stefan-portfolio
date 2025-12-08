@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 // simple fixed lamp (no swinging)
 import { RectAreaLightUniformsLib } from 'three/examples/jsm/lights/RectAreaLightUniformsLib.js';
 import { useEffect as useEff } from 'react';
@@ -19,7 +19,8 @@ export default function Lamp({
   width = 11,
   height = 11,
 }: LampProps) {
-  const { lampOn } = useUIStore();
+  const { lampOn, toggleLamp, showTooltip, hideTooltip } = useUIStore();
+  const [hovered, setHovered] = useState(false);
   const lightRef = useRef<any>(null);
 
   // Ensure RectAreaLight uniforms are injected
@@ -33,8 +34,31 @@ export default function Lamp({
     if (lightRef.current) lightRef.current.intensity = lampOn ? intensity : 0;
   }, [lampOn, intensity]);
 
+  const tooltipText = 'Light';
+
+  // Handlers for hover
+  const handlePointerOver = (e: any) => {
+    setHovered(true);
+    // Get screen position for tooltip (fallback to center if not available)
+    const x = e?.clientX || window.innerWidth / 2;
+    const y = e?.clientY || window.innerHeight / 2;
+    showTooltip(tooltipText, x, y);
+    // Change cursor
+    document.body.style.cursor = 'pointer';
+  };
+  const handlePointerOut = () => {
+    setHovered(false);
+    hideTooltip();
+    document.body.style.cursor = '';
+  };
+
   return (
-    <group position={position}>
+    <group
+      position={position}
+      onClick={toggleLamp}
+      onPointerOver={handlePointerOver}
+      onPointerOut={handlePointerOut}
+    >
       {/* Short pole that doesn't protrude below the lamp head */}
       <mesh position={[0, 0, 0]} castShadow>
         <cylinderGeometry args={[0.025, 0.025, 0.9]} />
@@ -47,7 +71,7 @@ export default function Lamp({
         <meshStandardMaterial
           color="#111111"
           emissive={color}
-          emissiveIntensity={lampOn ? 1.2 : 0.02}
+          emissiveIntensity={lampOn ? (hovered ? 1.7 : 1.2) : hovered ? 0.18 : 0.02}
           metalness={0.25}
           roughness={0.35}
         />
