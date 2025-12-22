@@ -19,12 +19,46 @@ export default function GamesBoard() {
       platform: 'NES',
     },
     {
+      id: 'toe-jam-and-earl',
+      name: 'ToeJam & Earl',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/c/c7/ToeJam_%26_Earl.png/250px-ToeJam_%26_Earl.png',
+      releaseYear: 1991,
+      platform: 'Sega Genesis',
+    },
+    {
+      id: 'sonic-the-hedgehog-2',
+      name: 'Sonic the Hedgehog 2',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Sonic_2_US_Cover.jpg/250px-Sonic_2_US_Cover.jpg',
+      releaseYear: 1992,
+      platform: 'Sega Genesis',
+    },
+    {
+      id: 'streets-of-rage-2',
+      name: 'Streets of Rage 2',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/2/26/Streets_of_Rage_2.jpg/250px-Streets_of_Rage_2.jpg',
+      releaseYear: 1992,
+      platform: 'Sega Genesis',
+    },
+    {
       id: 'wolfenstein-3d',
       name: 'Wolfenstein 3D',
-      image: 'https://upload.wikimedia.org/wikipedia/en/0/05/Wolfenstein_3D_cover_art.jpg',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Wolfenstein-3d.jpg/250px-Wolfenstein-3d.jpg',
       releaseYear: 1992,
       platform: 'PC',
     },
+    {
+      id: 'mortal-kombat-ii',
+      name: 'Mortal Kombat II',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/d/df/Mortal_Kombat_II_boxart.png/250px-Mortal_Kombat_II_boxart.png',
+      releaseYear: 1993,
+      platform: 'Sega Genesis',
+    },
+
     {
       id: 'doom',
       name: 'Doom',
@@ -33,115 +67,232 @@ export default function GamesBoard() {
       platform: 'PC',
     },
     {
-      id: 'final-fantasy-vi',
-      name: 'Final Fantasy VI',
-      image: 'https://upload.wikimedia.org/wikipedia/en/b/b4/Final_Fantasy_VI.jpg',
+      id: 'doom-ii',
+      name: 'Doom II: Hell on Earth',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Doom_II_-_Hell_on_Earth_Coverart.png/250px-Doom_II_-_Hell_on_Earth_Coverart.png',
       releaseYear: 1994,
-      platform: 'SNES',
+      platform: 'PC',
     },
     {
       id: 'hexen',
       name: 'Hexen',
-      image: 'https://upload.wikimedia.org/wikipedia/en/8/8c/Hexen_box.jpg',
-      releaseYear: 1995,
-      platform: 'PC',
-    },
-    {
-      id: 'command-and-conquer',
-      name: 'Command & Conquer',
-      image: 'https://upload.wikimedia.org/wikipedia/en/2/23/Command_%26_Conquer_-_DOS_-_Cover.jpg',
+      image: 'https://upload.wikimedia.org/wikipedia/en/3/3d/Hexenbox.jpg',
       releaseYear: 1995,
       platform: 'PC',
     },
     {
       id: 'duke-nukem',
       name: 'Duke Nukem 3D',
-      image: 'https://upload.wikimedia.org/wikipedia/en/2/23/Duke_Nukem_3D_Coverart.png',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/6/61/Duke_Nukem_3D_Coverart.png/250px-Duke_Nukem_3D_Coverart.png',
       releaseYear: 1996,
       platform: 'PC',
     },
     {
+      id: 'pokemon-blue',
+      name: 'Pokémon Blue',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/a/af/Pok%C3%A9mon_Red_and_Blue_cover_art.webp/250px-Pok%C3%A9mon_Red_and_Blue_cover_art.webp.png',
+      releaseYear: 1996,
+      platform: 'Game Boy',
+    },
+    {
+      id: 'super-mario-64',
+      name: 'Super Mario 64',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Super_Mario_64.png/250px-Super_Mario_64.png',
+      releaseYear: 1996,
+      platform: 'Nintendo 64',
+    },
+    {
+      id: 'wayne-gretzky-hockey',
+      name: "Wayne Gretzky's 3D Hockey",
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/0/0f/Wayne_Gretzky%27s_3D_Hockey_for_N64%2C_Front_Cover.jpg/250px-Wayne_Gretzky%27s_3D_Hockey_for_N64%2C_Front_Cover.jpg',
+      releaseYear: 1996,
+      platform: 'Nintendo 64',
+    },
+    {
       id: 'quake',
       name: 'Quake',
-      image: 'https://upload.wikimedia.org/wikipedia/en/4/4b/Quake_cover.png',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Quake1cover.jpg/250px-Quake1cover.jpg',
       releaseYear: 1996,
       platform: 'PC',
     },
     {
       id: 'quake-ii',
       name: 'Quake II',
-      image: 'https://upload.wikimedia.org/wikipedia/en/9/93/Quake_2_cover.jpg',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/Quake2box.jpg/250px-Quake2box.jpg',
       releaseYear: 1997,
       platform: 'PC',
     },
     {
+      id: 'goldeneye-007',
+      name: 'GoldenEye 007',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/1/13/GoldenEye_007_N64_cover.jpg/250px-GoldenEye_007_N64_cover.jpg',
+      releaseYear: 1997,
+      platform: 'Nintendo 64',
+    },
+    {
+      id: 'nfl-blitz',
+      name: 'NFL Blitz',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/9/95/NFL_Blitz_cover.jpg/250px-NFL_Blitz_cover.jpg',
+      releaseYear: 1997,
+      platform: 'N64',
+    },
+    {
+      id: 'final-fantasy-tactics',
+      name: 'Final Fantasy Tactics',
+      image: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Fftbox.jpg/250px-Fftbox.jpg',
+      releaseYear: 1997,
+      platform: 'PS1',
+    },
+    {
+      id: 'banjo-kazooie',
+      name: 'Banjo-Kazooie',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Banjo_Kazooie_Cover.png/250px-Banjo_Kazooie_Cover.png',
+      releaseYear: 1998,
+      platform: 'Nintendo 64',
+    },
+    {
+      id: 'legend-of-zelda-ocarina-of-time',
+      name: 'The Legend of Zelda: Ocarina of Time',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/5/57/The_Legend_of_Zelda_Ocarina_of_Time.jpg/250px-The_Legend_of_Zelda_Ocarina_of_Time.jpg',
+      releaseYear: 1998,
+      platform: 'Nintendo 64',
+    },
+    {
       id: 'unreal',
       name: 'Unreal',
-      image: 'https://upload.wikimedia.org/wikipedia/en/1/1f/Unreal_Coverart.png',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/d/de/Unreal_Coverart.png/250px-Unreal_Coverart.png',
       releaseYear: 1998,
       platform: 'PC',
     },
     {
       id: 'half-life',
       name: 'Half-Life',
-      image: 'https://upload.wikimedia.org/wikipedia/en/f/fa/Half-Life_Cover_Art.jpg',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/f/fa/Half-Life_Cover_Art.jpg/250px-Half-Life_Cover_Art.jpg',
       releaseYear: 1998,
       platform: 'PC',
     },
+
     {
       id: 'team-fortress-classic',
       name: 'Team Fortress Classic',
-      image: 'https://upload.wikimedia.org/wikipedia/en/e/e6/Team_Fortress_Classic_box_art.jpg',
-      releaseYear: 1999,
-      platform: 'PC',
-    },
-    {
-      id: 'counter-strike',
-      name: 'Counter-Strike',
-      image: 'https://upload.wikimedia.org/wikipedia/en/f/ff/Counter-Strike_Box.jpg',
-      releaseYear: 1999,
-      platform: 'PC',
-    },
-    {
-      id: 'unreal-tournament',
-      name: 'Unreal Tournament',
-      image: 'https://upload.wikimedia.org/wikipedia/en/e/e7/Unreal_Tournament_-_Box_Front.jpg',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/Team_Fortress_Classic_box.jpg/250px-Team_Fortress_Classic_box.jpg',
       releaseYear: 1999,
       platform: 'PC',
     },
     {
       id: 'quake-3',
       name: 'Quake III: Arena',
-      image: 'https://upload.wikimedia.org/wikipedia/en/5/52/Quake_3_Arena.jpg',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Quake3Title.jpg/250px-Quake3Title.jpg',
       releaseYear: 1999,
       platform: 'PC',
     },
     {
-      id: 'diablo-ii',
-      name: 'Diablo II',
-      image: 'https://upload.wikimedia.org/wikipedia/en/d/d5/Diablo_II_Coverart.png',
+      id: 'unreal-tournament',
+      name: 'Unreal Tournament',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Unrealtournament.jpg/250px-Unrealtournament.jpg',
+      releaseYear: 1999,
+      platform: 'PC',
+    },
+    {
+      id: 'super-smash-bros',
+      name: 'Super Smash Bros.',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/4/42/Supersmashbox.jpg/250px-Supersmashbox.jpg',
+      releaseYear: 1999,
+      platform: 'Nintendo 64',
+    },
+    {
+      id: 'final-fantasy-9',
+      name: 'Final Fantasy IX',
+      image: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/51/Ffixbox.jpg/250px-Ffixbox.jpg',
+      releaseYear: 2000,
+      platform: 'PS1',
+    },
+    {
+      id: 'the-sims',
+      name: 'The Sims',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/2/22/The_Sims_Coverart.png/250px-The_Sims_Coverart.png',
       releaseYear: 2000,
       platform: 'PC',
     },
     {
-      id: 'max-payne',
-      name: 'Max Payne',
-      image: 'https://upload.wikimedia.org/wikipedia/en/8/8c/MaxPayneCoverArt.jpg',
+      id: 'paper-mario',
+      name: 'Paper Mario',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/6/61/Papermario.jpg/250px-Papermario.jpg',
+      releaseYear: 2000,
+      platform: 'Nintendo 64',
+    },
+    {
+      id: 'counter-strike',
+      name: 'Counter-Strike',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/6/67/Counter-Strike_Box.jpg/250px-Counter-Strike_Box.jpg',
+      releaseYear: 2000,
+      platform: 'PC',
+    },
+    {
+      id: 'diablo-ii',
+      name: 'Diablo II: Lord of Destruction',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/3/31/Diablo_II_-_Lord_of_Destruction_Coverart.png/250px-Diablo_II_-_Lord_of_Destruction_Coverart.png',
       releaseYear: 2001,
       platform: 'PC',
     },
     {
-      id: 'warcraft-3',
-      name: 'Warcraft 3',
+      id: 'halo',
+      name: 'Halo: Combat Evolved',
       image:
-        'https://upload.wikimedia.org/wikipedia/en/4/4b/Warcraft_III-The_Frozen_Throne_Box_Art.jpg',
+        'https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Halo_-_Combat_Evolved_%28XBox_version_-_box_art%29.jpg/250px-Halo_-_Combat_Evolved_%28XBox_version_-_box_art%29.jpg',
+      releaseYear: 2001,
+      platform: 'Xbox',
+    },
+
+    {
+      id: 'metal-gear-solid-2',
+      name: 'Metal Gear Solid 2',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/6/6a/Metalgear2boxart.jpg/250px-Metalgear2boxart.jpg',
+      releaseYear: 2002,
+      platform: 'Xbox',
+    },
+    {
+      id: 'morrowind',
+      name: 'The Elder Scrolls III: Morrowind',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/5/53/MorrowindCOVER.jpg/250px-MorrowindCOVER.jpg',
+      releaseYear: 2002,
+      platform: 'Xbox',
+    },
+    {
+      id: 'counter-strike-cz',
+      name: 'Counter-Strike: Condition Zero',
+      image: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/a8/CZbox.jpg/250px-CZbox.jpg',
       releaseYear: 2002,
       platform: 'PC',
     },
     {
-      id: 'max-payne-2',
-      name: 'Max Payne 2',
-      image: 'https://upload.wikimedia.org/wikipedia/en/c/c9/Max_Payne_2_Cover_Art.jpg',
+      id: 'warcraft-3',
+      name: 'Warcraft 3: The Frozen Throne',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/8/87/Warcraftiii-frozen-throne-boxcover.jpg/250px-Warcraftiii-frozen-throne-boxcover.jpg',
       releaseYear: 2003,
       platform: 'PC',
     },
@@ -160,54 +311,98 @@ export default function GamesBoard() {
       platform: 'PC',
     },
     {
-      id: 'guild-wars',
-      name: 'Guild Wars',
-      image: 'https://upload.wikimedia.org/wikipedia/en/7/77/Guild_Wars_cover.png',
+      id: 'halo-2',
+      name: 'Halo 2',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/9/92/Halo2-cover.png/250px-Halo2-cover.png',
+      releaseYear: 2004,
+      platform: 'Xbox',
+    },
+    {
+      id: 'ninja-gaiden-black',
+      name: 'Ninja Gaiden Black',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/1/1d/Ninja_Gaiden_%282004_video_game%29.png/250px-Ninja_Gaiden_%282004_video_game%29.png',
       releaseYear: 2005,
-      platform: 'PC',
+      platform: 'Xbox',
     },
     {
       id: 'call-of-duty-2',
       name: 'Call of Duty 2',
-      image: 'https://upload.wikimedia.org/wikipedia/en/3/39/Call_of_Duty_2_cover.png',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/d/d1/Call_of_Duty_2_Box.jpg/250px-Call_of_Duty_2_Box.jpg',
       releaseYear: 2005,
-      platform: 'PC, Xbox 360',
+      platform: 'Xbox 360',
     },
     {
       id: 'oblivion',
       name: 'The Elder Scrolls IV: Oblivion',
-      image: 'https://upload.wikimedia.org/wikipedia/en/b/b8/Oblivion_cover.png',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/The_Elder_Scrolls_IV_Oblivion_cover.png/250px-The_Elder_Scrolls_IV_Oblivion_cover.png',
       releaseYear: 2006,
-      platform: 'PC, Xbox 360',
+      platform: 'Xbox 360',
+    },
+    {
+      id: 'gears-of-war',
+      name: 'Gears of War',
+      image: 'https://upload.wikimedia.org/wikipedia/en/8/82/Gears_of_war_cover_art.jpg',
+      releaseYear: 2006,
+      platform: 'Xbox 360',
     },
     {
       id: 'team-fortress-2',
       name: 'Team Fortress 2',
-      image: 'https://upload.wikimedia.org/wikipedia/en/5/51/Team_Fortress_2_cover_art.jpg',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/5/5f/Tf2_standalonebox.jpg/250px-Tf2_standalonebox.jpg',
       releaseYear: 2007,
       platform: 'PC',
     },
     {
-      id: 'call-of-duty-4',
-      name: 'Call of Duty 4: Modern Warfare',
-      image: 'https://upload.wikimedia.org/wikipedia/en/5/5e/Call_of_Duty_4_Modern_Warfare.jpg',
+      id: 'guitar-hero-iii',
+      name: 'Guitar Hero III: Legends of Rock',
+      image: 'https://upload.wikimedia.org/wikipedia/en/9/93/Guitar-hero-iii-cover-image.jpg',
       releaseYear: 2007,
-      platform: 'PC, Xbox 360, PS3',
+      platform: 'Xbox 360',
     },
     {
-      id: 'fallout3',
-      name: 'Fallout 3',
-      image: 'https://upload.wikimedia.org/wikipedia/en/3/3d/Fallout_3_cover_art.PNG',
+      id: 'call-of-duty-4',
+      name: 'Call of Duty 4: Modern Warfare',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/5/5f/Call_of_Duty_4_Modern_Warfare.jpg/250px-Call_of_Duty_4_Modern_Warfare.jpg',
+      releaseYear: 2007,
+      platform: 'PC, Xbox 360',
+    },
+    {
+      id: 'gears-of-war-2',
+      name: 'Gears of War 2',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/e/e0/Gears_of_War_2_Game_Cover.jpg/250px-Gears_of_War_2_Game_Cover.jpg',
       releaseYear: 2008,
-      platform: 'PC, PS3, Xbox 360',
+      platform: 'Xbox 360',
+    },
+    {
+      id: 'grand-theft-auto-iv',
+      name: 'Grand Theft Auto IV',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/b/b7/Grand_Theft_Auto_IV_cover.jpg/250px-Grand_Theft_Auto_IV_cover.jpg',
+      releaseYear: 2008,
+      platform: 'Xbox 360',
     },
     {
       id: 'call-of-duty-mw2',
       name: 'Call of Duty: Modern Warfare 2',
       image:
-        'https://upload.wikimedia.org/wikipedia/en/d/d5/Call_of_Duty_Modern_Warfare_2_cover.png',
+        'https://upload.wikimedia.org/wikipedia/en/thumb/5/5f/Call_of_Duty_4_Modern_Warfare.jpg/250px-Call_of_Duty_4_Modern_Warfare.jpg',
       releaseYear: 2009,
-      platform: 'PC, Xbox 360, PS3',
+      platform: 'PC, Xbox 360',
+    },
+    {
+      id: 'resident-evil-5',
+      name: 'Resident Evil 5',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/5/58/Resident_Evil_5_Box_Artwork.jpg/250px-Resident_Evil_5_Box_Artwork.jpg',
+      releaseYear: 2009,
+      platform: 'Xbox 360',
     },
     {
       id: 'starcraft-ii',
@@ -225,22 +420,25 @@ export default function GamesBoard() {
     },
     {
       id: 'counter-strike-go',
-      name: 'Counter-Strike: GO',
-      image: 'https://upload.wikimedia.org/wikipedia/en/0/0e/CSGOcoverMarch2020.jpg',
+      name: 'Counter-Strike: Global Offensive',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/CSGOcoverMarch2020.jpg/250px-CSGOcoverMarch2020.jpg',
       releaseYear: 2012,
       platform: 'PC',
     },
     {
       id: 'dota-2',
       name: 'Dota 2',
-      image: 'https://upload.wikimedia.org/wikipedia/en/0/0e/Dota_2_Steam_artwork.jpg',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/3/31/Dota_2_Steam_artwork.jpg/250px-Dota_2_Steam_artwork.jpg',
       releaseYear: 2013,
       platform: 'PC',
     },
     {
       id: 'hearthstone',
       name: 'Hearthstone',
-      image: 'https://upload.wikimedia.org/wikipedia/en/3/35/Hearthstone_box_art.jpg',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Hearthstone_2016_logo.png/250px-Hearthstone_2016_logo.png',
       releaseYear: 2014,
       platform: 'PC, Mobile',
     },
@@ -249,42 +447,38 @@ export default function GamesBoard() {
       name: 'The Witcher 3: The Wild Hunt',
       image: 'https://upload.wikimedia.org/wikipedia/en/0/0c/Witcher_3_cover_art.jpg',
       releaseYear: 2015,
-      platform: 'PC, PS4, Xbox',
+      platform: 'PC, Xbox',
     },
     {
       id: 'overwatch',
       name: 'Overwatch',
       image: 'https://upload.wikimedia.org/wikipedia/en/5/51/Overwatch_cover_art.jpg',
       releaseYear: 2016,
-      platform: 'PC, PS4, Xbox',
-    },
-    {
-      id: 'doom-2016',
-      name: 'Doom',
-      image: 'https://upload.wikimedia.org/wikipedia/en/5/50/Doom_2016_cover.png',
-      releaseYear: 2016,
-      platform: 'PC, PS4, Xbox',
+      platform: 'PC',
     },
     {
       id: 'dark-souls-3',
       name: 'Dark Souls III',
-      image: 'https://upload.wikimedia.org/wikipedia/en/b/bb/Dark_souls_3_cover_art.jpg',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/Dark_souls_3_cover_art.jpg/250px-Dark_souls_3_cover_art.jpg',
       releaseYear: 2016,
-      platform: 'PC, PS4, Xbox',
+      platform: 'PC, Xbox',
     },
     {
       id: 'pubg',
       name: "PlayerUnknown's Battlegrounds",
-      image: 'https://upload.wikimedia.org/wikipedia/en/9/9f/PUBG_Steam_Store_logo.jpg',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Pubgbattlegrounds.png/250px-Pubgbattlegrounds.png',
       releaseYear: 2017,
-      platform: 'PC, Xbox, PS4',
+      platform: 'PC',
     },
     {
       id: 'dragon-ball-fighterz',
       name: 'Dragon Ball FighterZ',
-      image: 'https://upload.wikimedia.org/wikipedia/en/4/43/DBFZ_Final_Box_Art.png',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/a/ad/DBFZ_cover_art.jpg/250px-DBFZ_cover_art.jpg',
       releaseYear: 2018,
-      platform: 'PC, PS4, Xbox, Switch',
+      platform: 'Xbox',
     },
     {
       id: 'sekiro',
@@ -296,35 +490,33 @@ export default function GamesBoard() {
     {
       id: 'wow-classic',
       name: 'World of Warcraft: Classic',
-      image: 'https://upload.wikimedia.org/wikipedia/en/c/ce/World_of_Warcraft_Classic_cover.jpg',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/World_of_Warcraft_Classic_logo.png/250px-World_of_Warcraft_Classic_logo.png',
       releaseYear: 2019,
       platform: 'PC',
     },
+
     {
-      id: 'warcraft-3-reforged',
-      name: 'Warcraft 3: Reforged',
-      image: 'https://upload.wikimedia.org/wikipedia/en/f/f9/Warcraft_III-_Reforged.png',
+      id: 'half-life-alyx',
+      name: 'Half-Life: Alyx',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/4/49/Half-Life_Alyx_Cover_Art.jpg/250px-Half-Life_Alyx_Cover_Art.jpg',
+      releaseYear: 2020,
+      platform: 'PC (VR)',
+    },
+    {
+      id: 'hades',
+      name: 'Hades',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Hades_cover_art.jpg/250px-Hades_cover_art.jpg',
       releaseYear: 2020,
       platform: 'PC',
-    },
-    {
-      id: 'diablo-4',
-      name: 'Diablo 4',
-      image: 'https://upload.wikimedia.org/wikipedia/en/3/37/Diablo_4_cover_art.png',
-      releaseYear: 2020,
-      platform: 'PC, PS4/5, Xbox',
-    },
-    {
-      id: 'overwatch-2',
-      name: 'Overwatch 2',
-      image: 'https://upload.wikimedia.org/wikipedia/en/f/fe/Overwatch_2_cover_art.png',
-      releaseYear: 2020,
-      platform: 'PC, PS4/5, Xbox, Switch',
     },
     {
       id: 'valheim',
       name: 'Valheim',
-      image: 'https://upload.wikimedia.org/wikipedia/en/9/9a/Valheim_cover.jpg',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/7/77/Valheim_2021_logo.jpg/250px-Valheim_2021_logo.jpg',
       releaseYear: 2021,
       platform: 'PC',
     },
@@ -333,7 +525,31 @@ export default function GamesBoard() {
       name: 'Elden Ring',
       image: 'https://upload.wikimedia.org/wikipedia/en/b/b9/Elden_Ring_Box_art.jpg',
       releaseYear: 2022,
-      platform: 'PC, PS4/5, Xbox',
+      platform: 'PC, PS5',
+    },
+    {
+      id: 'satisfactory',
+      name: 'Satisfactory',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Satifactory_video_game_cover_art.jpg/250px-Satifactory_video_game_cover_art.jpg',
+      releaseYear: 2022,
+      platform: 'PC',
+    },
+    {
+      id: 'counter-strike-2',
+      name: 'Counter-Strike 2',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/CS2_Cover_Art.jpg/250px-CS2_Cover_Art.jpg',
+      releaseYear: 2023,
+      platform: 'PC',
+    },
+    {
+      id: 'battlefield-6',
+      name: 'Battlefield 6',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/8/87/Battlefield_6_cover_art.jpg/250px-Battlefield_6_cover_art.jpg',
+      releaseYear: 2025,
+      platform: 'PC',
     },
   ];
 
@@ -392,25 +608,6 @@ export default function GamesBoard() {
   // Show game list
   return (
     <div className={styles.gamesBoard}>
-      <h2>Favorite Games</h2>
-      <div className={styles.favoriteGamesList}>
-        {favoriteGames.map((game, i) => (
-          <div key={i} className={styles.favoriteGameCard}>
-            <img
-              src={game.image}
-              alt={game.name + ' cover'}
-              className={styles.favoriteGameImage}
-              loading="lazy"
-            />
-            <div className={styles.favoriteGameInfo}>
-              <div className={styles.favoriteGameTitle}>{game.name}</div>
-              <div className={styles.favoriteGameMeta}>
-                {game.releaseYear} - {game.platform}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
       <h2>My Games</h2>
       <div className={styles.myGamesGrid}>
         {myGames.map((game, i) => {
@@ -445,6 +642,25 @@ export default function GamesBoard() {
             </div>
           );
         })}
+      </div>
+      <h2>Favorite Games</h2>
+      <div className={styles.favoriteGamesList}>
+        {favoriteGames.map((game, i) => (
+          <div key={i} className={styles.favoriteGameCard}>
+            <img
+              src={game.image}
+              alt={game.name + ' cover'}
+              className={styles.favoriteGameImage}
+              loading="lazy"
+            />
+            <div className={styles.favoriteGameInfo}>
+              <div className={styles.favoriteGameTitle}>{game.name}</div>
+              <div className={styles.favoriteGameMeta}>
+                {game.releaseYear} - {game.platform}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

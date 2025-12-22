@@ -115,7 +115,7 @@ export default function Desk() {
           }}
           onClick={() => {
             hideTooltip();
-            openModal(<DesktopWindow />);
+            openModal(<DesktopWindow />, true);
             if (monitorSound.current) monitorSound.current.play();
           }}
         >
@@ -160,15 +160,15 @@ export default function Desk() {
           hideTooltip();
           openModal(
             <div style={{ width: '400px', padding: '1.5rem' }}>
-              <div>
+              <div style={{ margin: '1rem 0' }}>
                 <img
                   src="/stefan-pc.jpeg"
                   alt="Stefan's PC Build"
                   style={{ width: '100%', borderRadius: '8px', transform: 'scaleX(-1)' }}
                 />
               </div>
-              <h2>Stefan's PC Specs</h2>
-              <ul>
+              <h2 style={{ textDecoration: 'underline' }}>Stefan's PC Specs</h2>
+              <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                 <li>
                   <b>CPU:</b> AMD Ryzen 7 5800X 3.80GHz
                 </li>

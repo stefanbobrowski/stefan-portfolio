@@ -3,7 +3,7 @@ import { useUIStore } from '../../../store/uiStore';
 import styles from './Modal.module.scss';
 
 export default function Modal() {
-  const { modalContent, closeModal } = useUIStore();
+  const { modalContent, modalFullScreen, closeModal } = useUIStore();
 
   useEffect(() => {
     if (!modalContent) return;
@@ -22,7 +22,10 @@ export default function Modal() {
 
   return (
     <div className={styles.modalBackdrop} onClick={closeModal}>
-      <div className={styles.modalWindow} onClick={e => e.stopPropagation()}>
+      <div
+        className={modalFullScreen ? styles.modalWindowFullScreen : styles.modalWindow}
+        onClick={e => e.stopPropagation()}
+      >
         <button type="button" className={styles.modalClose} onClick={closeModal}>
           ✕
         </button>

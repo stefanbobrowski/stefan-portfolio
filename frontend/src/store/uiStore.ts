@@ -8,6 +8,7 @@ interface UIState {
     visible: boolean;
   };
   modalContent: React.ReactNode | null;
+  modalFullScreen: boolean;
   lampOn: boolean;
   dayNight: number; // 0 = day, 1 = night
   fastForwardDayNight: (duration?: number) => Promise<void>;
@@ -15,7 +16,7 @@ interface UIState {
   startSleep: (duration?: number) => Promise<void>;
   showTooltip: (text: string, x: number, y: number) => void;
   hideTooltip: () => void;
-  openModal: (content: React.ReactNode) => void;
+  openModal: (content: React.ReactNode, fullScreen?: boolean) => void;
   closeModal: () => void;
   toggleLamp: () => void;
 }
@@ -23,6 +24,7 @@ interface UIState {
 export const useUIStore = create<UIState>(set => ({
   tooltip: { text: '', x: 0, y: 0, visible: false },
   modalContent: null,
+  modalFullScreen: false,
   lampOn: false,
   dayNight: 0,
   isSleeping: false,
@@ -31,8 +33,9 @@ export const useUIStore = create<UIState>(set => ({
 
   hideTooltip: () => set({ tooltip: { text: '', x: 0, y: 0, visible: false } }),
 
-  openModal: content => set({ modalContent: content }),
-  closeModal: () => set({ modalContent: null }),
+  openModal: (content, fullScreen = false) =>
+    set({ modalContent: content, modalFullScreen: fullScreen }),
+  closeModal: () => set({ modalContent: null, modalFullScreen: false }),
 
   fastForwardDayNight: (duration = 3000) =>
     new Promise<void>(resolve => {

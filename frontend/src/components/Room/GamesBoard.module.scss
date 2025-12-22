@@ -6,7 +6,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 12px;
-  margin-bottom: 2rem;
 }
 
 .favoriteGameCard {
@@ -56,6 +55,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   gap: 12px;
+  margin-bottom: 2rem;
 }
 
 .myGameCard,
