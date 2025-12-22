@@ -13,8 +13,7 @@ export default function Tooltip() {
         left: tooltip.x,
         top: tooltip.y,
       }}
-    >
-      {tooltip.text}
-    </div>
+      dangerouslySetInnerHTML={{ __html: tooltip.text }}
+    />
   );
 }

@@ -18,12 +18,19 @@ export default function StefanAISection() {
         <div className={styles.botCard}>
           <AIAvatar />
 
-          <div className={styles.botPointer}></div>
-
           <div className={styles.presetButtons}>
-            <button onClick={() => sendPreset('What can you do?')}>What can you do?</button>
-            <button onClick={() => sendPreset('Show me an example')}>Show me an example</button>
-            <button onClick={() => sendPreset('Help me with coding')}>Help me with coding</button>
+            <button type="button" onClick={() => sendPreset('What can you do?')}>
+              What are you and what can you do?
+            </button>
+            <button type="button" onClick={() => sendPreset('Tell me about Stefan.')}>
+              Tell me about Stefan.
+            </button>
+            <button type="button" onClick={() => sendPreset('How did Stefan build you?')}>
+              How did Stefan build you?
+            </button>
+            <button type="button" onClick={() => sendPreset('How may I contact Stefan?')}>
+              How may I contact Stefan?
+            </button>
           </div>
         </div>
       </div>

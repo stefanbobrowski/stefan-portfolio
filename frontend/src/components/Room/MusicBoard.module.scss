@@ -1,0 +1,73 @@
+.musicBoard {
+  // padding: 1rem;
+}
+
+.heading {
+  margin-bottom: 24px;
+}
+
+.artistGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 24px;
+}
+
+.artistCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.7rem;
+  border: 1px solid var(--accent);
+  border-radius: 7px;
+  background-color: var(--surface);
+  box-shadow: 0 2px 7px #0002;
+  text-decoration: none;
+  transition:
+    background-color 0.42s ease,
+    border-color 0.42s ease;
+
+  &:hover {
+    background-color: var(--bg);
+    border-color: var(--accent-hover);
+
+    .artistName {
+      color: var(--accent-hover);
+    }
+
+    .artistImage {
+      border-color: var(--accent-hover);
+    }
+  }
+}
+
+.artistImage {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.6rem;
+  border: 2px solid var(--accent);
+  background: #0a223a;
+  transition: border-color 0.42s ease;
+}
+
+.musicNote {
+  font-size: 56px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.artistName {
+  color: #b6e3ff;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+  text-align: center;
+  transition: 0.42s ease;
+}
+
+.listenLabel {
+  font-size: 12px;
+  transition: color 0.42s ease;
+}

@@ -1,22 +1,66 @@
-import { Router } from 'express';
+import { Router, Request, Response } from 'express';
+import { body, validationResult } from 'express-validator';
 import skills from '../data/skills.json' with { type: 'json' };
 import projects from '../data/projects.json' with { type: 'json' };
 import resume from '../data/resume.json' with { type: 'json' };
+import general from '../data/general.json' with { type: 'json' };
 import { generateText } from '../lib/vertex.js';
 
 const router = Router();
 
-router.post('/', async (req, res) => {
-  const { question } = req.body;
+// Simple in-memory rate limiting
+const requestCounts = new Map<string, { count: number; resetTime: number }>();
 
-  const context = `
+function checkRateLimit(ip: string, maxRequests: number, windowMs: number): boolean {
+  const now = Date.now();
+  const record = requestCounts.get(ip);
+
+  if (!record || now > record.resetTime) {
+    requestCounts.set(ip, { count: 1, resetTime: now + windowMs });
+    return true;
+  }
+
+  if (record.count >= maxRequests) {
+    return false;
+  }
+
+  record.count++;
+  return true;
+}
+
+router.post(
+  '/',
+  [
+    body('question')
+      .trim()
+      .isString()
+      .isLength({ min: 1, max: 500 })
+      .withMessage('Question must be between 1 and 500 characters'),
+  ],
+  async (req: Request, res: Response) => {
+    // Rate limiting - 10 requests per hour per IP
+    const ip = req.ip || req.socket.remoteAddress || 'unknown';
+    if (!checkRateLimit(ip, 10, 60 * 60 * 1000)) {
+      return res.status(429).json({ error: 'Too many AI requests. Please try again in 1 hour.' });
+    }
+
+    // Validate input
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const { question } = req.body;
+
+    const context = `
 SKILLS_JSON: ${JSON.stringify(skills)}
 PROJECTS_JSON: ${JSON.stringify(projects)}
 RESUME_JSON: ${JSON.stringify(resume)}
+GENERAL_JSON: ${JSON.stringify(general)}
   `;
 
-  const prompt = `
-You are Stefan AI, the assistant for Stefan Bobrowski’s portfolio.
+    const prompt = `
+You are Stefan AI, the assistant for Stefan Bobrowski's portfolio.
 Answer questions using ONLY information found in the provided JSON context unless the user requests general advice or general technical help.
 
 STRICT RULES:
@@ -31,7 +75,7 @@ STRICT RULES:
 4. Never place categories and sub-items on the same bullet level.
 5. Keep responses clean, plain, and structured.
 6. Avoid decorative characters such as asterisks, stars, or unusual symbols.
-7. When answering about work, skills, or experience, list only what exists in SKILLS_JSON, PROJECTS_JSON, or RESUME_JSON.
+7. When answering about work, skills, or experience, list only what exists in SKILLS_JSON, PROJECTS_JSON, RESUME_JSON, or GENERAL_JSON.
 8. If the user asks for something not in the context, say it is not documented unless it is general advice or general coding help.
 9. Never invent or hallucinate skills, tools, projects, or experience not explicitly found in the JSON context.
 10. Do NOT repeat the entire context back to the user.
@@ -73,9 +117,14 @@ USER QUESTION:
 ${question}
   `;
 
-  const answer = await generateText(prompt);
-
-  res.json({ answer });
-});
+    try {
+      const answer = await generateText(prompt);
+      res.json({ answer });
+    } catch (error) {
+      console.error('AI generation error:', error);
+      res.status(500).json({ error: 'Failed to generate response. Please try again.' });
+    }
+  }
+);
 
 export default router;

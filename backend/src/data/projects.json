@@ -1,58 +1,62 @@
 [
   {
+    "title": "Video Searcher",
+    "slug": "video-searcher",
+    "type": "external",
+    "description": "Upload a video and let AI find the exact moments you're looking for. Get precise timestamps for headshots, kills, scores, and more.",
+    "tech": ["TypeScript", "OAuth2", "Rate Limiting", "Cloud Run", "Cloud Storage", "Vertex AI"],
+    "links": {
+      "live": "https://video-searcher-frontend-637174041158.us-central1.run.app/",
+      "github": "https://github.com/stefanbobrowski/VideoSearcher"
+    },
+    "thumbnail": "/projectThumbs/video-searcher-thumb.png"
+  },
+  {
     "title": "GGList",
     "slug": "gglist",
-    "year": 2025,
     "type": "external",
-    "status": "live",
     "description": "Pokémon card favorites & rating site using Google OAuth, Cloud SQL, and a full Vite + Node.js stack.",
-    "tech": ["React 19", "Vite", "Cloud Run", "Postgres", "OAuth2", "Chart.js"],
-    "highlights": [
-      "Built full-stack GCP architecture",
-      "Protected backend API with JWT + rate-limits",
-      "Favorites and voting stored in Cloud SQL"
-    ],
+    "tech": ["Vite", "React", "TypeScript", "Node", "CloudSQL", "OAuth2", "Chart.js"],
     "links": {
       "live": "https://gglist-frontend-177352903615.us-central1.run.app/",
       "github": "https://github.com/stefanbobrowski/gglist"
     },
-    "thumbnail": "/projectThumbs/project-thumb-pokemon.png"
+    "thumbnail": "/projectThumbs/gglist-thumb.png"
   },
   {
     "title": "Upload Center",
     "slug": "upload-center",
-    "year": 2025,
     "type": "external",
-    "status": "live",
-    "description": "A GCP-native file analysis app with JSON upload → BigQuery ingestion → Vertex AI text analysis.",
-    "tech": ["React", "Node.js", "Cloud Run", "BigQuery", "Cloud Storage", "Gemini API"],
-    "highlights": [
-      "Streaming JSON uploads to Cloud Storage",
-      "BigQuery load jobs for dataset analysis",
-      "Gemini text summarization and extraction"
-    ],
+    "description": "A GCP-native app for AI analysis of text sentiments, images, and data files using VertexAI and Gemini models.",
+    "tech": ["GCP", "Cloud Run", "BigQuery", "VertexAI", "Gemini"],
+
     "links": {
       "live": "https://upload-center-177749780343.us-central1.run.app/",
       "github": "https://github.com/stefanbobrowski/upload-center"
     },
-    "thumbnail": "/projectThumbs/project-thumb-cloud-playground.png"
+    "thumbnail": "/projectThumbs/upload-center-thumb.png"
   },
   {
     "title": "Nerd by Day, Nerd by Night",
     "slug": "nerd-by-day",
-    "year": 2025,
     "type": "external",
-    "status": "building",
     "description": "Brand + merch project with a custom e-commerce stack on GCP.",
-    "tech": ["Vite", "React", "Stripe (planned)", "Cloud SQL", "Cloud Run"],
-    "highlights": [
-      "Custom authentication",
-      "Merch store planning",
-      "Brand identity + full-stack implementation"
-    ],
+    "tech": ["Vite", "React", "Stripe", "Cloud SQL", "Cloud Run"],
+
     "links": {
       "github": "https://github.com/yourrepo/nerdbyday"
     },
-    "thumbnail": "/images/projects/nerdbyday.png"
+    "thumbnail": "/projectThumbs/nerdbyday-thumb.png"
+  },
+  {
+    "title": "Susie Jetta",
+    "slug": "susie-jetta",
+    "type": "external",
+    "description": "Makeup and Photography business hosted on GCP.",
+    "tech": ["Vite", "React", "TypeScript", "Cloud Build", "Cloud Storage"],
+    "links": {
+      "github": "https://github.com/stefanbobrowski/susie-jetta-gcp"
+    },
+    "thumbnail": "/projectThumbs/susie-thumb.png"
   }
 ]

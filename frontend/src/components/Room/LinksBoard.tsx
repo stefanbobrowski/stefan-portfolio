@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { FaGithub, FaLinkedin, FaStackOverflow, FaLink } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaStackOverflow } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
 import { MdEmail } from 'react-icons/md';
 
 export default function LinksBoard() {
@@ -7,7 +8,6 @@ export default function LinksBoard() {
   const [links, setLinks] = useState<any[]>([]);
 
   useEffect(() => {
-    // TODO: fetch social/contact links
     setLoading(false);
     setLinks([
       { name: 'GitHub', url: 'https://github.com/stefanbobrowski', icon: FaGithub },
@@ -19,18 +19,18 @@ export default function LinksBoard() {
       },
       {
         name: 'LeetCode',
-        url: 'https://leetcode.com/https://leetcode.com/u/StefanBobrowski/',
-        icon: FaLink,
+        url: 'https://leetcode.com/u/StefanBobrowski/',
+        icon: SiLeetcode,
       },
       { name: 'Email', url: 'mailto:stefan@example.com', icon: MdEmail },
     ]);
   }, []);
 
-  if (loading) return <div style={{ padding: 20 }}>Loading links...</div>;
+  if (loading) return <div>Loading links...</div>;
 
   return (
-    <div style={{ padding: 20 }}>
-      <h2 style={{ marginBottom: 16 }}>Links</h2>
+    <div>
+      <h2>Links</h2>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
         {links.map((link, i) => {
           const IconComponent = link.icon;
@@ -41,7 +41,7 @@ export default function LinksBoard() {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                padding: 16,
+                padding: '1rem',
                 background: '#0b2740',
                 borderRadius: 8,
                 border: '1px solid #122233',
@@ -51,6 +51,7 @@ export default function LinksBoard() {
                 alignItems: 'center',
                 gap: 12,
                 transition: 'background 0.2s',
+                maxWidth: '200px',
               }}
               onMouseEnter={e => (e.currentTarget.style.background = '#0f3556')}
               onMouseLeave={e => (e.currentTarget.style.background = '#0b2740')}

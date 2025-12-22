@@ -1,4 +1,5 @@
 .stefanAISection {
+  flex: 0 1 auto;
   display: flex;
   gap: 1rem;
   align-items: flex-start;
@@ -14,18 +15,6 @@
   border-radius: 16px;
   position: relative;
   // box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
-}
-
-.botPointer {
-  position: absolute;
-  right: -12px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
-  border-left: 12px solid #0f0f0f;
 }
 
 .presetButtons {

@@ -1,0 +1,28 @@
+.musicToggle {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  background-color: var(--surface);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 50px;
+  padding: 0.4rem 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    border 0.2s;
+  outline: none;
+  z-index: 5000;
+
+  &:hover,
+  &:focus {
+    // background-color: var(--accent-hover);
+    color: var(--accent-hover);
+    border-color: var(--accent-hover);
+  }
+}

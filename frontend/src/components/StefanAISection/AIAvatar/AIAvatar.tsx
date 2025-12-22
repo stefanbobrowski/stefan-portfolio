@@ -8,8 +8,8 @@ export default function BotAvatar() {
       loop
       autoplay
       style={{
-        width: 200,
-        height: 200,
+        // width: 200,
+        // height: 200,
         filter: 'drop-shadow(0 0 10px #00eaff50)',
       }}
     />

@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerInner}>
-        <p>Stefan Bobrowski - Full-Stack Web Developer</p>
+        <p>Stefan Bobrowski - Full-Stack AI Engineer</p>
         <div className={styles.socialLinks}>
           <a
             href="mailto:stefanbobrowski1@gmail.com"
@@ -53,7 +53,10 @@ export function Footer() {
             <SiLeetcode />
           </a>
         </div>
-        <p>© {new Date().getFullYear()} Stefan Bobrowski</p>
+        <p style={{ fontSize: '1rem' }}>
+          <span style={{ fontSize: 'inherit', verticalAlign: 'middle' }}>©</span>{' '}
+          {new Date().getFullYear()} Stefan Bobrowski
+        </p>
       </div>
     </footer>
   );

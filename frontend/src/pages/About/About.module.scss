@@ -1,0 +1,78 @@
+.aboutContainer {
+  padding: 1rem 0;
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+.header {
+  font-size: 10rem;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.flexWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.info {
+  flex: 1 1 420px;
+  min-width: 420px;
+}
+
+table {
+  width: 100%;
+  max-width: 700px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--surface);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  margin-top: 1.5rem;
+}
+
+thead th {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 1.2rem;
+  text-align: left;
+  font-size: 1.1rem;
+
+  &:last-child {
+    border-left: 1px solid #ccc;
+  }
+}
+
+tbody td {
+  padding: 0.75rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  background: var(--surface-alt);
+
+  &:last-child {
+    border-left: 1px solid var(--border);
+  }
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 700px) {
+  .flexWrap {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .info {
+    min-width: 0;
+  }
+  table {
+    font-size: 0.97rem;
+  }
+}

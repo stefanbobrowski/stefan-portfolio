@@ -35,19 +35,19 @@ export default function Bed({ onBedHover, onBedClick, ...props }: BedProps) {
     <group {...props}>
       {/* Bed frame */}
       <mesh position={[0, 1, 0]} castShadow onClick={handleClick}>
-        <boxGeometry args={[8, 1, 6]} />
+        <boxGeometry args={[7.5, 1, 6]} />
         <meshStandardMaterial color="#15121f" roughness={0.6} metalness={0.05} />
       </mesh>
 
       {/* Mattress */}
       <mesh position={[0, 1.62, 0]} onClick={handleClick} castShadow>
-        <boxGeometry args={[6.5, 0.5, 5.75]} />
+        <boxGeometry args={[7, 0.5, 5.75]} />
         <meshStandardMaterial color="#d9ccda" roughness={0.9} />
       </mesh>
 
       {/* Blanket */}
       <mesh
-        position={[0, 1.75, 0.63]}
+        position={[0, 1.667, 0.39]}
         onPointerOver={handlePointerOver(setBlanketHover)}
         onPointerOut={handlePointerOut(setBlanketHover)}
         onPointerMove={(e: React.PointerEvent<HTMLElement>) => {
@@ -56,9 +56,9 @@ export default function Bed({ onBedHover, onBedClick, ...props }: BedProps) {
         onClick={handleClick}
         castShadow
       >
-        <boxGeometry args={[7, 0.5, 4.5]} />
+        <boxGeometry args={[7.1, 0.5, 5]} />
         <meshStandardMaterial
-          color="#63325b"
+          color="#1c274d"
           roughness={0.8}
           emissive={blanketHover ? '#6ee7ff' : '#000000'}
           emissiveIntensity={blanketHover ? 0.25 : 0}
@@ -67,14 +67,14 @@ export default function Bed({ onBedHover, onBedClick, ...props }: BedProps) {
 
       {/* Pillow 1 */}
       <mesh position={[-1.75, 2, -2]} castShadow>
-        <boxGeometry args={[2, 0.4, 1.4]} />
-        <meshStandardMaterial color="#d9ccda" roughness={0.9} />
+        <boxGeometry args={[2, 0.35, 1.35]} />
+        <meshStandardMaterial color="#63325b" roughness={0.9} />
       </mesh>
 
       {/* Pillow 2 */}
       <mesh position={[1.5, 2, -2]} castShadow>
-        <boxGeometry args={[2, 0.35, 1.3]} />
-        <meshStandardMaterial color="#d9ccda" roughness={0.9} />
+        <boxGeometry args={[2, 0.35, 1.35]} />
+        <meshStandardMaterial color="#63325b" roughness={0.9} />
       </mesh>
     </group>
   );

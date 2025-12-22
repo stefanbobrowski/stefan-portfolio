@@ -11,7 +11,15 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  margin-top: 94px; // Header height + 1
-  padding: 2rem 1rem;
+  margin-top: 54px;
+  padding: 1rem 1rem;
   box-shadow: 0 -15px 10px rgba(var(--surface), 0.9);
+
+  // @media (max-width: 600px) {
+  //   padding: 0.5rem 0.5rem;
+  // }
+
+  @media (orientation: landscape) and (max-height: 500px) {
+    padding: 0.5rem 1rem;
+  }
 }

@@ -6,13 +6,13 @@
     {
       "company": "Sharper Image",
       "role": "Senior Frontend Developer",
-      "period": "2023–2024",
+      "period": "2023-2024",
       "summary": "Built modern customer-facing UI features using React and TypeScript."
     },
     {
       "company": "The Home Depot",
       "role": "Lead UI Engineer",
-      "period": "2019–2023",
+      "period": "2019-2023",
       "summary": "Owned large-scale UI architecture and design system work across major shopping flows."
     }
   ],

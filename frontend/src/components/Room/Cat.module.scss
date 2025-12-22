@@ -1,0 +1,100 @@
+.catGalleryModal {
+  padding: 2rem;
+  // background: var(--surface);
+  // border-radius: 18px;
+  // box-shadow: 0 4px 32px rgba(0, 0, 0, 0.18);
+  // border: 2.5px solid var(--accent);
+}
+
+.catGalleryTitle {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.catGalleryFlex {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.catGalleryCol {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 1.2rem 1rem 1.5rem 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border: 1.5px solid var(--accent-bg);
+  min-width: 220px;
+}
+
+.catGalleryImg {
+  // width: 220px;
+  max-height: 200px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.catGalleryName {
+  position: absolute;
+  left: 2rem;
+  top: 1rem;
+  font-family: 'Italianno';
+  font-size: 4.2rem;
+  font-weight: 500;
+  color: var(--accent-hover);
+  margin-bottom: 0.5rem;
+  transform: rotate(-10deg);
+}
+.catGalleryNameDrogo {
+  position: absolute;
+  left: 2rem;
+  top: 1rem;
+  font-family: 'Italianno';
+  font-size: 4.2rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  transform: rotate(-10deg);
+}
+
+.catGalleryList {
+  margin: 0;
+  color: var(--text);
+  font-size: 1rem;
+  list-style: none;
+}
+
+.catGalleryList li {
+  position: relative;
+  padding-left: 1.5em;
+  margin-bottom: 0.5em;
+}
+.catGalleryList li::before {
+  content: '🐾';
+  position: absolute;
+  left: 0;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--accent-hover);
+}
+
+@media (max-width: 700px) {
+  .catGalleryFlex {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .catGalleryCol {
+    min-width: 0;
+    width: 100%;
+  }
+  .catGalleryImg {
+    width: 100%;
+    max-width: 260px;
+  }
+}

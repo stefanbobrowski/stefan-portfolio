@@ -6,7 +6,6 @@ import DesktopWindow from './DesktopWindow';
 export default function Desk() {
   const { showTooltip, hideTooltip, openModal } = useUIStore();
 
-  // Load keyboard texture
   const keyboardTexture = useMemo(() => {
     const loader = new THREE.TextureLoader();
     return loader.load('/keyboard.jpg');
@@ -122,8 +121,8 @@ export default function Desk() {
         >
           <planeGeometry args={[2.9, 1.5]} />
           <meshStandardMaterial
-            emissive={monitor1Hover ? '#0a1a2e' : '#000000'}
-            emissiveIntensity={monitor1Hover ? 0.3 : 0}
+            emissive={monitor1Hover ? '#0a1a2e' : '#0a1a2e'}
+            emissiveIntensity={monitor1Hover ? 4.2 : 0.5}
             map={monitorTex}
             toneMapped={false}
           />
@@ -160,7 +159,14 @@ export default function Desk() {
         onClick={() => {
           hideTooltip();
           openModal(
-            <div>
+            <div style={{ width: '400px', padding: '1.5rem' }}>
+              <div>
+                <img
+                  src="/stefan-pc.jpeg"
+                  alt="Stefan's PC Build"
+                  style={{ width: '100%', borderRadius: '8px', transform: 'scaleX(-1)' }}
+                />
+              </div>
               <h2>Stefan's PC Specs</h2>
               <ul>
                 <li>
@@ -216,12 +222,12 @@ export default function Desk() {
           <meshStandardMaterial
             key={face}
             attach={`material-${face}`}
-            color="#000"
+            color="#ffffff"
             roughness={0.6}
             metalness={0.1}
             map={keyboardTexture}
             emissive={keyboardHover ? '#ffb86b' : '#000'}
-            emissiveIntensity={keyboardHover ? 0.5 : 0.12}
+            emissiveIntensity={keyboardHover ? 0.5 : 0.0}
           />
         ))}
       </mesh>

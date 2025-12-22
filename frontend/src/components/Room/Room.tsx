@@ -8,7 +8,7 @@ import RoomBox from './RoomBox';
 import Tooltip from '../UI/Tooltip/Tooltip';
 import Modal from '../UI/Modal/Modal';
 import SleepOverlay from './SleepOverlay';
-
+import RoomMusicToggle from './RoomMusicToggle';
 import styles from './Room.module.scss';
 
 // Needed for RectAreaLight
@@ -16,8 +16,10 @@ RectAreaLightUniformsLib.init();
 
 export default function Room() {
   const controls = useRef<OrbitControlsImpl | null>(null);
+
   return (
     <div className={styles.roomContainer}>
+      <RoomMusicToggle />
       <Canvas
         shadows
         camera={{
@@ -25,9 +27,7 @@ export default function Room() {
           fov: 40,
         }}
       >
-        {/* Soft overall fill tying the room together */}
         <hemisphereLight intensity={0.6} skyColor={'#ff77cc'} groundColor={'#2d0f3a'} />
-        {/* Gentle directional from the window side */}
         <directionalLight
           intensity={0.8}
           position={[0, 6, -12]}
@@ -49,9 +49,8 @@ export default function Room() {
           ref={controls}
           onChange={() => {
             const ctrl = controls.current;
-            if (!ctrl) return; // null guard
-
-            const cam = ctrl.object; // <-- TS now knows this is a Camera
+            if (!ctrl) return;
+            const cam = ctrl.object;
             if (cam.position.y < 2.4) cam.position.y = 2.4;
           }}
           enableDamping
@@ -60,8 +59,13 @@ export default function Room() {
           minDistance={7}
           maxDistance={18}
           rotateSpeed={0.45}
-          zoomSpeed={0.5}
-          panSpeed={0.3}
+          enableZoom={false}
+          enablePan={false}
+          mouseButtons={{
+            LEFT: 0,
+            MIDDLE: 0,
+            RIGHT: 2, // ROTATE (THREE.MOUSE.ROTATE === 2)
+          }}
           minPolarAngle={Math.PI / 2.8}
           maxPolarAngle={Math.PI / 1.9}
           minAzimuthAngle={-(Math.PI / 6)}

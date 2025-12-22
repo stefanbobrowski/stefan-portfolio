@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import type { SkillsJson } from '../../types/skills';
+import { useSkillsStore } from '../../store/skillsStore';
 import styles from './SkillBoard.module.scss';
 
 function handleMouseEnter(e: React.MouseEvent<HTMLSpanElement>) {
@@ -11,9 +12,11 @@ function handleMouseLeave(e: React.MouseEvent<HTMLSpanElement>) {
 }
 
 export default function SkillBoard() {
-  const [skillsData, setSkillsData] = useState<SkillsJson | null>(null);
+  const skillsData = useSkillsStore(state => state.skillsData);
+  const setSkillsData = useSkillsStore(state => state.setSkillsData);
 
   useEffect(() => {
+    if (skillsData) return;
     (async () => {
       try {
         const res = await fetch('/api/skills');
@@ -28,7 +31,6 @@ export default function SkillBoard() {
           setSkillsData(data.skills || data);
         } else {
           const text = await res.text();
-          // Received HTML (likely 404 or proxy page). Surface helpful message instead of trying to parse.
           console.warn('Expected JSON but got:', text.slice(0, 200));
           setSkillsData({ error: `Unexpected response from server.` } as any);
         }
@@ -37,9 +39,15 @@ export default function SkillBoard() {
         setSkillsData({ error: err.message || 'Failed to load skills' } as any);
       }
     })();
-  }, []);
+  }, [skillsData, setSkillsData]);
 
-  if (!skillsData) return <div className={styles.loading}>Loading...</div>;
+  if (!skillsData)
+    return (
+      <div>
+        <h2>Skills</h2>
+        <div className={styles.loading}>Loading skills...</div>
+      </div>
+    );
 
   if ((skillsData as any).error) {
     return (
@@ -51,6 +59,7 @@ export default function SkillBoard() {
 
   return (
     <div className={styles.skillBoard}>
+      <h2>Skills</h2>
       {Object.entries(skillsData).map(([category, data]) => (
         <section
           key={category}

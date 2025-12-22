@@ -1,24 +1,23 @@
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
+import { useUIStore } from '../../store/uiStore';
 import { useFrame, useLoader, useThree } from '@react-three/fiber';
 import { Billboard } from '@react-three/drei';
 import * as THREE from 'three';
-import { useUIStore } from '../../store/uiStore';
+import styles from './Cat.module.scss';
 
 type CatProps = {
   position?: [number, number, number];
-  images?: string[]; // paths to cat photos in /public
-  index?: 0 | 1; // if provided, render only that image (0=drogo,1=sylvy)
+  images?: string[];
+  index?: 0 | 1;
   scale?: number;
 };
 
 export default function Cat({ position = [6.2, -0.46, -8.5], images, index, scale = 1 }: CatProps) {
   const { showTooltip, hideTooltip, openModal } = useUIStore();
 
-  // images for the two billboards — use provided or defaults
   const defaults = ['/cats/drogo-1.png', '/cats/sylvy2.png'];
   const imgs = images && images.length >= 2 ? images : defaults;
 
-  // synthesized cat meows (two variants)
   const playMeow = (variant: 0 | 1) => {
     try {
       const ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
@@ -29,7 +28,6 @@ export default function Cat({ position = [6.2, -0.46, -8.5], images, index, scal
       const now = ctx.currentTime;
       const duration = variant === 0 ? 0.35 : 0.42;
 
-      // base frequency for meow
       const baseFreq = variant === 0 ? 480 : 520;
       const endFreq = variant === 0 ? 680 : 750;
 
@@ -118,49 +116,38 @@ export default function Cat({ position = [6.2, -0.46, -8.5], images, index, scal
         bRef.current.material.emissiveIntensity = bHover.current ? 0.02 : 0;
       }
       bRef.current.lookAt(camera.position);
-
-      // // For Sylvy on the bed, tilt to face camera with a slight downward angle
-      // if (index === 1 || index === undefined) {
-      //   // Look at camera
-
-      //   // Tilt down slightly to simulate lying on bed
-      //   bRef.current.rotateX(0.03);
-      //   bRef.current.rotateY(0.5);
-      // }
     }
   });
   const openGallery = () => {
     openModal(
-      <div style={{ maxWidth: 800 }}>
-        <h2>My Cats</h2>
-        <div style={{ display: 'flex', gap: 12 }}>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <h3>Drogo</h3>
-            <img src={imgs[0]} style={{ width: 260, borderRadius: 8 }} />
-            <ul>
-              <li>- A curious and rambunctious young man.</li>
-              <li>
-                - Very vocal when he wants to go outside, and affectionate {'('}if he lets you pet
-                him{').'}
-              </li>
-              <li>- Enjoys being outdoors and getting into trouble around the neighborhood.</li>
-              <li>
-                - Loves eating his favorite meal, Tuna Fillet with Sea Weed, after a long day
-                outside.
-              </li>
+      <div className={styles.catGalleryModal}>
+        <h2 className={styles.catGalleryTitle}>My Cats</h2>
+        <div className={styles.catGalleryFlex}>
+          <div className={styles.catGalleryCol}>
+            <div className={styles.catGalleryNameDrogo}>Drogo</div>
+            <img src={imgs[0]} className={styles.catGalleryImg} alt="Drogo the cat" />
+            <ul className={styles.catGalleryList}>
+              <li>Named after the Dothraki warlord Khal Drogo from Game of Thrones.</li>
+              <li>Clouded Jack: Savannah, Bengal, PixeBob hybrid.</li>
+              <li>Natural fighter, hunter, and explorer.</li>
+              <li>Curious and rambunctious. Likes to open doors.</li>
+              <li>Enjoys being outdoors and getting into trouble around the neighborhood.</li>
+              <li>Loves eating his favorite meal, Tuna Fillet with Sea Weed.</li>
             </ul>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <h3>Sylvia</h3>
-            <img src={imgs[1]} style={{ width: 260, borderRadius: 8 }} />
-            <ul>
-              <li>- Clever, kind, gentle... A lovely little lady.</li>
-              <li>- Very vocal and affectionate. Ready for scalp massages always.</li>
-              <li>- Enjoys sunbathing by the window and sitting together on the couch.</li>
+          <div className={styles.catGalleryCol}>
+            <div className={styles.catGalleryName}>Sylvia</div>
+            <img src={imgs[1]} className={styles.catGalleryImg} alt="Sylvia the cat" />
+            <ul className={styles.catGalleryList}>
+              <li>Her name means "forest" or "spirit of the wood" in Latin.</li>
+              <li>Super agile and playful. Will chase anything moving.</li>
+              <li>Hyper-vigilant and timid.</li>
+              <li>Likes being outside and watching the birds and squirrels.</li>
               <li>
-                - Extremely agile and will play with anything moving. Favorite toy: feather
-                wand.{' '}
+                Prefers being inside and sunbathing by the window, or being a mushy lump on the
+                bed/sofa.
               </li>
+              <li>Highly vocal and affectionate.</li>
             </ul>
           </div>
         </div>
@@ -211,11 +198,11 @@ export default function Cat({ position = [6.2, -0.46, -8.5], images, index, scal
           </mesh>
         </Billboard>
       ) : null}
-      {/* Sylvy */}
+      {/* Sylvia */}
       {index === undefined || index === 1 ? (
         <mesh
           ref={bRef}
-          position={[-10, 1.95, 2.1]}
+          position={[-10, 1.86, 2.15]}
           scale={[scale, scale, scale]}
           onPointerOver={(e: any) => {
             e.stopPropagation();

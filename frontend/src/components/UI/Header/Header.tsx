@@ -12,8 +12,8 @@ export function Header() {
             <div className={styles.brandImage}>
               <img
                 src={stefanPic}
-                width="60"
-                height="60"
+                width="40"
+                height="40"
                 alt="Stefan Bobrowski"
                 className={styles.logo}
               />
@@ -23,11 +23,30 @@ export function Header() {
         </div>
 
         <nav className={styles.nav}>
-          <NavLink to="/projects">Projects</NavLink>
-          <a href="/StefanBobrowskiResume.pdf" target="_blank" rel="noopener noreferrer">
+          <NavLink
+            to="/projects"
+            className={({ isActive }) =>
+              isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+            }
+          >
+            Projects
+          </NavLink>
+          <NavLink
+            to="/resume"
+            className={({ isActive }) =>
+              isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+            }
+          >
             Resume
-          </a>
-          <NavLink to="/about">About</NavLink>
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+            }
+          >
+            About
+          </NavLink>
         </nav>
 
         <div className={styles.right}>

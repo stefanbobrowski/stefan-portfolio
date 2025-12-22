@@ -101,19 +101,30 @@ export default function RoomBox() {
         <NeonSign text={'Nerd By Day\nNerd By Night'} color="#6ee7ff" />
       </group>
 
-      {/* DBZ Poster on left wall */}
-      <group position={[-9.92, 5.2, -1]}>
-        <Poster imageUrl="/poster-1.jpg" width={1.4} height={2.1} />
+      <group position={[-9.99, 4.2, -3.6]}>
+        <Poster imageUrl="/posters/poster-1.jpg" width={1.8} height={2.7} title="The Matrix" />
       </group>
 
-      {/* Second Poster on left wall */}
-      <group position={[-9.92, 5, -3]}>
-        <Poster imageUrl="/poster-2.jpg" width={1.4} height={2.1} />
+      <group position={[-9.99, 4.2, 1.49]}>
+        <Poster imageUrl="/posters/poster-2.jpg" width={1.6} height={2.4} title="Dragonball Z" />
       </group>
 
-      {/* Landscape Poster on left wall - below the other two */}
-      <group position={[-9.92, 3, -0.75]}>
-        <Poster imageUrl="/poster-landscape.jpg" width={2.8} height={1.4} />
+      <group position={[-9.99, 3.36, -0.99]}>
+        <Poster
+          imageUrl="/posters/poster-landscape.jpg"
+          width={3}
+          height={1.6}
+          title="World of Warcraft: Classic"
+        />
+      </group>
+
+      <group position={[-9.99, 5.1, -0.97]}>
+        <Poster
+          imageUrl="/posters/poster-landscape-2.jpg"
+          width={2.975}
+          height={1.56}
+          title="Deftones"
+        />
       </group>
 
       {/* Light switch on right wall */}

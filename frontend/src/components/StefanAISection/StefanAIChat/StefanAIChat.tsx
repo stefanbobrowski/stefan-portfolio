@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from './StefanAIChat.module.scss';
 
 export default function StefanAIChat({
@@ -14,6 +14,7 @@ export default function StefanAIChat({
   ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
+  const chatBoxRef = useRef<HTMLDivElement | null>(null);
 
   const API = import.meta.env.VITE_API_URL || '/api';
 
@@ -33,7 +34,14 @@ export default function StefanAIChat({
       });
 
       const data = await res.json();
-      setMessages(prev => [...prev, { role: 'assistant', text: data.answer ?? 'No response.' }]);
+
+      // Check for rate limiting or other errors
+      if (!res.ok) {
+        const errorMessage = data.error || 'An error occurred. Please try again.';
+        setMessages(prev => [...prev, { role: 'assistant', text: errorMessage }]);
+      } else {
+        setMessages(prev => [...prev, { role: 'assistant', text: data.answer ?? 'No response.' }]);
+      }
     } catch {
       setMessages(prev => [...prev, { role: 'assistant', text: 'Error contacting Stefan AI.' }]);
     }
@@ -47,12 +55,22 @@ export default function StefanAIChat({
     onSendPreset(askStefan);
   }
 
+  // auto-scroll to bottom when messages change
+  useEffect(() => {
+    const el = chatBoxRef.current;
+    if (!el) return;
+    // wait a tick for DOM updates
+    requestAnimationFrame(() => {
+      el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' });
+    });
+  }, [messages, loading]);
+
   return (
     <div className={styles.chatWrapper}>
       <div className={styles.bubbleFrame}>
         <div className={styles.bubblePointer}></div>
 
-        <div className={styles.chatBox}>
+        <div className={styles.chatBox} ref={chatBoxRef}>
           {messages.map((m, i) => (
             <div
               key={i}
@@ -76,7 +94,7 @@ export default function StefanAIChat({
           onChange={e => setInput(e.target.value)}
           onKeyDown={e => e.key === 'Enter' && askStefan()}
         />
-        <button className={styles.sendButton} onClick={() => askStefan()}>
+        <button type="button" className={styles.sendButton} onClick={() => askStefan()}>
           Send
         </button>
       </div>

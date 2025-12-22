@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useUIStore } from '../../store/uiStore';
+import styles from './BookShelf.module.scss';
+import { favoriteBooks } from './favoriteBooks';
 
 export default function BookShelf() {
   const { showTooltip, hideTooltip, openModal } = useUIStore();
@@ -21,54 +23,6 @@ export default function BookShelf() {
     o.stop(ctx.currentTime + 0.12); // stop just before gain hits zero
     o.onended = () => ctx.close();
   }
-
-  const favoriteBooks = [
-    {
-      title: 'Christian Standard Bible',
-      author: 'Holman Bible Publishers',
-      genre: 'Religion',
-    },
-    {
-      title: 'The Horus Heresy Series',
-      author: 'Black Library',
-      genre: 'Science Fiction',
-    },
-    {
-      title: 'A Song of Ice and Fire Series',
-      author: 'George R.R. Martin',
-      genre: 'Fantasy',
-    },
-    {
-      title: 'The Hobbit',
-      author: 'J.R.R. Tolkien',
-      genre: 'Fantasy',
-    },
-    {
-      title: 'The Pragmatic Programmer',
-      author: 'Andrew Hunt, David Thomas',
-      genre: 'Programming',
-    },
-    {
-      title: 'Clean Code',
-      author: 'Robert C. Martin',
-      genre: 'Programming',
-    },
-    {
-      title: "Don't Make Me Think",
-      author: 'Steve Krug',
-      genre: 'UX/UI Design',
-    },
-    {
-      title: 'Designing Data-Intensive Applications',
-      author: 'Martin Kleppmann',
-      genre: 'Software Architecture',
-    },
-    {
-      title: 'Atomic Habits',
-      author: 'James Clear',
-      genre: 'Self-Improvement',
-    },
-  ];
 
   // Classic bookshelf: vertical sides, top/bottom, 3 shelves, books in rows
   return (
@@ -216,10 +170,10 @@ export default function BookShelf() {
         onPointerOver={(e: React.PointerEvent<HTMLElement>) => {
           document.body.style.cursor = 'pointer';
           setShelfHover(true);
-          showTooltip(`My Favorite Books`, e.clientX, e.clientY);
+          showTooltip(`Book Shelf`, e.clientX, e.clientY);
         }}
         onPointerMove={(e: React.PointerEvent<HTMLElement>) => {
-          showTooltip(`My Favorite Books`, e.clientX, e.clientY);
+          showTooltip(`Book Shelf`, e.clientX, e.clientY);
         }}
         onPointerOut={() => {
           document.body.style.cursor = 'default';
@@ -230,37 +184,40 @@ export default function BookShelf() {
           hideTooltip();
           playBookThud();
           openModal(
-            <div>
-              <h2>My Favorite Books</h2>
-              <div
-                style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '20px' }}
-              >
+            <div className={styles.bookShelf}>
+              <h2>Book Shelf</h2>
+              <div className={styles.bookList}>
                 {favoriteBooks.map((book, idx) => (
                   <div
                     key={idx}
-                    style={{
-                      padding: '16px',
-                      background: '#0b2740',
-                      borderRadius: '8px',
-                      border: '1px solid #122233',
+                    className={styles.bookCard}
+                    style={{ cursor: 'pointer' }}
+                    onMouseEnter={e => {
+                      const rect = (e.target as HTMLElement).getBoundingClientRect();
+                      showTooltip(
+                        `<strong style="color:var(--accent);">${book.title}</strong><br/><span style="color:#fffae5;">by ${book.author}</span><br/><em style="color:#8b4789;">${book.genre}</em>`,
+                        rect.left + rect.width / 2,
+                        rect.top
+                      );
+                    }}
+                    onMouseMove={e => {
+                      showTooltip(
+                        `<strong style="color:var(--accent);">${book.title}</strong><br/><span style="color:#fffae5;">by ${book.author}</span><br/><em style="color:#8b4789;">${book.genre}</em>`,
+                        e.clientX,
+                        e.clientY
+                      );
+                    }}
+                    onMouseLeave={hideTooltip}
+                    onClick={() => {
+                      window.open(book.url, '_blank', 'noopener,noreferrer');
                     }}
                   >
-                    <h3 style={{ margin: '0 0 8px 0', color: '#6ee7ff' }}>{book.title}</h3>
-                    <p style={{ margin: '0 0 4px 0', color: '#9db3c8', fontSize: '0.9rem' }}>
-                      by {book.author}
-                    </p>
-                    <span
-                      style={{
-                        display: 'inline-block',
-                        padding: '4px 8px',
-                        background: '#0f3556',
-                        borderRadius: '4px',
-                        fontSize: '0.75rem',
-                        color: '#6ee7ff',
-                      }}
-                    >
-                      {book.genre}
-                    </span>
+                    <img
+                      src={book.image}
+                      alt={book.title}
+                      loading="lazy"
+                      className={styles.bookCardImage}
+                    />
                   </div>
                 ))}
               </div>

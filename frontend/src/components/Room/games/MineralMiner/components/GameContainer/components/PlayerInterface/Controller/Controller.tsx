@@ -41,6 +41,7 @@ export const Controller = () => {
       <div className="controller-grid">
         <div className="grid-item">
           <button
+            type="button"
             className="build-worker-button"
             onClick={handleBuildWorker}
             onMouseEnter={() => setShowTooltip(true)}

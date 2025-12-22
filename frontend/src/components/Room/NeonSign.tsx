@@ -127,8 +127,8 @@ export default function NeonSign({
         <>
           <pointLight color={color} intensity={15} distance={8} position={[-1, 0.3, 0]} />
           <pointLight color={color} intensity={15} distance={8} position={[1, 0.3, 0]} />
-          <pointLight color={color} intensity={15} distance={8} position={[0, -0.3, 0]} />
-          <pointLight color={color} intensity={20} distance={10} position={[0, 0, 0]} />
+          {/* <pointLight color={color} intensity={5} distance={8} position={[0, -0.3, 0]} />
+          <pointLight color={color} intensity={0} distance={10} position={[0, 0, 0]} /> */}
         </>
       )}
     </group>

@@ -4,6 +4,31 @@ import { RectAreaLightUniformsLib } from 'three/examples/jsm/lights/RectAreaLigh
 import { useEffect as useEff } from 'react';
 import { useUIStore } from '../../store/uiStore';
 
+// Sound function copied from LightSwitch
+const playToggleSound = (nextOn: boolean) => {
+  try {
+    const AudioCtx = (window as any).AudioContext || (window as any).webkitAudioContext;
+    if (!AudioCtx) return;
+    if (!(window as any)._lampAudioCtx) (window as any)._lampAudioCtx = new AudioCtx();
+    const ctx = (window as any)._lampAudioCtx;
+    if (ctx.state === 'suspended') ctx.resume();
+
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    o.type = 'sine';
+    o.frequency.value = nextOn ? 900 : 420;
+    g.gain.setValueAtTime(0.0001, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.18, ctx.currentTime + 0.01);
+    g.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.12);
+    o.connect(g);
+    g.connect(ctx.destination);
+    o.start();
+    o.stop(ctx.currentTime + 0.14);
+  } catch (e) {
+    // ignore audio errors
+  }
+};
+
 type LampProps = {
   position?: [number, number, number];
   color?: string;
@@ -36,14 +61,12 @@ export default function Lamp({
 
   const tooltipText = 'Light';
 
-  // Handlers for hover
   const handlePointerOver = (e: any) => {
     setHovered(true);
     // Get screen position for tooltip (fallback to center if not available)
     const x = e?.clientX || window.innerWidth / 2;
     const y = e?.clientY || window.innerHeight / 2;
     showTooltip(tooltipText, x, y);
-    // Change cursor
     document.body.style.cursor = 'pointer';
   };
   const handlePointerOut = () => {
@@ -52,10 +75,16 @@ export default function Lamp({
     document.body.style.cursor = '';
   };
 
+  const handleLampClick = () => {
+    const next = !lampOn;
+    toggleLamp();
+    playToggleSound(next);
+  };
+
   return (
     <group
       position={position}
-      onClick={toggleLamp}
+      onClick={handleLampClick}
       onPointerOver={handlePointerOver}
       onPointerOut={handlePointerOut}
     >

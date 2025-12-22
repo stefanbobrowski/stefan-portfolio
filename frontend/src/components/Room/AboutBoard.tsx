@@ -5,7 +5,6 @@ export default function AboutBoard() {
   const [about, setAbout] = useState<any>(null);
 
   useEffect(() => {
-    // TODO: fetch from /api/about or general
     setLoading(false);
     setAbout({
       name: 'Stefan Bobrowski',
@@ -14,11 +13,11 @@ export default function AboutBoard() {
     });
   }, []);
 
-  if (loading) return <div style={{ padding: 20 }}>Loading...</div>;
+  if (loading) return <div style={{ padding: '1rem' }}>Loading...</div>;
 
   return (
-    <div style={{ padding: 20 }}>
-      <h2 style={{ marginBottom: 16 }}>About Me</h2>
+    <div>
+      <h2>About Me</h2>
       <div
         style={{ padding: 16, background: '#0b2740', borderRadius: 8, border: '1px solid #122233' }}
       >
