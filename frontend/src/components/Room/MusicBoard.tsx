@@ -50,6 +50,11 @@ const topArtists = [
     image: 'https://i.scdn.co/image/ab6761610000517445e1bb6e5285297f9e55e550',
   },
   {
+    name: 'Fat Jon',
+    url: 'https://open.spotify.com/artist/5Fmr3KeGe2IAVFmMxUq1sD',
+    image: 'https://i.scdn.co/image/ab67616100005174c06a11845750950d9b4c0e30',
+  },
+  {
     name: 'Steely Dan',
     url: '  https://open.spotify.com/artist/6P7H3ai06vU1sGvdpBwDmE?si=vGtOvuQjS4iIAupFz3JySA',
     image: 'https://i.scdn.co/image/c930cc3599a165211fa20c3ec0d70d1a3cbe4778',
@@ -79,23 +84,13 @@ export default function MusicBoard() {
             className={styles.artistCard}
           >
             {artist.image ? (
-              <img
-                src={artist.image}
-                alt={artist.name}
-                className={styles.artistImage}
-              />
+              <img src={artist.image} alt={artist.name} className={styles.artistImage} />
             ) : (
-              <span
-                className={styles.musicNote}
-                aria-label="music"
-                role="img"
-              >
+              <span className={styles.musicNote} aria-label="music" role="img">
                 🎵
               </span>
             )}
-            <span className={styles.artistName}>
-              {artist.name}
-            </span>
+            <span className={styles.artistName}>{artist.name}</span>
             <span className={styles.listenLabel}>Listen on Spotify</span>
           </a>
         ))}

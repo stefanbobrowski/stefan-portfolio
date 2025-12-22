@@ -46,13 +46,15 @@ steps:
   # 4) Build FRONTEND Docker image with backend URL
   # -------------------------------
   - name: 'gcr.io/cloud-builders/docker'
+    entrypoint: 'bash'
     args:
-      - 'build'
-      - '-t'
-      - 'gcr.io/$PROJECT_ID/portfolio-frontend'
-      - '--build-arg'
-      - 'VITE_API_URL=$(cat /workspace/backend_url.txt)/api'
-      - './frontend'
+      - '-c'
+      - |
+        BACKEND_URL=$(cat /workspace/backend_url.txt)
+        docker build \
+          -t gcr.io/$PROJECT_ID/portfolio-frontend \
+          --build-arg VITE_API_URL="$${BACKEND_URL}/api" \
+          ./frontend
 
   # -------------------------------
   # 5) Push FRONTEND Docker image
