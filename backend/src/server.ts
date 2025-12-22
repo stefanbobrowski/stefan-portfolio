@@ -20,8 +20,8 @@ app.use(
   })
 );
 
-// Handle preflight requests
-app.options('*', cors());
+// Handle preflight requests - CORS middleware already handles OPTIONS
+// app.options('*', cors()); // Removed - causes path-to-regexp error in newer versions
 
 app.use(express.json({ limit: '10kb' }));
 
