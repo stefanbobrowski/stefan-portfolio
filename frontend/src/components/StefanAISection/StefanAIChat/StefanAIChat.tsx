@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { apiEndpoints } from '../../../config/api';
 import styles from './StefanAIChat.module.scss';
 
 export default function StefanAIChat({
@@ -16,8 +17,6 @@ export default function StefanAIChat({
   const [loading, setLoading] = useState(false);
   const chatBoxRef = useRef<HTMLDivElement | null>(null);
 
-  const API = import.meta.env.VITE_API_URL || '/api';
-
   async function askStefan(message?: string) {
     const text = message ?? input.trim();
     if (!text) return;
@@ -27,7 +26,7 @@ export default function StefanAIChat({
     setLoading(true);
 
     try {
-      const res = await fetch(`${API}/ask-stefan`, {
+      const res = await fetch(apiEndpoints.askStefan, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question: text }),

@@ -102,6 +102,7 @@
     "color": "#32514D",
     "skills": [
       { "name": "GitHub Copilot", "url": "https://github.com/features/copilot" },
+      { "name": "Claude", "url": "https://www.anthropic.com/claude" },
       { "name": "Gemini", "url": "https://ai.google.dev/" },
       { "name": "Vertex AI", "url": "https://cloud.google.com/vertex-ai" },
       { "name": "ChatGPT", "url": "https://openai.com/chatgpt" }

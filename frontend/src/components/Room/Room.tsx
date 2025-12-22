@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
-import { RectAreaLightUniformsLib } from 'three/examples/jsm/lights/RectAreaLightUniformsLib.js';
+import { RectAreaLightUniformsLib } from 'three-stdlib';
 import CityBackground from './CityBackground';
 import RoomBox from './RoomBox';
 import Tooltip from '../UI/Tooltip/Tooltip';

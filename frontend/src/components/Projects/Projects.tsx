@@ -3,6 +3,7 @@ import { FaGithub } from 'react-icons/fa';
 import { FiGlobe } from 'react-icons/fi';
 import styles from './Projects.module.scss';
 import { useProjectsStore } from '../../store/projectsStore';
+import { apiEndpoints } from '../../config/api';
 
 interface ProjectsProps {
   variant?: 'page' | 'desktop';
@@ -19,7 +20,7 @@ export default function Projects({ variant = 'page' }: ProjectsProps) {
       setLoading(false);
       return;
     }
-    fetch('/api/projects')
+    fetch(apiEndpoints.projects)
       .then(res => res.json())
       .then(data => {
         setProjects(data);

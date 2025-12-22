@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import type { SkillsJson } from '../../types/skills';
 import { useSkillsStore } from '../../store/skillsStore';
+import { apiEndpoints } from '../../config/api';
 import styles from './SkillBoard.module.scss';
 
 function handleMouseEnter(e: React.MouseEvent<HTMLSpanElement>) {
@@ -19,7 +19,7 @@ export default function SkillBoard() {
     if (skillsData) return;
     (async () => {
       try {
-        const res = await fetch('/api/skills');
+        const res = await fetch(apiEndpoints.skills);
         const ct = res.headers.get('content-type') || '';
         if (!res.ok) {
           const text = await res.text();

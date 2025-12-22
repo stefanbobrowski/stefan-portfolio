@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 // simple fixed lamp (no swinging)
-import { RectAreaLightUniformsLib } from 'three/examples/jsm/lights/RectAreaLightUniformsLib.js';
+import { RectAreaLightUniformsLib } from 'three-stdlib';
 import { useEffect as useEff } from 'react';
 import { useUIStore } from '../../store/uiStore';
 

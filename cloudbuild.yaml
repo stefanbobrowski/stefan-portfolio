@@ -1,18 +1,67 @@
 steps:
   # -------------------------------
-  # 1) Build FRONTEND Docker image
+  # 1) Build BACKEND first to get URL
   # -------------------------------
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/portfolio-frontend', './frontend']
+  - name: 'node:22.14'
+    dir: 'backend'
+    entrypoint: npm
+    args: ['ci']
+
+  - name: 'node:22.14'
+    dir: 'backend'
+    entrypoint: npm
+    args: ['run', 'build']
 
   # -------------------------------
-  # 2) Push FRONTEND Docker image
+  # 2) Deploy BACKEND to Cloud Run
+  # -------------------------------
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      [
+        'run',
+        'deploy',
+        'portfolio-backend',
+        '--source=backend/',
+        '--region=us-central1',
+        '--allow-unauthenticated',
+      ]
+
+  # -------------------------------
+  # 3) Get BACKEND URL
+  # -------------------------------
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: 'get-backend-url'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        echo "Getting backend URL..."
+        gcloud run services describe portfolio-backend \
+          --region=us-central1 \
+          --format='value(status.url)' > /workspace/backend_url.txt
+        cat /workspace/backend_url.txt
+
+  # -------------------------------
+  # 4) Build FRONTEND Docker image with backend URL
+  # -------------------------------
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/portfolio-frontend'
+      - '--build-arg'
+      - 'VITE_API_URL=$(cat /workspace/backend_url.txt)/api'
+      - './frontend'
+
+  # -------------------------------
+  # 5) Push FRONTEND Docker image
   # -------------------------------
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/portfolio-frontend']
 
   # -------------------------------
-  # 3) Deploy FRONTEND to Cloud Run
+  # 6) Deploy FRONTEND to Cloud Run
   # -------------------------------
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
@@ -26,34 +75,6 @@ steps:
         '--platform=managed',
         '--allow-unauthenticated',
         '--port=8080',
-      ]
-
-  # -------------------------------
-  # 4) Build BACKEND with Node 22
-  # -------------------------------
-  - name: 'node:22.14'
-    dir: 'backend'
-    entrypoint: npm
-    args: ['ci']
-
-  - name: 'node:22.14'
-    dir: 'backend'
-    entrypoint: npm
-    args: ['run', 'build']
-
-  # -------------------------------
-  # 5) Deploy BACKEND to Cloud Run
-  # -------------------------------
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: gcloud
-    args:
-      [
-        'run',
-        'deploy',
-        'portfolio-backend',
-        '--source=backend/',
-        '--region=us-central1',
-        '--allow-unauthenticated',
       ]
 
 options:
