@@ -10,7 +10,18 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+// CORS - allow all origins for public API
+app.use(
+  cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: false,
+  })
+);
+
+// Handle preflight requests
+app.options('*', cors());
 
 app.use(express.json({ limit: '10kb' }));
 
