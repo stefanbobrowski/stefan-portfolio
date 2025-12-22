@@ -10,13 +10,16 @@ dotenv.config();
 
 const app = express();
 
-// CORS - allow all origins for public API
+// CORS - allow origins for public API
 app.use(
   cors({
-    origin: '*',
-    methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: false,
+    origin: [
+      'https://stefanbobrowski.com',
+      'https://www.stefanbobrowski.com',
+      'https://portfolio-frontend-719818228386.us-central1.run.app',
+      'http://localhost:5173',
+    ],
+    credentials: true,
   })
 );
 
