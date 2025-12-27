@@ -87,6 +87,7 @@
     "color": "#3A5A67",
     "skills": [
       { "name": "Three.js", "url": "https://threejs.org/" },
+      { "name": "Drei", "url": "https://github.com/pmndrs/drei" },
       { "name": "React Three Fiber", "url": "https://docs.pmnd.rs/react-three-fiber" },
       { "name": "D3.js", "url": "https://d3js.org/" },
       { "name": "Chart.js", "url": "https://www.chartjs.org/" },

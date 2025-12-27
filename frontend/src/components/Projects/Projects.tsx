@@ -34,7 +34,7 @@ export default function Projects({ variant = 'page' }: ProjectsProps) {
 
   if (loading) {
     return (
-      <div className={variant === 'desktop' ? styles.desktopLoading : styles.pageLoading}>
+      <div className={variant === 'page' ? styles.projectsPage : ''}>
         <h2>Projects</h2>
         <p>Loading projects...</p>
       </div>
@@ -42,7 +42,7 @@ export default function Projects({ variant = 'page' }: ProjectsProps) {
   }
 
   return (
-    <div className={variant === 'desktop' ? styles.desktopContainer : styles.projectsPage}>
+    <div className={variant === 'page' ? styles.projectsPage : ''}>
       <h2>Projects</h2>
 
       <div className={styles.projectsGrid}>

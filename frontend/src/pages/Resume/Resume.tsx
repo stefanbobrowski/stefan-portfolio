@@ -6,7 +6,7 @@ const ResumeViewer = () => (
         width: '100%',
         maxWidth: 1000,
         margin: '0 auto',
-        height: '80vh',
+        height: '79vh',
         minHeight: '400px',
         boxShadow: '0 4px 24px rgba(0,0,0,0.15)',
         overflow: 'hidden',
