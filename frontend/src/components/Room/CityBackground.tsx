@@ -4,7 +4,7 @@ import { useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 
 export default function CityBackground() {
-  const tex = useTexture('/city.jpg');
+  const tex = useTexture('/city.webp');
   const meshRef = useRef(null);
 
   const radius = 450;

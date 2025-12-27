@@ -15,7 +15,7 @@ type CatProps = {
 export default function Cat({ position = [6.2, -0.46, -8.5], images, index, scale = 1 }: CatProps) {
   const { showTooltip, hideTooltip, openModal } = useUIStore();
 
-  const defaults = ['/cats/drogo-1.png', '/cats/sylvy2.png'];
+  const defaults = ['/cats/drogo.webp', '/cats/sylvy.webp'];
   const imgs = images && images.length >= 2 ? images : defaults;
 
   const playMeow = (variant: 0 | 1) => {

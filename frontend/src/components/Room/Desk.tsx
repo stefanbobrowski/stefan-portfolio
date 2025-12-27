@@ -8,7 +8,7 @@ export default function Desk() {
 
   const keyboardTexture = useMemo(() => {
     const loader = new THREE.TextureLoader();
-    return loader.load('/keyboard.jpg');
+    return loader.load('/keyboard.webp');
   }, []);
 
   const desktopSound = useRef<HTMLAudioElement | null>(null);
@@ -162,7 +162,7 @@ export default function Desk() {
             <div style={{ width: '400px', padding: '1.5rem' }}>
               <div style={{ margin: '1rem 0' }}>
                 <img
-                  src="/stefan-pc.jpeg"
+                  src="/stefan-pc.webp"
                   alt="Stefan's PC Build"
                   style={{ width: '100%', borderRadius: '8px', transform: 'scaleX(-1)' }}
                 />

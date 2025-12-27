@@ -62,9 +62,9 @@ export default function Room() {
           enableZoom={false}
           enablePan={false}
           mouseButtons={{
-            LEFT: 0,
+            LEFT: 2,
             MIDDLE: 0,
-            RIGHT: 2, // ROTATE (THREE.MOUSE.ROTATE === 2)
+            RIGHT: 0,
           }}
           minPolarAngle={Math.PI / 2.8}
           maxPolarAngle={Math.PI / 1.9}

@@ -102,11 +102,11 @@ export default function RoomBox() {
       </group>
 
       <group position={[-9.99, 4.2, -3.6]}>
-        <Poster imageUrl="/posters/poster-1.jpg" width={1.8} height={2.7} title="The Matrix" />
+        <Poster imageUrl="/posters/poster-1.webp" width={1.8} height={2.7} title="The Matrix" />
       </group>
 
       <group position={[-9.99, 4.2, 1.49]}>
-        <Poster imageUrl="/posters/poster-2.jpg" width={1.6} height={2.4} title="Dragonball Z" />
+        <Poster imageUrl="/posters/poster-2.webp" width={1.6} height={2.4} title="Dragonball Z" />
       </group>
 
       <group position={[-9.99, 3.36, -0.99]}>
@@ -120,7 +120,7 @@ export default function RoomBox() {
 
       <group position={[-9.99, 5.1, -0.97]}>
         <Poster
-          imageUrl="/posters/poster-landscape-2.jpg"
+          imageUrl="/posters/poster-landscape-2.webp"
           width={2.975}
           height={1.56}
           title="Deftones"
