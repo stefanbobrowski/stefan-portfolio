@@ -5,7 +5,7 @@ import { MdEmail } from 'react-icons/md';
 export default function LinksBoard() {
   const links = [
     { name: 'GitHub', url: 'https://github.com/stefanbobrowski', icon: FaGithub },
-    { name: 'LinkedIn', url: 'https://linkedin.com/in/stefanbobrowski', icon: FaLinkedin },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/stefanbobrowski', icon: FaLinkedin },
     {
       name: 'Stack Overflow',
       url: 'https://stackoverflow.com/users/3317728/stefanbob',
