@@ -11,11 +11,9 @@ export default function VideosBoard({ controls = true }: { controls?: boolean } 
 
   const videos = useMemo(
     () => [
-      { title: 'Drogo Coding', url: '/videos/video-1.MOV' },
       { title: 'Drogo Wagging', url: '/videos/video-2.mp4' },
       { title: 'Sylvia Cleaning', url: '/videos/video-3.mp4' },
       { title: 'Billiards Cut', url: '/videos/video-4.mp4' },
-      { title: 'Empire Liftoff', url: '/videos/video-5.mp4' },
       { title: 'Double Kettle Flip (12KG/26.45LBS)', url: '/videos/video-6.mp4' },
     ],
     []
