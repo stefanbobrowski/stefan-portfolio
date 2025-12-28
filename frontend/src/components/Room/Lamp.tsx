@@ -1,16 +1,22 @@
-import React, { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
+import type { ThreeEvent } from '@react-three/fiber';
 // simple fixed lamp (no swinging)
 import { RectAreaLightUniformsLib } from 'three-stdlib';
-import { useEffect as useEff } from 'react';
 import { useUIStore } from '../../store/uiStore';
 
 // Sound function copied from LightSwitch
 const playToggleSound = (nextOn: boolean) => {
   try {
-    const AudioCtx = (window as any).AudioContext || (window as any).webkitAudioContext;
-    if (!AudioCtx) return;
-    if (!(window as any)._lampAudioCtx) (window as any)._lampAudioCtx = new AudioCtx();
-    const ctx = (window as any)._lampAudioCtx;
+    type Win = Window & {
+      AudioContext?: typeof AudioContext;
+      webkitAudioContext?: typeof AudioContext;
+      _lampAudioCtx?: AudioContext;
+    };
+    const Ctor = (window as Win).AudioContext ?? (window as Win).webkitAudioContext;
+    if (!Ctor) return;
+    if (!(window as Win)._lampAudioCtx) (window as Win)._lampAudioCtx = new Ctor();
+    const ctx = (window as Win)._lampAudioCtx;
+    if (!ctx) return;
     if (ctx.state === 'suspended') ctx.resume();
 
     const o = ctx.createOscillator();
@@ -25,7 +31,7 @@ const playToggleSound = (nextOn: boolean) => {
     o.start();
     o.stop(ctx.currentTime + 0.14);
   } catch (e) {
-    // ignore audio errors
+    console.log('Audio error in Lamp toggle sound:', e);
   }
 };
 
@@ -46,12 +52,13 @@ export default function Lamp({
 }: LampProps) {
   const { lampOn, toggleLamp, showTooltip, hideTooltip } = useUIStore();
   const [hovered, setHovered] = useState(false);
-  const lightRef = useRef<any>(null);
+  // @ts-expect-error: three-fiber RectAreaLight typing interop — allow using THREE.RectAreaLight for refs
+  const lightRef = useRef<THREE.RectAreaLight | null>(null);
 
   // Ensure RectAreaLight uniforms are injected
   RectAreaLightUniformsLib.init();
 
-  useEff(() => {
+  useEffect(() => {
     if (lightRef.current) lightRef.current.rotation.x = -Math.PI / 2;
   }, []);
 
@@ -61,11 +68,11 @@ export default function Lamp({
 
   const tooltipText = 'Light';
 
-  const handlePointerOver = (e: any) => {
+  const handlePointerOver = (e: ThreeEvent<PointerEvent>) => {
     setHovered(true);
     // Get screen position for tooltip (fallback to center if not available)
-    const x = e?.clientX || window.innerWidth / 2;
-    const y = e?.clientY || window.innerHeight / 2;
+    const x = (e as ThreeEvent<PointerEvent>).clientX ?? window.innerWidth / 2;
+    const y = (e as ThreeEvent<PointerEvent>).clientY ?? window.innerHeight / 2;
     showTooltip(tooltipText, x, y);
     document.body.style.cursor = 'pointer';
   };

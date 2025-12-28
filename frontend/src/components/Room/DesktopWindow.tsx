@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import type { IconType } from 'react-icons';
 import SkillBoard from '../SkillBoard/SkillBoard';
 import ProjectsBoard from './ProjectsBoard';
 import AboutBoard from './AboutBoard';
@@ -36,7 +37,7 @@ export default function DesktopWindow() {
   const [activeTab, setActiveTab] = useState<TabType>('home');
   const [hoverTab, setHoverTab] = useState<TabType | null>(null);
 
-  const tabs: { id: TabType; label: string; icon: any }[] = [
+  const tabs: { id: TabType; label: string; icon: IconType }[] = [
     { id: 'home', label: 'Home', icon: AiOutlineHome },
     { id: 'skills', label: 'Skills', icon: AiOutlineTool },
     { id: 'projects', label: 'Projects', icon: AiOutlineFolder },

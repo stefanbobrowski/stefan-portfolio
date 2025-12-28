@@ -3,7 +3,7 @@ import skills from '../data/skills.json' with { type: 'json' };
 
 const router = Router();
 
-router.get('/', async (req, res) => {
+router.get('/', async (_req, res) => {
   res.json(skills);
 });
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { MyStopwatch } from './MyTimer';
 import './MiniMap.scss';
 

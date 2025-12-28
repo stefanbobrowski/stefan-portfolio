@@ -1,5 +1,5 @@
-import React, { useEffect, useContext } from 'react';
-import { Context } from '../../store';
+import { useEffect, useContext } from 'react';
+import { Context } from '../../context';
 import worker from '../../assets/worker.jpg';
 import './Worker.scss';
 

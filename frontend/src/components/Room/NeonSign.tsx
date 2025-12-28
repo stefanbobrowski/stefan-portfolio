@@ -7,22 +7,6 @@ type NeonSignProps = {
   color?: string;
 };
 
-function hexToRgb(hex: string) {
-  const h = hex.replace('#', '');
-  const full =
-    h.length === 3
-      ? h
-          .split('')
-          .map(c => c + c)
-          .join('')
-      : h;
-  const num = parseInt(full, 16);
-  const r = (num >> 16) & 255;
-  const g = (num >> 8) & 255;
-  const b = num & 255;
-  return `${r}, ${g}, ${b}`;
-}
-
 export default function NeonSign({
   text = 'Nerd By Day\nNerd By Night',
   color = '#6ee7ff',
@@ -32,7 +16,6 @@ export default function NeonSign({
   const [hover, setHover] = useState(false);
 
   const tex = useMemo(() => {
-    // create a canvas sized to content so the resulting texture maps without distortion
     const cvs = document.createElement('canvas');
     const lines = text.split('\n');
     const baseWidth = 1024;
@@ -57,13 +40,6 @@ export default function NeonSign({
 
     const startY = padding + Math.floor(lineHeight / 2);
 
-    // glow layers for each line (scaled to font size)
-    // for (let g = 12; g >= 1; g--) {
-    //   ctx.lineWidth = Math.max(1, Math.round(fontSize * 0.02 * g));
-    //   ctx.strokeStyle = `rgba(${hexToRgb(color)}, ${0.02 * g})`;
-    //   lines.forEach((ln, i) => ctx.strokeText(ln, cvs.width / 2, startY + i * lineHeight));
-    // }
-
     // main stroke and fill
     ctx.lineWidth = Math.max(2, Math.round(fontSize * 0.06));
     ctx.strokeStyle = color;
@@ -72,7 +48,7 @@ export default function NeonSign({
     lines.forEach((ln, i) => ctx.fillText(ln, cvs.width / 2, startY + i * lineHeight));
 
     const tex = new THREE.CanvasTexture(cvs);
-    tex.encoding = THREE.sRGBEncoding;
+    // tex.encoding = THREE.sRGBEncoding;
     tex.needsUpdate = true;
     tex.minFilter = THREE.LinearFilter;
     tex.magFilter = THREE.LinearFilter;
@@ -92,22 +68,22 @@ export default function NeonSign({
       <mesh
         rotation={[0, Math.PI / 2, 0]}
         position={[0, 0, 0.02]}
-        onPointerOver={(e: any) => {
+        onPointerOver={(e: React.PointerEvent) => {
           e.stopPropagation();
           document.body.style.cursor = 'pointer';
           setHover(true);
           showTooltip(isOn ? 'Turn off neon sign' : 'Turn on neon sign', e.clientX, e.clientY);
         }}
-        onPointerMove={(e: any) => {
+        onPointerMove={(e: React.PointerEvent) => {
           showTooltip(isOn ? 'Turn off neon sign' : 'Turn on neon sign', e.clientX, e.clientY);
         }}
-        onPointerOut={(e: any) => {
+        onPointerOut={(e: React.PointerEvent) => {
           e.stopPropagation();
           document.body.style.cursor = 'default';
           setHover(false);
           hideTooltip();
         }}
-        onClick={(e: any) => {
+        onClick={(e: React.PointerEvent) => {
           e.stopPropagation();
           setIsOn(!isOn);
           hideTooltip();
@@ -122,13 +98,10 @@ export default function NeonSign({
           transparent
         />
       </mesh>
-      {/* Multiple point lights to simulate light from the letters */}
       {isOn && (
         <>
           <pointLight color={color} intensity={15} distance={8} position={[-1, 0.3, 0]} />
           <pointLight color={color} intensity={15} distance={8} position={[1, 0.3, 0]} />
-          {/* <pointLight color={color} intensity={5} distance={8} position={[0, -0.3, 0]} />
-          <pointLight color={color} intensity={0} distance={10} position={[0, 0, 0]} /> */}
         </>
       )}
     </group>

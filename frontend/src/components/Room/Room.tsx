@@ -8,7 +8,6 @@ import RoomBox from './RoomBox';
 import Tooltip from '../UI/Tooltip/Tooltip';
 import Modal from '../UI/Modal/Modal';
 import SleepOverlay from './SleepOverlay';
-import RoomMusicToggle from './RoomMusicToggle';
 import styles from './Room.module.scss';
 
 // Needed for RectAreaLight
@@ -19,7 +18,7 @@ export default function Room() {
 
   return (
     <div className={styles.roomContainer}>
-      <RoomMusicToggle />
+      {/* <RoomMusicToggle /> */}
       <Canvas
         shadows
         camera={{

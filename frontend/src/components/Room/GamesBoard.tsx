@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styles from './GamesBoard.module.scss';
 import NineSquare from './games/NineSquare/NineSquare';
 import MineralMiner from './games/MineralMiner/MineralMiner';
@@ -6,8 +6,6 @@ import MineralMiner from './games/MineralMiner/MineralMiner';
 type GameType = 'ninesquare' | 'mineralminer' | null;
 
 export default function GamesBoard() {
-  const [loading, setLoading] = useState(true);
-  const [games, setGames] = useState<any[]>([]);
   const [activeGame, setActiveGame] = useState<GameType>(null);
 
   const favoriteGames = [
@@ -416,7 +414,7 @@ export default function GamesBoard() {
       name: 'Dark Souls',
       image: 'https://upload.wikimedia.org/wikipedia/en/8/8d/Dark_Souls_Cover_Art.jpg',
       releaseYear: 2011,
-      platform: 'PC, PS3, Xbox 360',
+      platform: 'PC, Xbox 360',
     },
     {
       id: 'counter-strike-go',
@@ -478,14 +476,14 @@ export default function GamesBoard() {
       image:
         'https://upload.wikimedia.org/wikipedia/en/thumb/a/ad/DBFZ_cover_art.jpg/250px-DBFZ_cover_art.jpg',
       releaseYear: 2018,
-      platform: 'Xbox',
+      platform: 'PC',
     },
     {
       id: 'sekiro',
       name: 'Sekiro: Shadows Die Twice',
       image: 'https://upload.wikimedia.org/wikipedia/en/6/6e/Sekiro_art.jpg',
       releaseYear: 2019,
-      platform: 'PC, PS4, Xbox',
+      platform: 'PC',
     },
     {
       id: 'wow-classic',
@@ -528,19 +526,19 @@ export default function GamesBoard() {
       platform: 'PC, PS5',
     },
     {
-      id: 'satisfactory',
-      name: 'Satisfactory',
-      image:
-        'https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Satifactory_video_game_cover_art.jpg/250px-Satifactory_video_game_cover_art.jpg',
-      releaseYear: 2022,
-      platform: 'PC',
-    },
-    {
       id: 'counter-strike-2',
       name: 'Counter-Strike 2',
       image:
         'https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/CS2_Cover_Art.jpg/250px-CS2_Cover_Art.jpg',
       releaseYear: 2023,
+      platform: 'PC',
+    },
+    {
+      id: 'satisfactory',
+      name: 'Satisfactory',
+      image:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Satifactory_video_game_cover_art.jpg/250px-Satifactory_video_game_cover_art.jpg',
+      releaseYear: 2024,
       platform: 'PC',
     },
     {
@@ -643,7 +641,7 @@ export default function GamesBoard() {
           );
         })}
       </div>
-      <h2>Favorite Games</h2>
+      <h2>Games Library</h2>
       <div className={styles.favoriteGamesList}>
         {favoriteGames.map((game, i) => (
           <div key={i} className={styles.favoriteGameCard}>

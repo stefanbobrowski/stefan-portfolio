@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useUIStore } from '../../store/uiStore';
 
 export default function SleepOverlay() {
@@ -6,12 +6,17 @@ export default function SleepOverlay() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (isSleeping) setVisible(true);
-    else {
+    let t: number | undefined;
+    if (isSleeping) {
+      // schedule show on next tick to avoid synchronous setState inside effect
+      t = window.setTimeout(() => setVisible(true), 0);
+    } else {
       // allow fade-out before hiding
-      const t = setTimeout(() => setVisible(false), 350);
-      return () => clearTimeout(t);
+      t = window.setTimeout(() => setVisible(false), 350);
     }
+    return () => {
+      if (t) window.clearTimeout(t);
+    };
   }, [isSleeping]);
 
   if (!visible && !isSleeping) return null;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ccOutline from '../../../../../assets/cc-outline.png';
 import armored from '../../../../../assets/armored.png';
 import './Selection.scss';

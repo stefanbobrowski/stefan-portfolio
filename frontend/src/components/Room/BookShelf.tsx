@@ -1,11 +1,9 @@
-import { useState } from 'react';
 import { useUIStore } from '../../store/uiStore';
-import styles from './BookShelf.module.scss';
 import { favoriteBooks } from './favoriteBooks';
+import styles from './BookShelf.module.scss';
 
 export default function BookShelf() {
   const { showTooltip, hideTooltip, openModal } = useUIStore();
-  const [shelfHover, setShelfHover] = useState(false);
 
   // Synthesized book thud sound using Web Audio API
   function playBookThud() {
@@ -169,7 +167,6 @@ export default function BookShelf() {
         visible={false}
         onPointerOver={(e: React.PointerEvent<HTMLElement>) => {
           document.body.style.cursor = 'pointer';
-          setShelfHover(true);
           showTooltip(`Book Shelf`, e.clientX, e.clientY);
         }}
         onPointerMove={(e: React.PointerEvent<HTMLElement>) => {
@@ -177,7 +174,6 @@ export default function BookShelf() {
         }}
         onPointerOut={() => {
           document.body.style.cursor = 'default';
-          setShelfHover(false);
           hideTooltip();
         }}
         onClick={() => {

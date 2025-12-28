@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function WindowWall() {
   return (
     <group position={[0, 3.5, -12]}>

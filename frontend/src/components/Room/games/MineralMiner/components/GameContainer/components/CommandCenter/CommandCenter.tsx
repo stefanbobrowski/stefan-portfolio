@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { Context } from '../../../../store';
+import { useContext } from 'react';
+import { Context } from '../../../../context';
 import { Worker } from '../../../Worker/Worker';
 import commandCenter from '../../../../assets/command-center.png';
 
@@ -15,7 +15,7 @@ export const CommandCenter = () => {
       </div>
       <div className="cc-border" />
       <div className="workers-container">
-        {state.workers.map((worker, i) => (
+        {state.workers.map((_worker, i) => (
           <Worker key={i} />
         ))}
       </div>

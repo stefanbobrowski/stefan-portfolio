@@ -1,4 +1,3 @@
-import React from 'react';
 import { Store } from './store';
 import { GameContainer } from './components/GameContainer/GameContainer';
 import './MineralMiner.scss';

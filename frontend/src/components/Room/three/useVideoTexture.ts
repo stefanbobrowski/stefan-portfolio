@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { VideoTexture } from 'three';
 
 export function useVideoTexture(src: string) {
-  const textureRef = useRef<any>(null);
+  const textureRef = useRef<unknown>(null);
 
   useEffect(() => {
     const video = document.createElement('video');

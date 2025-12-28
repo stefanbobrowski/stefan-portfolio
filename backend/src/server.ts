@@ -10,7 +10,6 @@ dotenv.config();
 
 const app = express();
 
-// CORS - allow origins for public API
 app.use(
   cors({
     origin: [
@@ -23,12 +22,9 @@ app.use(
   })
 );
 
-// Handle preflight requests - CORS middleware already handles OPTIONS
-// app.options('*', cors()); // Removed - causes path-to-regexp error in newer versions
-
 app.use(express.json({ limit: '10kb' }));
 
-app.use((req, res, next) => {
+app.use((_req, res, next) => {
   res.setHeader('X-Content-Type-Options', 'nosniff');
   res.setHeader('X-Frame-Options', 'DENY');
   res.setHeader('X-XSS-Protection', '1; mode=block');

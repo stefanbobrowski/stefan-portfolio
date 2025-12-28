@@ -2,9 +2,9 @@ import { useThree, useFrame } from '@react-three/fiber';
 import { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
 import { useRef, useEffect } from 'react';
 
-export function OrbitControls(props: any) {
+export function OrbitControls() {
   const { camera, gl } = useThree();
-  const controls = useRef<any>(null);
+  const controls = useRef<OrbitControlsImpl | null>(null);
 
   useFrame(() => controls.current?.update());
 

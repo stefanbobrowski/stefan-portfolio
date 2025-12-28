@@ -8,15 +8,21 @@ type LightSwitchProps = {
 
 export default function LightSwitch({ position = [9.8, 5.2, 4] }: LightSwitchProps) {
   const { lampOn, toggleLamp, showTooltip, hideTooltip } = useUIStore();
-  const switchRef = useRef<any>(null);
-  const audioRef = useRef<any>(null);
+  // @ts-expect-error: three-fiber Mesh typing interop — allow using THREE.Mesh for refs
+  const switchRef = useRef<THREE.Mesh>(null);
+  const audioRef = useRef<AudioContext | null>(null);
 
   const playToggleSound = (nextOn: boolean) => {
     try {
-      const AudioCtx = (window as any).AudioContext || (window as any).webkitAudioContext;
-      if (!AudioCtx) return;
-      if (!audioRef.current) audioRef.current = new AudioCtx();
-      const ctx = audioRef.current;
+      type Win = Window & {
+        AudioContext?: typeof AudioContext;
+        webkitAudioContext?: typeof AudioContext;
+      };
+      const Ctor = (window as Win).AudioContext ?? (window as Win).webkitAudioContext;
+      if (!Ctor) return;
+      if (!audioRef.current) audioRef.current = new Ctor();
+      const ctx = audioRef.current as AudioContext;
+      if (!ctx) return;
       if (ctx.state === 'suspended') ctx.resume();
 
       const o = ctx.createOscillator();
@@ -31,7 +37,7 @@ export default function LightSwitch({ position = [9.8, 5.2, 4] }: LightSwitchPro
       o.start();
       o.stop(ctx.currentTime + 0.14);
     } catch (e) {
-      // ignore audio errors
+      console.log('Audio error in LightSwitch toggle sound:', e);
     }
   };
 
@@ -51,15 +57,15 @@ export default function LightSwitch({ position = [9.8, 5.2, 4] }: LightSwitchPro
         document.body.style.cursor = 'pointer';
         showTooltip(
           lampOn ? 'Turn off light' : 'Turn on light',
-          (e as any).clientX,
-          (e as any).clientY
+          (e as ThreeEvent<PointerEvent>).clientX,
+          (e as ThreeEvent<PointerEvent>).clientY
         );
       }}
       onPointerMove={(e: ThreeEvent<PointerEvent>) => {
         showTooltip(
           lampOn ? 'Turn off light' : 'Turn on light',
-          (e as any).clientX,
-          (e as any).clientY
+          (e as ThreeEvent<PointerEvent>).clientX,
+          (e as ThreeEvent<PointerEvent>).clientY
         );
       }}
       onPointerOut={() => {
@@ -86,7 +92,6 @@ export default function LightSwitch({ position = [9.8, 5.2, 4] }: LightSwitchPro
       </mesh>
 
       {/* Accent light to make the switch more visible on dark wall */}
-      {/* Subtle accent light (soft, not overpowering) */}
       <pointLight position={[-0.05, 0, 0.06]} intensity={1.2} color="#ffd7b2" distance={1.5} />
 
       {/* Emissive backing to catch light better */}

@@ -1,13 +1,23 @@
 import { type ThreeElements, useFrame } from '@react-three/fiber';
-import { useRef, useMemo } from 'react';
+import { useRef, useMemo, useState } from 'react';
 import * as THREE from 'three';
 
 export default function Plant(props: ThreeElements['group']) {
-  const trunkRef = useRef<any>(null);
-  const leavesRef = useRef<any>(null);
+  // @ts-expect-error: three-fiber Group typing interop — allow using THREE.Group for refs
+  const trunkRef = useRef<THREE.Group | null>(null);
+  // @ts-expect-error: three-fiber Group typing interop — allow using THREE.Group for refs
+  const leavesRef = useRef<THREE.Group | null>(null);
 
-  const leaves = useMemo(() => {
-    const arr = [];
+  const [leaves] = useState(() => {
+    const arr: Array<{
+      x: number;
+      y: number;
+      z: number;
+      r: number;
+      sx: number;
+      sy: number;
+      rot: number;
+    }> = [];
     const numLeaves = 14;
     const baseY = 5.2;
     for (let i = 0; i < numLeaves; i++) {
@@ -16,27 +26,55 @@ export default function Plant(props: ThreeElements['group']) {
       const x = Math.cos(angle) * radius * (0.92 + Math.random() * 0.12);
       const z = Math.sin(angle) * radius * (0.92 + Math.random() * 0.12);
       const y = baseY - 0.18 + Math.random() * 0.28;
-      // Clamp r so leaves point up/out, not down (between -0.2 and 0.7 rad)
       const r = angle + (Math.random() - 0.5) * 0.18;
-      // Clamp rot so leaves are not upside down (between -0.25 and 0.25 rad)
       const rot = (Math.random() - 0.5) * 0.5;
       const sx = 1.6 + Math.random() * 0.7;
       const sy = 1.7 + Math.random() * 0.8;
       arr.push({ x, y, z, r, sx, sy, rot });
     }
     return arr;
+  });
+
+  const leafShape = useMemo(() => {
+    const s = new THREE.Shape();
+    s.moveTo(0, 0);
+    s.bezierCurveTo(0.3, 0.2, 0.5, 0.8, 0, 1);
+    s.bezierCurveTo(-0.5, 0.8, -0.3, 0.2, 0, 0);
+    return s;
   }, []);
+
+  const stemPoints = useMemo(
+    () => [
+      new THREE.Vector3(0, -0.1, 0.01),
+      new THREE.Vector3(0, 0.7, 0.01),
+      new THREE.Vector3(0, 1, 0.01),
+    ],
+    []
+  );
+
+  const veinPoints = useMemo(
+    () => [
+      [new THREE.Vector3(0, 0.2, 0.01), new THREE.Vector3(0.18, 0.45, 0.01)],
+      [new THREE.Vector3(0, 0.4, 0.01), new THREE.Vector3(-0.16, 0.65, 0.01)],
+      [new THREE.Vector3(0, 0.6, 0.01), new THREE.Vector3(0.13, 0.85, 0.01)],
+      [new THREE.Vector3(0, 0.8, 0.01), new THREE.Vector3(-0.1, 0.97, 0.01)],
+    ],
+    []
+  );
 
   useFrame(({ clock }) => {
     const t = clock.elapsedTime;
     if (trunkRef.current) {
-      trunkRef.current.rotation.y = Math.sin(t * 0.25) * 0.018;
-      trunkRef.current.rotation.z = Math.cos(t * 0.3) * 0.009;
+      trunkRef.current.rotation.y = Math.sin(t * 0.18) * 0.012;
+      trunkRef.current.rotation.z = Math.cos(t * 0.2) * 0.006;
     }
     if (leavesRef.current) {
-      leavesRef.current.children.forEach((c: any, i: number) => {
-        c.rotation.z = Math.sin(t * (0.6 + i * 0.15)) * 0.045 + c.userData.baseRot;
-        c.rotation.x = Math.cos(t * (0.5 + i * 0.1)) * 0.022;
+      // @ts-expect-error: three-fiber Group typing interop — allow using THREE.Group for refs
+      leavesRef.current.children.forEach((c: THREE.Object3D, i: number) => {
+        // userData.baseRot is set when the leaf group is created
+        const baseRot = (c.userData as { baseRot?: number }).baseRot ?? 0;
+        c.rotation.z = Math.sin(t * (0.35 + i * 0.08)) * 0.03 + baseRot;
+        c.rotation.x = Math.cos(t * (0.28 + i * 0.05)) * 0.015;
       });
     }
   });
@@ -69,82 +107,53 @@ export default function Plant(props: ThreeElements['group']) {
 
       {/* Large fiddle-leaf-fig leaves - wide, tall, slightly wavy */}
       <group ref={leavesRef} position={[0, 0, 0]}>
-        {leaves.map((l, i) => {
-          const leafShape = useMemo(() => {
-            const s = new THREE.Shape();
-            s.moveTo(0, 0);
-            s.bezierCurveTo(0.3, 0.2, 0.5, 0.8, 0, 1);
-            s.bezierCurveTo(-0.5, 0.8, -0.3, 0.2, 0, 0);
-            return s;
-          }, []);
-
-          const stemPoints = useMemo(
-            () => [
-              new THREE.Vector3(0, -0.1, 0.01),
-              new THREE.Vector3(0, 0.7, 0.01),
-              new THREE.Vector3(0, 1, 0.01),
-            ],
-            []
-          );
-
-          const veinPoints = useMemo(
-            () => [
-              [new THREE.Vector3(0, 0.2, 0.01), new THREE.Vector3(0.18, 0.45, 0.01)],
-              [new THREE.Vector3(0, 0.4, 0.01), new THREE.Vector3(-0.16, 0.65, 0.01)],
-              [new THREE.Vector3(0, 0.6, 0.01), new THREE.Vector3(0.13, 0.85, 0.01)],
-              [new THREE.Vector3(0, 0.8, 0.01), new THREE.Vector3(-0.1, 0.97, 0.01)],
-            ],
-            []
-          );
-
-          return (
-            <group
-              key={i}
-              position={[l.x, l.y, l.z]}
-              rotation={[0.1, l.rot, l.r]}
-              scale={[l.sx, l.sy, 1]}
-              castShadow
-              userData={{ baseRot: l.r }}
-            >
-              {/* Leaf shape */}
-              <mesh>
-                <shapeGeometry args={[leafShape, 32]} />
-                <meshStandardMaterial
-                  color={`hsl(${110 + i * 8}, 58%, ${28 - i * 1.5}%)`}
-                  roughness={0.65}
-                  metalness={0.01}
-                  side={THREE.DoubleSide}
+        {leaves.map((l, i) => (
+          <group
+            key={i}
+            position={[l.x, l.y, l.z]}
+            rotation={[0.1, l.rot, l.r]}
+            scale={[l.sx, l.sy, 1]}
+            castShadow
+            userData={{ baseRot: l.r }}
+          >
+            {/* Leaf shape */}
+            <mesh>
+              <shapeGeometry args={[leafShape, 32]} />
+              <meshStandardMaterial
+                color={`hsl(${110 + i * 8}, 58%, ${28 - i * 1.5}%)`}
+                roughness={0.65}
+                metalness={0.01}
+                side={THREE.DoubleSide}
+              />
+            </mesh>
+            {/* Main stem (center vein) */}
+            <line>
+              <bufferGeometry>
+                <bufferAttribute
+                  attach="attributes-position"
+                  count={stemPoints.length}
+                  array={new Float32Array(stemPoints.flatMap(p => [p.x, p.y, p.z]))}
+                  itemSize={3}
                 />
-              </mesh>
-              {/* Main stem (center vein) */}
-              <line>
+              </bufferGeometry>
+              <lineBasicMaterial color="#6b5f3a" linewidth={2} />
+            </line>
+            {/* Side veins */}
+            {veinPoints.map((pts, vi) => (
+              <line key={vi}>
                 <bufferGeometry>
                   <bufferAttribute
                     attach="attributes-position"
-                    count={stemPoints.length}
-                    array={new Float32Array(stemPoints.flatMap(p => [p.x, p.y, p.z]))}
+                    count={pts.length}
+                    array={new Float32Array(pts.flatMap(p => [p.x, p.y, p.z]))}
                     itemSize={3}
                   />
                 </bufferGeometry>
-                <lineBasicMaterial color="#b6a97a" linewidth={2} />
+                <lineBasicMaterial color="#7f6f4a" linewidth={1} />
               </line>
-              {/* Side veins */}
-              {veinPoints.map((pts, vi) => (
-                <line key={vi}>
-                  <bufferGeometry>
-                    <bufferAttribute
-                      attach="attributes-position"
-                      count={pts.length}
-                      array={new Float32Array(pts.flatMap(p => [p.x, p.y, p.z]))}
-                      itemSize={3}
-                    />
-                  </bufferGeometry>
-                  <lineBasicMaterial color="#d8cfa3" linewidth={1} />
-                </line>
-              ))}
-            </group>
-          );
-        })}
+            ))}
+          </group>
+        ))}
       </group>
     </group>
   );

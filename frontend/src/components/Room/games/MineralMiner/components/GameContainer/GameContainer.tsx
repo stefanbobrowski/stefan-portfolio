@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from 'react';
-import { Context } from '../../store';
+import { Context } from '../../context';
 import { Status } from './components/Status/Status';
 import { CommandCenter } from './components/CommandCenter/CommandCenter';
 import { PlayerInterface } from './components/PlayerInterface/PlayerInterface';

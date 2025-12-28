@@ -1,8 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 
 export default function VideosBoard({ controls = true }: { controls?: boolean } = {}) {
-  const [loading, setLoading] = useState(true);
-  const [videos, setVideos] = useState<any[]>([]);
   const [modalVideo, setModalVideo] = useState<null | {
     url: string;
     title?: string;
@@ -10,20 +8,25 @@ export default function VideosBoard({ controls = true }: { controls?: boolean } 
   }>(null);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [vidWidth, setVidWidth] = useState<number | null>(null);
 
-  useEffect(() => {
-    // TODO: fetch video content
-    setLoading(false);
-    setVideos([
+  const videos = useMemo(
+    () => [
       { title: 'Drogo Coding', url: '/videos/video-1.MOV' },
       { title: 'Drogo Wagging', url: '/videos/video-2.mp4' },
       { title: 'Sylvia Cleaning', url: '/videos/video-3.mp4' },
       { title: 'Billiards Cut', url: '/videos/video-4.mp4' },
       { title: 'Empire Liftoff', url: '/videos/video-5.mp4' },
       { title: 'Double Kettle Flip (12KG/26.45LBS)', url: '/videos/video-6.mp4' },
-    ]);
-  }, []);
+    ],
+    []
+  );
+
+  const pauseOtherVideos = (current?: HTMLVideoElement | null) => {
+    const list = document.querySelectorAll<HTMLVideoElement>('video');
+    list.forEach(v => {
+      if (v !== current) v.pause();
+    });
+  };
 
   // Prevent page/body scrolling while modal is open
   const _prevOverflow = useRef<string | null>(null);
@@ -67,21 +70,6 @@ export default function VideosBoard({ controls = true }: { controls?: boolean } 
     return () => window.removeEventListener('keydown', onKey);
   }, [modalVideo, controls, currentIndex, videos]);
 
-  // Keep caption width in sync with displayed video width
-  const updateVidWidth = () => {
-    if (videoRef.current) setVidWidth(videoRef.current.clientWidth || null);
-    else setVidWidth(null);
-  };
-  useEffect(() => {
-    if (!modalVideo) return;
-    updateVidWidth();
-    const onResize = () => updateVidWidth();
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
-  }, [modalVideo]);
-
-  if (loading) return <div>Loading videos...</div>;
-
   return (
     <div>
       <h2 style={{ marginBottom: 16 }}>Videos</h2>
@@ -113,6 +101,7 @@ export default function VideosBoard({ controls = true }: { controls?: boolean } 
                 <video
                   src={video.url}
                   controls
+                  onPlay={e => pauseOtherVideos(e.currentTarget)}
                   style={{
                     width: '100%',
                     height: 140,
@@ -187,7 +176,7 @@ export default function VideosBoard({ controls = true }: { controls?: boolean } 
             src={modalVideo.url}
             controls
             autoPlay
-            onLoadedMetadata={() => updateVidWidth()}
+            onPlay={e => pauseOtherVideos(e.currentTarget)}
             onClick={e => e.stopPropagation()}
             style={{
               maxWidth: '95%',
@@ -267,8 +256,8 @@ export default function VideosBoard({ controls = true }: { controls?: boolean } 
                 backgroundColor: 'rgba(0,0,0,0.7)',
                 padding: '1rem 0.25rem',
                 borderRadius: 4,
-                width: vidWidth ?? '100%',
-                maxWidth: vidWidth ? undefined : 600,
+                width: '100%',
+                maxWidth: 600,
                 boxSizing: 'border-box',
               }}
             >

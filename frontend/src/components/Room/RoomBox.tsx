@@ -15,7 +15,7 @@ import BookShelf from './BookShelf';
 export default function RoomBox() {
   return (
     <group>
-      {/* FLOOR (20 x 24) */}
+      {/* FLOOR */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]} receiveShadow>
         <planeGeometry args={[20, 24]} />
         <meshStandardMaterial
@@ -30,7 +30,7 @@ export default function RoomBox() {
       {/* BACK WALL + WINDOW FRAME */}
       <WindowWall />
 
-      {/* LEFT WALL (matches depth of room) */}
+      {/* LEFT WALL */}
       <mesh position={[-10, 6, 0]} rotation={[0, Math.PI / 2, 0]} receiveShadow>
         <planeGeometry args={[24, 12]} />
         <meshStandardMaterial
@@ -54,7 +54,7 @@ export default function RoomBox() {
         />
       </mesh>
 
-      {/* CEILING (match floor size) */}
+      {/* CEILING */}
       <mesh position={[0, 8, 0]} rotation={[Math.PI / 2, 0, 0]} receiveShadow>
         <planeGeometry args={[20, 24]} />
         <meshStandardMaterial
@@ -66,13 +66,10 @@ export default function RoomBox() {
         />
       </mesh>
 
-      {/* Desk + PC */}
       <Desk />
       <Rug />
-      {/* PLANT - near window */}
       <Plant position={[7.5, 0, -9]} />
 
-      {/* BED - right wall (wrapped so clicking opens Rest modal) */}
       <group position={[-7, -0.47, -7.5]} rotation={[0, Math.PI / 2, 0]}>
         <Bed
           onBedHover={hovering => {
@@ -91,13 +88,10 @@ export default function RoomBox() {
 
       <Lamp />
 
-      {/* Clickable cats: Drogo (original spot) and Sylvy (behind the plant on the right) */}
       <Cat position={[2.25, -0.15, 2.1]} index={0} scale={1} />
       <Cat position={[4.55, -0.15, -6]} index={1} scale={1} />
 
-      {/* Neon sign above bed on left wall (centered above bed) */}
       <group position={[-9.92, 4.2, -7.5]}>
-        {/* nudged to align centered above bed (match bed z -7.5) */}
         <NeonSign text={'Nerd By Day\nNerd By Night'} color="#6ee7ff" />
       </group>
 
@@ -127,10 +121,8 @@ export default function RoomBox() {
         />
       </group>
 
-      {/* Light switch on right wall */}
       <LightSwitch position={[9.975, 4.2, -3]} />
 
-      {/* BookShelf on right wall */}
       <BookShelf />
     </group>
   );

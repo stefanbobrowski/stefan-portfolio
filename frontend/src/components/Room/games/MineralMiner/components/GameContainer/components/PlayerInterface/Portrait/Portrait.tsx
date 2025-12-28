@@ -1,4 +1,3 @@
-import React from 'react';
 import Advisor from '../../../../../assets/advisor.gif';
 import './Portrait.scss';
 

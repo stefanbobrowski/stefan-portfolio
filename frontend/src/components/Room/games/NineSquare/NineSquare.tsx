@@ -108,7 +108,6 @@ const NineSquare = () => {
           {spaceArray.map((row, i) => (
             <div className={styles.row} key={i}>
               {row.map((cell, j) => (
-                // eslint-disable-next-line jsx-a11y/click-events-have-key-events
                 <div
                   className={`${styles.cell} ${activeCell?.i === i && activeCell?.j === j ? styles.active : ''}`}
                   key={j}

@@ -1,32 +1,23 @@
-import { useState, useEffect } from 'react';
 import { FaGithub, FaLinkedin, FaStackOverflow } from 'react-icons/fa';
 import { SiLeetcode } from 'react-icons/si';
 import { MdEmail } from 'react-icons/md';
 
 export default function LinksBoard() {
-  const [loading, setLoading] = useState(true);
-  const [links, setLinks] = useState<any[]>([]);
-
-  useEffect(() => {
-    setLoading(false);
-    setLinks([
-      { name: 'GitHub', url: 'https://github.com/stefanbobrowski', icon: FaGithub },
-      { name: 'LinkedIn', url: 'https://linkedin.com/in/stefanbobrowski', icon: FaLinkedin },
-      {
-        name: 'Stack Overflow',
-        url: 'https://stackoverflow.com/users/3317728/stefanbob',
-        icon: FaStackOverflow,
-      },
-      {
-        name: 'LeetCode',
-        url: 'https://leetcode.com/u/StefanBobrowski/',
-        icon: SiLeetcode,
-      },
-      { name: 'Email', url: 'mailto:stefan@example.com', icon: MdEmail },
-    ]);
-  }, []);
-
-  if (loading) return <div>Loading links...</div>;
+  const links = [
+    { name: 'GitHub', url: 'https://github.com/stefanbobrowski', icon: FaGithub },
+    { name: 'LinkedIn', url: 'https://linkedin.com/in/stefanbobrowski', icon: FaLinkedin },
+    {
+      name: 'Stack Overflow',
+      url: 'https://stackoverflow.com/users/3317728/stefanbob',
+      icon: FaStackOverflow,
+    },
+    {
+      name: 'LeetCode',
+      url: 'https://leetcode.com/u/StefanBobrowski/',
+      icon: SiLeetcode,
+    },
+    { name: 'Email', url: 'mailto:stefan@example.com', icon: MdEmail },
+  ];
 
   return (
     <div>

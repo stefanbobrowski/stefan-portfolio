@@ -1,4 +1,3 @@
-import React from 'react';
 import minerals from '../../../../assets/minerals.jpg';
 import './MineralField.scss';
 

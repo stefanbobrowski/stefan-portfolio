@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { Context } from '../../../../../store';
+import { Context } from '../../../../../context';
 import worker from '../../../../../assets/worker.jpg';
 import minerals from '../../../../../assets/minerals.jpg';
 import './Controller.scss';

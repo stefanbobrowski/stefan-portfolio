@@ -1,4 +1,3 @@
-import React from 'react';
 import { useUIStore } from '../../store/uiStore';
 
 export default function RestModal() {
@@ -6,7 +5,16 @@ export default function RestModal() {
 
   const playSleepMelody = (duration = 3000) => {
     try {
-      const ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
+      type Win = Window & {
+        AudioContext?: typeof AudioContext;
+        webkitAudioContext?: typeof AudioContext;
+      };
+      const Ctor = (window as Win).AudioContext ?? (window as Win).webkitAudioContext;
+      if (!Ctor) {
+        console.warn('AudioContext not available in this environment');
+        return;
+      }
+      const ctx = new Ctor();
       const master = ctx.createGain();
       master.connect(ctx.destination);
       master.gain.value = 0.0001;
@@ -80,28 +88,27 @@ export default function RestModal() {
         try {
           pad1.stop();
           pad2.stop();
-        } catch (e) {}
+        } catch (e) {
+          console.warn('Error stopping pad oscillators', e);
+        }
       }, duration + 200);
 
       setTimeout(() => {
         try {
           ctx.close();
         } catch (e) {
-          /* ignore */
+          console.warn('Error closing audio context', e);
         }
       }, duration + 400);
     } catch (e) {
-      // audio not available, ignore
+      console.warn('AudioContext creation failed', e);
     }
   };
 
   const handleRest = () => {
-    // close the Rest modal and trigger the full-screen sleep overlay
-    const duration = 5000; // ms — longer sleep experience
+    const duration = 5000;
     closeModal();
-    // start overlay
     const startSleep = useUIStore.getState().startSleep;
-    // play a longer, layered melody
     playSleepMelody(duration);
     startSleep(duration);
   };
@@ -163,7 +170,6 @@ export default function RestModal() {
           </span>
         </div>
 
-        {/* Title */}
         <h2
           style={{
             textAlign: 'center',
@@ -179,7 +185,6 @@ export default function RestModal() {
           Time to Rest?
         </h2>
 
-        {/* Description */}
         <p
           style={{
             textAlign: 'center',
@@ -194,7 +199,6 @@ export default function RestModal() {
           Take a short rest — the screen will fade and you'll hear a peaceful melody.
         </p>
 
-        {/* Buttons */}
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
           <button
             type="button"

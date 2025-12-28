@@ -12,21 +12,23 @@ export default function Bed({ onBedHover, onBedClick, ...props }: BedProps) {
 
   const [blanketHover, setBlanketHover] = useState(false);
 
-  const handlePointerOver = (setter: (val: boolean) => void) => (e: any) => {
-    e.stopPropagation();
-    setter(true);
-    showTooltip('Rest', e.clientX, e.clientY);
-    onBedHover?.(true);
-  };
+  const handlePointerOver =
+    (setter: (val: boolean) => void) => (e: React.PointerEvent<HTMLElement>) => {
+      e.stopPropagation();
+      setter(true);
+      showTooltip('Rest', e.clientX, e.clientY);
+      onBedHover?.(true);
+    };
 
-  const handlePointerOut = (setter: (val: boolean) => void) => (e: any) => {
-    e.stopPropagation();
-    setter(false);
-    hideTooltip();
-    onBedHover?.(false);
-  };
+  const handlePointerOut =
+    (setter: (val: boolean) => void) => (e: React.PointerEvent<HTMLElement>) => {
+      e.stopPropagation();
+      setter(false);
+      hideTooltip();
+      onBedHover?.(false);
+    };
 
-  const handleClick = (e: any) => {
+  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     e.stopPropagation();
     onBedClick?.();
   };

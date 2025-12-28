@@ -33,9 +33,15 @@ a {
 }
 
 p {
-  max-width: 630px;
+  // max-width: 630px;
+  max-width: 60ch;
   font-size: 1rem;
   line-height: 1;
+
+  &.paragraph {
+    line-height: 1.45;
+    margin-bottom: 1rem;
+  }
 }
 
 h1,

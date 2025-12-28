@@ -2,7 +2,7 @@ import { useRef, useMemo } from 'react';
 import * as THREE from 'three';
 
 export default function Rug() {
-  const rugRef = useRef<any>(null);
+  const rugRef = useRef<unknown>(null);
 
   const canvasTexture = useMemo(() => {
     const w = 512;

@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import type { ThreeEvent } from '@react-three/fiber';
 import { useUIStore } from '../../store/uiStore';
 import { useFrame, useLoader, useThree } from '@react-three/fiber';
 import { Billboard } from '@react-three/drei';
@@ -20,7 +21,14 @@ export default function Cat({ position = [6.2, -0.46, -8.5], images, index, scal
 
   const playMeow = (variant: 0 | 1) => {
     try {
-      const ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
+      // prefer standard AudioContext, fallback to legacy webkitAudioContext
+      type Win = Window & {
+        webkitAudioContext?: typeof AudioContext;
+        AudioContext?: typeof AudioContext;
+      };
+      const Ctor = (window as Win).AudioContext ?? (window as Win).webkitAudioContext;
+      if (!Ctor) return;
+      const ctx = new Ctor();
       const master = ctx.createGain();
       master.connect(ctx.destination);
       master.gain.value = 0.25;
@@ -64,20 +72,23 @@ export default function Cat({ position = [6.2, -0.46, -8.5], images, index, scal
         () => {
           try {
             ctx.close();
-          } catch (e) {}
+          } catch {
+            /* ignore */
+          }
         },
         (duration + 0.1) * 1000
       );
-    } catch (e) {
+    } catch {
       // audio not available
     }
   };
 
   const texA = useLoader(THREE.TextureLoader, imgs[0]);
   const texB = useLoader(THREE.TextureLoader, imgs[1]);
-
-  const aRef = useRef<any>(null);
-  const bRef = useRef<any>(null);
+  // @ts-expect-error: three-fiber Group typing interop — allow using THREE.Group for refs
+  const aRef = useRef<THREE.Mesh | null>(null);
+  // @ts-expect-error: three-fiber Group typing interop — allow using THREE.Group for refs
+  const bRef = useRef<THREE.Mesh | null>(null);
   const aHover = useRef(false);
   const bHover = useRef(false);
 
@@ -163,23 +174,23 @@ export default function Cat({ position = [6.2, -0.46, -8.5], images, index, scal
           <mesh
             ref={aRef}
             scale={[scale, scale, scale]}
-            onPointerOver={(e: any) => {
+            onPointerOver={(e: ThreeEvent<PointerEvent>) => {
               e.stopPropagation();
               document.body.style.cursor = 'pointer';
               aHover.current = true;
               showTooltip('Drogo', e.clientX, e.clientY);
             }}
-            onPointerMove={(e: any) => {
+            onPointerMove={(e: ThreeEvent<PointerEvent>) => {
               e.stopPropagation();
               showTooltip('Drogo', e.clientX, e.clientY);
             }}
-            onPointerOut={(e: any) => {
+            onPointerOut={(e: ThreeEvent<PointerEvent>) => {
               e.stopPropagation();
               document.body.style.cursor = 'default';
               aHover.current = false;
               hideTooltip();
             }}
-            onClick={(e: any) => {
+            onClick={(e: ThreeEvent<PointerEvent>) => {
               e.stopPropagation();
               hideTooltip();
               playMeow(0);
@@ -204,23 +215,23 @@ export default function Cat({ position = [6.2, -0.46, -8.5], images, index, scal
           ref={bRef}
           position={[-10, 1.86, 2.15]}
           scale={[scale, scale, scale]}
-          onPointerOver={(e: any) => {
+          onPointerOver={(e: ThreeEvent<PointerEvent>) => {
             e.stopPropagation();
             document.body.style.cursor = 'pointer';
             bHover.current = true;
             showTooltip('Sylvia', e.clientX, e.clientY);
           }}
-          onPointerMove={(e: any) => {
+          onPointerMove={(e: ThreeEvent<PointerEvent>) => {
             e.stopPropagation();
             showTooltip('Sylvia', e.clientX, e.clientY);
           }}
-          onPointerOut={(e: any) => {
+          onPointerOut={(e: ThreeEvent<PointerEvent>) => {
             e.stopPropagation();
             document.body.style.cursor = 'default';
             bHover.current = false;
             hideTooltip();
           }}
-          onClick={(e: any) => {
+          onClick={(e: ThreeEvent<PointerEvent>) => {
             e.stopPropagation();
             hideTooltip();
             playMeow(1);
