@@ -67,8 +67,8 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
-  @media (max-width: 1100px) {
-    // width: 150px;
+  @media (max-width: 768px) {
+    width: 120px;
   }
 }
 
@@ -79,7 +79,7 @@
 
 .desktopWindowSidebarButton {
   width: 100%;
-  padding: 8px;
+  padding: 0.5rem;
   background: #0b2740;
   color: #e6eef6;
   border: 1px solid #122233;
@@ -91,12 +91,18 @@
   display: flex;
   align-items: center;
   gap: 0.7rem;
-
-  @media (max-width: 1100px) {
+  @media (max-width: 768px) {
+    padding: 0.3rem;
+    font-size: 0.75rem;
   }
   svg {
     width: 1.5rem;
     height: 1.5rem;
+
+    @media (max-width: 768px) {
+      width: 1rem;
+      height: 1rem;
+    }
   }
 }
 .desktopWindowSidebarButtonActive {

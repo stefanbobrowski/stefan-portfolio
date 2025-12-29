@@ -6,9 +6,56 @@
   width: 100%;
   max-width: 1440px;
   aspect-ratio: 16 / 10;
-  max-height: calc(100vh - 105px); // adjust 120px to your header+footer height
+  max-height: calc(100vh - 105px); // header height
   margin: 0 auto;
   // padding: 1rem;
-  border: 1px solid #222; // debug
+  outline: 1px solid #222; // debug
   background: #0a0a0a;
+
+  @media (max-width: 768px) {
+    max-height: calc(100vh - 70px);
+  }
+}
+
+.instructions {
+  // position: absolute;
+  // bottom: -4rem;
+  // left: 50%;
+  // transform: translateX(-50%);
+  text-align: center;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin: 1.4rem auto 0.4rem auto;
+  margin-top: 1.4rem;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1rem;
+  box-shadow: 0 5px 14px rgba(2, 6, 23, 0.5);
+  backdrop-filter: blur(6px) saturate(120%);
+}
+
+.instruction {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.mouseIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--text-muted);
+}
+
+.kbd {
+  background: var(--bg);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--text-muted);
 }

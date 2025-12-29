@@ -9,6 +9,7 @@ import VideosBoard from './VideosBoard';
 import GamesBoard from './GamesBoard';
 import MusicBoard from './MusicBoard';
 import styles from './DesktopWindow.module.scss';
+import resumeStyles from '../ResumeViewer.module.scss';
 
 import {
   AiOutlineHome,
@@ -102,28 +103,12 @@ export default function DesktopWindow() {
           {activeTab === 'projects' && <ProjectsBoard />}
           {activeTab === 'about' && <AboutBoard />}
           {activeTab === 'resume' && (
-            <div
-              style={{
-                width: '100%',
-                height: '100%',
-                minHeight: 0,
-                display: 'flex',
-                flexDirection: 'column',
-                padding: 0,
-                margin: 0,
-              }}
-            >
-              <h2>Resume</h2>
+            <div className={resumeStyles.resumeContainer}>
               <iframe
-                src="/StefanBobrowskiResume.pdf"
-                style={{
-                  height: '100%',
-                  width: '100%',
-                  flex: 1,
-                  minHeight: 0,
-                  border: 'none',
-                }}
+                src="/StefanBobrowskiResume.pdf#zoom=page-fit"
                 title="Stefan Bobrowski Resume"
+                className={resumeStyles.iframe}
+                loading="lazy"
               />
             </div>
           )}

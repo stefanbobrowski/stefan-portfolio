@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useUIStore } from '../../store/uiStore';
+import styles from './SleepOverlay.module.scss';
 
 export default function SleepOverlay() {
   const isSleeping = useUIStore(state => state.isSleeping);
@@ -21,31 +22,23 @@ export default function SleepOverlay() {
 
   if (!visible && !isSleeping) return null;
 
-  return (
+  // Generate 12 Z's with staggered delays for continuous stream
+  const zElements = Array.from({ length: 12 }, (_, i) => (
     <div
-      style={{
-        position: 'fixed',
-        inset: 0,
-        background: isSleeping ? 'rgba(0,0,0,1)' : 'rgba(0,0,0,0)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        zIndex: 10000,
-        pointerEvents: isSleeping ? 'auto' : 'none',
-        transition: 'background 350ms ease',
-      }}
+      key={i}
+      className={styles.floatingZ}
+      style={{ '--delay': `${i * 0.25}s` } as React.CSSProperties}
     >
-      <div
-        style={{
-          color: '#fff',
-          fontSize: 140,
-          fontWeight: 700,
-          opacity: isSleeping ? 1 : 0,
-          transition: 'opacity 350ms ease',
-          userSelect: 'none',
-        }}
-      >
-        ZZZ
+      Z
+    </div>
+  ));
+
+  return (
+    <div className={`${styles.overlay} ${!isSleeping && styles.hidden}`}>
+      <div className={styles.contentWrapper}>
+        <div className={styles.source}>😴</div>
+        {zElements}
+        <div className={styles.sunIcon}>☀️</div>
       </div>
     </div>
   );

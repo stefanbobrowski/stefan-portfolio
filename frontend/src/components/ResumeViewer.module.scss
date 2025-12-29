@@ -1,0 +1,25 @@
+.resumePage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.resumeContainer {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  align-items: stretch;
+}
+
+.iframe {
+  flex: 1;
+  width: 100%;
+  border: 0;
+  display: block;
+}

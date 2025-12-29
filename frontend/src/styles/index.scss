@@ -59,6 +59,10 @@ h2 {
   color: var(--accent-hover);
 }
 
+h2 {
+  text-transform: uppercase;
+}
+
 button {
   padding: 0.5rem 1rem;
   cursor: pointer;
