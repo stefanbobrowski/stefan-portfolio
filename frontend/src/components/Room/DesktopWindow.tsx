@@ -94,8 +94,13 @@ export default function DesktopWindow() {
         <main className={styles.desktopWindowMain}>
           {activeTab === 'home' && (
             <div>
-              <h2>Welcome to StefanOS</h2>
+              <h2 style={{ textTransform: 'none' }}>Welcome to StefanOS</h2>
               <p>Click the tabs on the left to explore content.</p>
+              <img
+                src="/backgrounds/futuristic-city-bg.svg"
+                alt="Futuristic City Background"
+                className={styles.homeImage}
+              />
             </div>
           )}
 

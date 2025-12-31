@@ -29,17 +29,17 @@ export default function RoomInstructions() {
     <div className={styles.instructions} role="region" aria-label="Scene controls">
       <div className={styles.instruction}>
         <MouseIcon side="left" />
-        <div className={styles.label}>Left click — interact</div>
+        <div className={styles.label}>Interact</div>
       </div>
 
       <div className={styles.instruction}>
         <MouseIcon side="right" />
-        <div className={styles.label}>Right click — rotate camera</div>
+        <div className={styles.label}>Rotate Camera</div>
       </div>
 
       <div className={styles.instruction}>
         <div className={styles.kbd}>Esc</div>
-        <div className={styles.label}>Close modal / exit</div>
+        <div className={styles.label}>Close Window</div>
       </div>
     </div>
   );

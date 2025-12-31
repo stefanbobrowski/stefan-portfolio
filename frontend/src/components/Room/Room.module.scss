@@ -37,6 +37,10 @@
   font-size: 1rem;
   box-shadow: 0 5px 14px rgba(2, 6, 23, 0.5);
   backdrop-filter: blur(6px) saturate(120%);
+
+  @media (max-width: 600px) {
+    font-size: 0.875rem;
+  }
 }
 
 .instruction {

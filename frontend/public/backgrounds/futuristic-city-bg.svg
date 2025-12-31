@@ -1,0 +1,232 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e27;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#1a1f3a;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#2d1b4e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f1628;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="neonGlow1" cx="30%" cy="40%">
+      <stop offset="0%" style="stop-color:#ff006e;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#ff006e;stop-opacity:0" />
+    </radialGradient>
+    
+    <radialGradient id="neonGlow2" cx="70%" cy="30%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:0" />
+    </radialGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="brightGlow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Base Sky Gradient -->
+  <rect width="1920" height="1080" fill="url(#skyGradient)"/>
+  
+  <!-- Neon Glows -->
+  <ellipse cx="576" cy="432" rx="600" ry="800" fill="url(#neonGlow1)"/>
+  <ellipse cx="1344" cy="216" rx="500" ry="700" fill="url(#neonGlow2)"/>
+
+  <!-- Far Background Stars -->
+  <circle cx="200" cy="150" r="1.5" fill="#00ffff" opacity="0.6"/>
+  <circle cx="450" cy="200" r="1" fill="#ff006e" opacity="0.5"/>
+  <circle cx="800" cy="120" r="1.2" fill="#00ffff" opacity="0.7"/>
+  <circle cx="1200" cy="180" r="1" fill="#ff006e" opacity="0.4"/>
+  <circle cx="1600" cy="100" r="1.5" fill="#00ffff" opacity="0.6"/>
+  <circle cx="1800" cy="250" r="1" fill="#9933ff" opacity="0.5"/>
+
+  <!-- Distant Buildings (Very Faded) -->
+  <rect x="100" y="600" width="120" height="400" fill="#1a1f3a" opacity="0.3"/>
+  <rect x="250" y="650" width="100" height="350" fill="#2d1b4e" opacity="0.3"/>
+  <rect x="1700" y="580" width="140" height="420" fill="#1a1f3a" opacity="0.3"/>
+
+  <!-- Mid-distance Buildings -->
+  <g opacity="0.6">
+    <!-- Left cluster -->
+    <rect x="50" y="750" width="180" height="330" fill="#0f3b6e" stroke="#00d4ff" stroke-width="2"/>
+    <rect x="70" y="780" width="40" height="50" fill="#00ffff" opacity="0.8"/>
+    <rect x="120" y="800" width="40" height="50" fill="#00ffff" opacity="0.6"/>
+    <rect x="170" y="820" width="40" height="40" fill="#ff006e" opacity="0.7"/>
+    
+    <!-- Center-left cluster -->
+    <rect x="300" y="700" width="160" height="380" fill="#1a0f3a" stroke="#9933ff" stroke-width="2"/>
+    <rect x="320" y="740" width="35" height="45" fill="#9933ff" opacity="0.7"/>
+    <rect x="365" y="760" width="35" height="50" fill="#00ffff" opacity="0.7"/>
+    <rect x="410" y="750" width="35" height="45" fill="#ff006e" opacity="0.6"/>
+  </g>
+
+  <!-- Foreground Buildings -->
+  <g>
+    <!-- Left skyscraper -->
+    <rect x="0" y="700" width="280" height="380" fill="#0a0e27" stroke="#00d4ff" stroke-width="3"/>
+    <!-- Windows -->
+    <rect x="20" y="730" width="30" height="30" fill="#00ffff" filter="url(#glow)"/>
+    <rect x="60" y="730" width="30" height="30" fill="#0a0e27"/>
+    <rect x="100" y="730" width="30" height="30" fill="#00ffff" filter="url(#glow)"/>
+    <rect x="140" y="730" width="30" height="30" fill="#0a0e27"/>
+    <rect x="180" y="730" width="30" height="30" fill="#00ffff" filter="url(#glow)"/>
+    <rect x="220" y="730" width="30" height="30" fill="#0a0e27"/>
+    
+    <rect x="20" y="780" width="30" height="30" fill="#0a0e27"/>
+    <rect x="60" y="780" width="30" height="30" fill="#00ffff" filter="url(#glow)"/>
+    <rect x="100" y="780" width="30" height="30" fill="#9933ff" filter="url(#glow)"/>
+    <rect x="140" y="780" width="30" height="30" fill="#00ffff" filter="url(#glow)"/>
+    <rect x="180" y="780" width="30" height="30" fill="#0a0e27"/>
+    <rect x="220" y="780" width="30" height="30" fill="#ff006e" filter="url(#glow)"/>
+    
+    <rect x="20" y="830" width="30" height="30" fill="#00ffff" filter="url(#glow)"/>
+    <rect x="60" y="830" width="30" height="30" fill="#ff006e" filter="url(#glow)"/>
+    <rect x="100" y="830" width="30" height="30" fill="#0a0e27"/>
+    <rect x="140" y="830" width="30" height="30" fill="#9933ff" filter="url(#glow)"/>
+    <rect x="180" y="830" width="30" height="30" fill="#00ffff" filter="url(#glow)"/>
+    <rect x="220" y="830" width="30" height="30" fill="#0a0e27"/>
+    
+    <rect x="20" y="880" width="30" height="30" fill="#0a0e27"/>
+    <rect x="60" y="880" width="30" height="30" fill="#00ffff" filter="url(#glow)"/>
+    <rect x="100" y="880" width="30" height="30" fill="#0a0e27"/>
+    <rect x="140" y="880" width="30" height="30" fill="#ff006e" filter="url(#glow)"/>
+    <rect x="180" y="880" width="30" height="30" fill="#0a0e27"/>
+    <rect x="220" y="880" width="30" height="30" fill="#00ffff" filter="url(#glow)"/>
+    
+    <!-- Top accent lines -->
+    <line x1="20" y1="710" x2="250" y2="710" stroke="#00d4ff" stroke-width="2" opacity="0.8"/>
+  </g>
+
+  <!-- Center buildings -->
+  <g>
+    <!-- Tall center building -->
+    <rect x="400" y="650" width="240" height="430" fill="#1a0f3a" stroke="#9933ff" stroke-width="3"/>
+    <!-- Windows pattern -->
+    <rect x="420" y="680" width="28" height="28" fill="#9933ff" filter="url(#glow)"/>
+    <rect x="460" y="680" width="28" height="28" fill="#0a0e27"/>
+    <rect x="500" y="680" width="28" height="28" fill="#00ffff" filter="url(#glow)"/>
+    <rect x="540" y="680" width="28" height="28" fill="#ff006e" filter="url(#glow)"/>
+    <rect x="580" y="680" width="28" height="28" fill="#0a0e27"/>
+    
+    <rect x="420" y="730" width="28" height="28" fill="#0a0e27"/>
+    <rect x="460" y="730" width="28" height="28" fill="#00ffff" filter="url(#glow)"/>
+    <rect x="500" y="730" width="28" height="28" fill="#0a0e27"/>
+    <rect x="540" y="730" width="28" height="28" fill="#9933ff" filter="url(#glow)"/>
+    <rect x="580" y="730" width="28" height="28" fill="#ff006e" filter="url(#glow)"/>
+    
+    <rect x="420" y="780" width="28" height="28" fill="#00ffff" filter="url(#glow)"/>
+    <rect x="460" y="780" width="28" height="28" fill="#0a0e27"/>
+    <rect x="500" y="780" width="28" height="28" fill="#ff006e" filter="url(#glow)"/>
+    <rect x="540" y="780" width="28" height="28" fill="#0a0e27"/>
+    <rect x="580" y="780" width="28" height="28" fill="#00ffff" filter="url(#glow)"/>
+    
+    <rect x="420" y="830" width="28" height="28" fill="#0a0e27"/>
+    <rect x="460" y="830" width="28" height="28" fill="#9933ff" filter="url(#glow)"/>
+    <rect x="500" y="830" width="28" height="28" fill="#0a0e27"/>
+    <rect x="540" y="830" width="28" height="28" fill="#ff006e" filter="url(#glow)"/>
+    <rect x="580" y="830" width="28" height="28" fill="#0a0e27"/>
+    
+    <!-- Top neon accent -->
+    <rect x="400" y="640" width="240" height="3" fill="#9933ff" filter="url(#brightGlow)"/>
+  </g>
+
+  <!-- Right side buildings -->
+  <g>
+    <!-- Right building 1 -->
+    <rect x="750" y="720" width="200" height="360" fill="#0f1a4a" stroke="#00d4ff" stroke-width="2.5"/>
+    <rect x="770" y="750" width="25" height="25" fill="#00ffff" filter="url(#glow)"/>
+    <rect x="805" y="750" width="25" height="25" fill="#0f1a4a"/>
+    <rect x="840" y="750" width="25" height="25" fill="#00ffff" filter="url(#glow)"/>
+    <rect x="875" y="750" width="25" height="25" fill="#ff006e" filter="url(#glow)"/>
+    
+    <rect x="770" y="800" width="25" height="25" fill="#0f1a4a"/>
+    <rect x="805" y="800" width="25" height="25" fill="#9933ff" filter="url(#glow)"/>
+    <rect x="840" y="800" width="25" height="25" fill="#0f1a4a"/>
+    <rect x="875" y="800" width="25" height="25" fill="#00ffff" filter="url(#glow)"/>
+    
+    <rect x="770" y="850" width="25" height="25" fill="#00ffff" filter="url(#glow)"/>
+    <rect x="805" y="850" width="25" height="25" fill="#ff006e" filter="url(#glow)"/>
+    <rect x="840" y="850" width="25" height="25" fill="#0f1a4a"/>
+    <rect x="875" y="850" width="25" height="25" fill="#9933ff" filter="url(#glow)"/>
+    
+    <!-- Right building 2 (smaller) -->
+    <rect x="1050" y="760" width="180" height="320" fill="#1a0f3a" stroke="#ff006e" stroke-width="2.5"/>
+    <rect x="1070" y="790" width="28" height="28" fill="#ff006e" filter="url(#glow)"/>
+    <rect x="1115" y="790" width="28" height="28" fill="#0a0e27"/>
+    <rect x="1160" y="790" width="28" height="28" fill="#00ffff" filter="url(#glow)"/>
+    <rect x="1205" y="790" width="28" height="28" fill="#ff006e" filter="url(#glow)"/>
+    
+    <rect x="1070" y="840" width="28" height="28" fill="#0a0e27"/>
+    <rect x="1115" y="840" width="28" height="28" fill="#9933ff" filter="url(#glow)"/>
+    <rect x="1160" y="840" width="28" height="28" fill="#0a0e27"/>
+    <rect x="1205" y="840" width="28" height="28" fill="#00ffff" filter="url(#glow)"/>
+  </g>
+
+  <!-- Far right buildings -->
+  <g>
+    <rect x="1300" y="700" width="220" height="380" fill="#0a0e27" stroke="#00d4ff" stroke-width="2.5"/>
+    <rect x="1320" y="740" width="26" height="26" fill="#0a0e27"/>
+    <rect x="1360" y="740" width="26" height="26" fill="#00ffff" filter="url(#glow)"/>
+    <rect x="1400" y="740" width="26" height="26" fill="#ff006e" filter="url(#glow)"/>
+    <rect x="1440" y="740" width="26" height="26" fill="#0a0e27"/>
+    <rect x="1480" y="740" width="26" height="26" fill="#00ffff" filter="url(#glow)"/>
+    
+    <rect x="1320" y="790" width="26" height="26" fill="#9933ff" filter="url(#glow)"/>
+    <rect x="1360" y="790" width="26" height="26" fill="#0a0e27"/>
+    <rect x="1400" y="790" width="26" height="26" fill="#00ffff" filter="url(#glow)"/>
+    <rect x="1440" y="790" width="26" height="26" fill="#ff006e" filter="url(#glow)"/>
+    <rect x="1480" y="790" width="26" height="26" fill="#0a0e27"/>
+    
+    <rect x="1320" y="840" width="26" height="26" fill="#0a0e27"/>
+    <rect x="1360" y="840" width="26" height="26" fill="#ff006e" filter="url(#glow)"/>
+    <rect x="1400" y="840" width="26" height="26" fill="#0a0e27"/>
+    <rect x="1440" y="840" width="26" height="26" fill="#9933ff" filter="url(#glow)"/>
+    <rect x="1480" y="840" width="26" height="26" fill="#00ffff" filter="url(#glow)"/>
+    
+    <rect x="1300" y="690" width="220" height="2" fill="#00d4ff" filter="url(#brightGlow)"/>
+  </g>
+
+  <!-- Far right tall building -->
+  <g>
+    <rect x="1600" y="600" width="240" height="480" fill="#1a0f3a" stroke="#9933ff" stroke-width="3"/>
+    <rect x="1620" y="640" width="32" height="32" fill="#9933ff" filter="url(#glow)"/>
+    <rect x="1668" y="640" width="32" height="32" fill="#0a0e27"/>
+    <rect x="1716" y="640" width="32" height="32" fill="#00ffff" filter="url(#glow)"/>
+    <rect x="1764" y="640" width="32" height="32" fill="#ff006e" filter="url(#glow)"/>
+    
+    <rect x="1620" y="700" width="32" height="32" fill="#0a0e27"/>
+    <rect x="1668" y="700" width="32" height="32" fill="#ff006e" filter="url(#glow)"/>
+    <rect x="1716" y="700" width="32" height="32" fill="#0a0e27"/>
+    <rect x="1764" y="700" width="32" height="32" fill="#00ffff" filter="url(#glow)"/>
+    
+    <rect x="1620" y="760" width="32" height="32" fill="#00ffff" filter="url(#glow)"/>
+    <rect x="1668" y="760" width="32" height="32" fill="#0a0e27"/>
+    <rect x="1716" y="760" width="32" height="32" fill="#9933ff" filter="url(#glow)"/>
+    <rect x="1764" y="760" width="32" height="32" fill="#0a0e27"/>
+    
+    <rect x="1620" y="820" width="32" height="32" fill="#0a0e27"/>
+    <rect x="1668" y="820" width="32" height="32" fill="#00ffff" filter="url(#glow)"/>
+    <rect x="1716" y="820" width="32" height="32" fill="#ff006e" filter="url(#glow)"/>
+    <rect x="1764" y="820" width="32" height="32" fill="#0a0e27"/>
+    
+    <!-- Top accent -->
+    <rect x="1600" y="590" width="240" height="3" fill="#9933ff" filter="url(#brightGlow)"/>
+  </g>
+
+  <!-- Floating particles/lights -->
+  <circle cx="300" cy="400" r="2" fill="#00ffff" opacity="0.8" filter="url(#glow)"/>
+  <circle cx="900" cy="350" r="1.5" fill="#ff006e" opacity="0.6" filter="url(#glow)"/>
+  <circle cx="1400" cy="450" r="2" fill="#00ffff" opacity="0.7" filter="url(#glow)"/>
+  <circle cx="500" cy="300" r="1" fill="#9933ff" opacity="0.5" filter="url(#glow)"/>
+  <circle cx="1200" cy="400" r="1.5" fill="#ff006e" opacity="0.6" filter="url(#glow)"/>
+  <circle cx="1800" cy="380" r="2" fill="#00ffff" opacity="0.7" filter="url(#glow)"/>
+</svg>
