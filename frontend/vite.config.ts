@@ -6,7 +6,8 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      three: resolve('./node_modules/three'),
+      three: resolve(__dirname, 'node_modules/three'),
+      three$: resolve(__dirname, 'node_modules/three/build/three.module.js'),
     },
     dedupe: ['three'],
   },

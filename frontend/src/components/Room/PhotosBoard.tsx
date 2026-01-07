@@ -196,7 +196,7 @@ export default function PhotosBoard({ controls = true }: { controls?: boolean } 
                 <img
                   src={photo.url}
                   alt={photo.title}
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                   style={{
                     width: '100%',

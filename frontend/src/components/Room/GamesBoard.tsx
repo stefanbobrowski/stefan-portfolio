@@ -649,7 +649,7 @@ export default function GamesBoard() {
               src={game.image}
               alt={game.name + ' cover'}
               className={styles.favoriteGameImage}
-              loading="lazy"
+              loading="eager"
             />
             <div className={styles.favoriteGameInfo}>
               <div className={styles.favoriteGameTitle}>{game.name}</div>

@@ -211,7 +211,7 @@ export default function BookShelf() {
                     <img
                       src={book.image}
                       alt={book.title}
-                      loading="lazy"
+                      loading="eager"
                       className={styles.bookCardImage}
                     />
                   </div>
