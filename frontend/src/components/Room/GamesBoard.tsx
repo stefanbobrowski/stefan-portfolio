@@ -101,7 +101,7 @@ export default function GamesBoard() {
       image:
         'https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Super_Mario_64.png/250px-Super_Mario_64.png',
       releaseYear: 1996,
-      platform: 'Nintendo 64',
+      platform: 'N64',
     },
     {
       id: 'wayne-gretzky-hockey',
@@ -109,7 +109,7 @@ export default function GamesBoard() {
       image:
         'https://upload.wikimedia.org/wikipedia/en/thumb/0/0f/Wayne_Gretzky%27s_3D_Hockey_for_N64%2C_Front_Cover.jpg/250px-Wayne_Gretzky%27s_3D_Hockey_for_N64%2C_Front_Cover.jpg',
       releaseYear: 1996,
-      platform: 'Nintendo 64',
+      platform: 'N64',
     },
     {
       id: 'quake',
@@ -133,7 +133,7 @@ export default function GamesBoard() {
       image:
         'https://upload.wikimedia.org/wikipedia/en/thumb/1/13/GoldenEye_007_N64_cover.jpg/250px-GoldenEye_007_N64_cover.jpg',
       releaseYear: 1997,
-      platform: 'Nintendo 64',
+      platform: 'N64',
     },
     {
       id: 'nfl-blitz',
@@ -156,7 +156,7 @@ export default function GamesBoard() {
       image:
         'https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Banjo_Kazooie_Cover.png/250px-Banjo_Kazooie_Cover.png',
       releaseYear: 1998,
-      platform: 'Nintendo 64',
+      platform: 'N64',
     },
     {
       id: 'legend-of-zelda-ocarina-of-time',
@@ -164,7 +164,7 @@ export default function GamesBoard() {
       image:
         'https://upload.wikimedia.org/wikipedia/en/thumb/5/57/The_Legend_of_Zelda_Ocarina_of_Time.jpg/250px-The_Legend_of_Zelda_Ocarina_of_Time.jpg',
       releaseYear: 1998,
-      platform: 'Nintendo 64',
+      platform: 'N64',
     },
     {
       id: 'unreal',
@@ -213,7 +213,7 @@ export default function GamesBoard() {
       image:
         'https://upload.wikimedia.org/wikipedia/en/thumb/4/42/Supersmashbox.jpg/250px-Supersmashbox.jpg',
       releaseYear: 1999,
-      platform: 'Nintendo 64',
+      platform: 'N64',
     },
     {
       id: 'final-fantasy-9',
@@ -236,7 +236,7 @@ export default function GamesBoard() {
       image:
         'https://upload.wikimedia.org/wikipedia/en/thumb/6/61/Papermario.jpg/250px-Papermario.jpg',
       releaseYear: 2000,
-      platform: 'Nintendo 64',
+      platform: 'N64',
     },
     {
       id: 'counter-strike',
