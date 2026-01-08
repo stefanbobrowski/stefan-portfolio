@@ -7,6 +7,7 @@
       { "name": "React", "url": "https://react.dev/" },
       { "name": "Vite", "url": "https://vitejs.dev/" },
       { "name": "Astro", "url": "https://astro.build/" },
+      { "name": "TanStack Query", "url": "https://tanstack.com/query" },
       { "name": "Zustand", "url": "https://zustand-demo.pmnd.rs/" },
       { "name": "Axios", "url": "https://axios-http.com/" },
       { "name": "Lottie", "url": "https://lottiefiles.com/" },
@@ -19,7 +20,6 @@
       { "name": "WCAG Accessibility", "url": "https://www.w3.org/WAI/standards-guidelines/wcag/" }
     ]
   },
-
   "backend": {
     "color": "#7A5E32",
     "skills": [
@@ -31,7 +31,6 @@
       { "name": "Multer", "url": "https://github.com/expressjs/multer" }
     ]
   },
-
   "cloud": {
     "color": "#445A45",
     "skills": [
@@ -44,7 +43,6 @@
       { "name": "Vertex AI", "url": "https://cloud.google.com/vertex-ai" }
     ]
   },
-
   "security": {
     "color": "#684040",
     "skills": [
@@ -61,7 +59,6 @@
       { "name": "JWT", "url": "https://jwt.io/" }
     ]
   },
-
   "devops": {
     "color": "#2E4157",
     "skills": [
@@ -73,7 +70,6 @@
       { "name": "Kubernetes", "url": "https://kubernetes.io/" }
     ]
   },
-
   "design": {
     "color": "#746B38",
     "skills": [
@@ -82,7 +78,6 @@
       { "name": "Adobe Premiere Pro", "url": "https://www.adobe.com/products/premiere.html" }
     ]
   },
-
   "visualization": {
     "color": "#3A5A67",
     "skills": [
@@ -98,7 +93,6 @@
       { "name": "WebGL", "url": "https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" }
     ]
   },
-
   "ai_tools": {
     "color": "#32514D",
     "skills": [
@@ -109,7 +103,6 @@
       { "name": "ChatGPT", "url": "https://openai.com/chatgpt" }
     ]
   },
-
   "game_dev": {
     "color": "#443C66",
     "skills": [
