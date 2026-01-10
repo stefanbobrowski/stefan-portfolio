@@ -14,16 +14,16 @@
   max-width: 1440px;
   margin: 0 auto;
   margin-top: 54px;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
   box-shadow: 0 -15px 10px rgba(var(--surface), 0.9);
 
   @media screen and (max-width: 768px) {
-    padding: 2rem 0.5rem;
+    padding: 1.5rem 0.5rem;
   }
 
   @media (max-width: 600px) {
     margin-top: 46px;
-    padding: 1.5rem 0.5rem;
+    padding: 1.25rem 0.5rem;
   }
 
   @media (orientation: landscape) and (max-height: 500px) {
