@@ -52,6 +52,14 @@ router.post(
 
     const { question } = req.body;
 
+    // Ensure Vertex AI is configured in the environment before attempting a request
+    const projectId = process.env.GOOGLE_CLOUD_PROJECT;
+    const apiKey = process.env.GOOGLE_API_KEY;
+    if (!projectId || !apiKey) {
+      console.error('Missing Vertex AI env vars', { projectId: !!projectId, hasApiKey: !!apiKey });
+      return res.status(503).json({ error: 'AI backend not configured. Please contact admin.' });
+    }
+
     const context = `
 SKILLS_JSON: ${JSON.stringify(skills)}
 PROJECTS_JSON: ${JSON.stringify(projects)}
@@ -122,7 +130,12 @@ ${question}
       res.json({ answer });
     } catch (error) {
       console.error('AI generation error:', error);
-      res.status(500).json({ error: 'Failed to generate response. Please try again.' });
+      res
+        .status(500)
+        .json({
+          error: 'Failed to generate response. Please try again.',
+          detail: error instanceof Error ? error.message : String(error),
+        });
     }
   }
 );
