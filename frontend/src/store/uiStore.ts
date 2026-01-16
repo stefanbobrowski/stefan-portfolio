@@ -25,7 +25,7 @@ export const useUIStore = create<UIState>(set => ({
   tooltip: { text: '', x: 0, y: 0, visible: false },
   modalContent: null,
   modalFullScreen: false,
-  lampOn: false,
+  lampOn: true,
   dayNight: 0,
   isSleeping: false,
 
