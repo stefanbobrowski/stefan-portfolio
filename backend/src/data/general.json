@@ -7,7 +7,7 @@
   "ethnicity": "Italian-Polish-Irish-American",
   "race": "White",
   "gender": "Male",
-  "favoriteColor": "purple",
+  "favoriteColor": "Purple Navy",
   "hobbies": [
     "music",
     "video games",
@@ -26,8 +26,8 @@
   ],
   "car": "Kia K5",
   "motorcycle": "2024 Kawasaki Z900",
-  "favoriteFood": "Vegan",
-  "bio": "Full-stack AI Engineer with a passion for building scalable web applications and cloud-native systems. Experienced in React, TypeScript, Node.js, and Google Cloud Platform.",
+  "favoriteFood": "Anything Vegan",
+  "bio": "Full-stack AI Engineer with a passion for building scalable web applications and cloud-native systems. Experienced in React, TypeScript, Node.js, Express, Google Cloud Platform, and AI technologies including Vertex AI and Gemini models. Skilled in prompt engineering and developing AI agents to solve complex problems. Adept at creating immersive 3D visualizations using Three.js and react-three/fiber. Committed to continuous learning and innovation in the field of AI and web development.",
   "interests": [
     "3D Visualization",
     "AI and Machine Learning",
@@ -35,11 +35,11 @@
     "Prompt Engineering",
     "AI Agent Development",
     "Full Stack Applications",
-    "Web Developement",
+    "Web Development",
     "Game Development"
   ],
   "website": "https://stefanbobrowski.com",
   "github": "https://github.com/stefanbobrowski",
   "linkedin": "https://www.linkedin.com/in/stefanbobrowski",
-  "aiInformation": ["Vertex AI", "Gemini 2.5", "Google Cloud", "Prompt Engineering"]
+  "aiInformation": ["Copilot", "Vertex AI", "Gemini", "Google Cloud Platform", "Prompt Engineering"]
 }

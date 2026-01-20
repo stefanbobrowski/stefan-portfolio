@@ -1,3 +1,4 @@
+import { FiDownload } from 'react-icons/fi';
 import styles from '../../../src/components/ResumeViewer.module.scss';
 
 const ResumeViewer = () => (
@@ -10,6 +11,12 @@ const ResumeViewer = () => (
         className={styles.iframe}
         loading="lazy"
       />
+    </div>
+    <div className={styles.resumeLink}>
+      <a href="/StefanBobrowskiResume.pdf" target="_blank" rel="noopener noreferrer" download>
+        <FiDownload className={styles.resumeIcon} />
+        Download Resume
+      </a>
     </div>
   </div>
 );

@@ -8,10 +8,7 @@ export function About() {
       <div className={styles.flexWrap}>
         <div className={styles.info}>
           <p>This is the portfolio website of Stefan Bobrowski, Full-Stack AI Engineer. </p>
-          <p>
-            Built with a modern 2025 full-stack toolset: Vite + React + TypeScript on the frontend,
-            Node + Express on the backend, and Google Cloud Platform for hosting and AI services.
-          </p>
+          <p>Built with a modern 2026 full-stack toolset:</p>
 
           <table>
             <thead>
@@ -22,20 +19,20 @@ export function About() {
             </thead>
             <tbody>
               <tr>
-                <td>Front-End Framework</td>
-                <td>React + TypeScript (Vite)</td>
+                <td>Front-End</td>
+                <td>Vite, React, Typescript, SCSS Modules</td>
               </tr>
               <tr>
                 <td>3D / Visualization</td>
-                <td>Three.js, react-three/fiber, @react-three/drei, Lottie animations</td>
+                <td>Three.js, react-three/fiber, react-three/drei, Lottie</td>
               </tr>
               <tr>
-                <td>Back-End Framework</td>
-                <td>Node.js + Express</td>
+                <td>Back-End</td>
+                <td>Node.js, Express</td>
               </tr>
               <tr>
-                <td>AI / Video Analysis</td>
-                <td>Vertex AI — Gemini 2.5 Flash</td>
+                <td>AI</td>
+                <td>Vertex AI, Gemini, Copilot</td>
               </tr>
               <tr>
                 <td>Hosting</td>
@@ -43,7 +40,7 @@ export function About() {
               </tr>
               <tr>
                 <td>CI / CD</td>
-                <td>Cloud Build (Docker, GitHub repository)</td>
+                <td>Cloud Build, Docker, Github, Github Actions</td>
               </tr>
               <tr>
                 <td>Database</td>
@@ -51,18 +48,16 @@ export function About() {
               </tr>
               <tr>
                 <td>Storage</td>
-                <td>Cloud Storage (object storage / temporary uploads)</td>
+                <td>Cloud Storage</td>
               </tr>
             </tbody>
           </table>
           <div style={{ marginTop: '1.5rem' }}>
             <h3>Visualization & 3D</h3>
             <p>
-              The immersive Room experience is built with Three.js via react-three/fiber and
-              @react-three/drei. It features primitive geometries (BoxGeometry, RoundedBox), image
-              textures, dynamic lighting (RectAreaLight, PointLight, SpotLight), soft shadows,
-              particle snow effects, OrbitControls for camera navigation. The scene maintains smooth
-              performance across devices with optimized update loops.
+              The immersive Room experience is built with Three.js with react-three/fiber and
+              react-three/drei. It's mostly primitive geometries with some image textures, lighting,
+              shadows, OrbitControls for camera navigation.
             </p>
           </div>
         </div>

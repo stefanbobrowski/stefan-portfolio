@@ -10,7 +10,7 @@ export default function StefanAIChat({
   const [messages, setMessages] = useState<{ role: 'user' | 'assistant'; text: string }[]>([
     {
       role: 'assistant',
-      text: "I'm Stefan AI, built to help you navigate this portfolio and answer questions about Stefan's work and technical background. How may I assist you?",
+      text: "I'm Stefan AI, built to help you navigate Stefan's website and answer any questions you may have about his work or technical background. How may I assist you?",
     },
   ]);
   const [input, setInput] = useState('');

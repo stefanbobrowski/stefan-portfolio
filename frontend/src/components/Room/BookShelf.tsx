@@ -198,7 +198,7 @@ export default function BookShelf() {
                     }}
                     onMouseMove={e => {
                       showTooltip(
-                        `<strong style="color:var(--accent);">${book.title}</strong><br/><span style="color:#fffae5;">by ${book.author}</span><br/><em style="color:#8b4789;">${book.genre}</em>`,
+                        `<strong style="color:var(--accent);">${book.title}</strong><br/><span style="color:#fffae5;">by ${book.author}</span><br/><em style="color:#5ce683;">${book.genre}</em>`,
                         e.clientX,
                         e.clientY
                       );

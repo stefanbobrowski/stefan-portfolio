@@ -4,6 +4,7 @@ import skills from '../data/skills.json' with { type: 'json' };
 import projects from '../data/projects.json' with { type: 'json' };
 import resume from '../data/resume.json' with { type: 'json' };
 import general from '../data/general.json' with { type: 'json' };
+import help from '../data/help.json' with { type: 'json' };
 import { generateText } from '../lib/vertex.js';
 
 const router = Router();
@@ -65,6 +66,7 @@ SKILLS_JSON: ${JSON.stringify(skills)}
 PROJECTS_JSON: ${JSON.stringify(projects)}
 RESUME_JSON: ${JSON.stringify(resume)}
 GENERAL_JSON: ${JSON.stringify(general)}
+HELP_JSON: ${JSON.stringify(help)}
   `;
 
     const prompt = `
@@ -130,12 +132,10 @@ ${question}
       res.json({ answer });
     } catch (error) {
       console.error('AI generation error:', error);
-      res
-        .status(500)
-        .json({
-          error: 'Failed to generate response. Please try again.',
-          detail: error instanceof Error ? error.message : String(error),
-        });
+      res.status(500).json({
+        error: 'Failed to generate response. Please try again.',
+        detail: error instanceof Error ? error.message : String(error),
+      });
     }
   }
 );
