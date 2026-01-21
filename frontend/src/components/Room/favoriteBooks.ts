@@ -1,5 +1,33 @@
 export const favoriteBooks = [
   {
+    title: 'Secrets of the JavaScript Ninja, 2nd Edition',
+    author: 'John Resig and Bear Bibeault',
+    genre: 'Programming',
+    image: 'https://m.media-amazon.com/images/I/711+-FJC3sL._AC_UY218_.jpg',
+    url: 'https://amzn.to/4sPvKJT',
+  },
+  {
+    title: 'High Performance JavaScript',
+    author: 'Nicholas C. Zakas',
+    genre: 'Programming',
+    image: 'https://m.media-amazon.com/images/I/711L64LxBuL._AC_UY218_.jpg',
+    url: 'https://amzn.to/4sObok8',
+  },
+  {
+    title: "The Non-Designer's Design Book",
+    author: 'Robin Williams',
+    genre: 'Design',
+    image: 'https://m.media-amazon.com/images/I/71Z0OaYNu3L._AC_UY218_.jpg',
+    url: 'https://amzn.to/4pNLpq8',
+  },
+  {
+    title: 'Node.js, MongoDB and Angular Web Development',
+    author: 'Brad Dayley',
+    genre: 'Programming',
+    image: 'https://m.media-amazon.com/images/I/71csJQdqb+L._AC_UY218_.jpg',
+    url: 'https://amzn.to/3NuQ2rU',
+  },
+  {
     title: 'AI 2041: Ten Visions for Our Future',
     author: 'Kai-Fu Lee',
     genre: 'Technology',

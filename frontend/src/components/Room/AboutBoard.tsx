@@ -1,8 +1,8 @@
 export default function AboutBoard() {
   const about = {
     name: 'Stefan Bobrowski',
-    title: 'Full-Stack AI Engineer',
-    bio: 'Full-Stack AI Engineer with over 10 years of experience building intelligent, scalable web applications that integrate cutting-edge AI capabilities. Expert in React, TypeScript, and modern JavaScript development, with hands-on experience implementing AI-powered features using Claude, Gemini, and Vertex AI. Skilled in architecting secure, cloud-native solutions on Google Cloud Platform, developing both elegant user interfaces with Three.js/WebGL and robust backend APIs with Node.js/Express. Passionate about leveraging AI to solve real-world problems, writing clean and maintainable code, and delivering innovative solutions that provide measurable business value.',
+    title: 'Full-Stack Engineer',
+    bio: 'Full-Stack Engineer with over 10 years of experience building intelligent, scalable web applications. Recently specialized in integrating cutting-edge AI capabilities in production systems using Claude, Gemini, and Vertex AI. Expert in React, TypeScript, and modern JavaScript development, with hands-on experience implementing Cloud Architecture and AI-powered features. Skilled in architecting secure, cloud-native solutions on Google Cloud Platform, developing both elegant user interfaces and robust backend APIs with Node.js/Express. Passionate about solving real-world problems, writing clean and maintainable code, and delivering innovative solutions that provide measurable business value.',
   };
 
   return (
@@ -26,13 +26,6 @@ export default function AboutBoard() {
           <p style={{ marginBottom: '0.8rem', color: '#6ee7ff' }}>{about.title}</p>
         </div>
         <p className="paragraph">{about.bio}</p>
-        <p className="paragraph" style={{ color: '#6ee7ff' }}>
-          This is the portfolio website of Stefan Bobrowski, Full-Stack AI Engineer.
-        </p>
-        <p className="paragraph">
-          Built with a modern 2025 full-stack toolset: Vite + React + TypeScript on the frontend,
-          Node + Express on the backend, and Google Cloud Platform for hosting and AI services.
-        </p>
       </div>
     </div>
   );

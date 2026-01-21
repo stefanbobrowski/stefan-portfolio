@@ -23,7 +23,7 @@
 }
 
 .bookTags {
-  color: #1e4d2b;
+  color: #5ce683;
   font-size: 0.95em;
   font-style: italic;
 }
@@ -58,7 +58,10 @@
     box-shadow: 0 10px 32px rgba(0, 0, 0, 0.22);
     border-color: var(--accent);
     z-index: 2;
-
     color: #ffeb93;
+  }
+
+  & .bookCardImage {
+    margin: auto;
   }
 }

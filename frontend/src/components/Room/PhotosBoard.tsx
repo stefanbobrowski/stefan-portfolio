@@ -13,7 +13,7 @@ export default function PhotosBoard({ controls = true }: { controls?: boolean } 
   const photos = useMemo(
     () => [
       { title: 'Profile Photo', caption: 'Profile Photo', url: '/photos/photo-1.webp' },
-      { title: 'Deviated Septum', caption: 'Deviated Septum', url: '/photos/photo-2.webp' },
+
       {
         title: 'Mini-Golf Scorekeeper',
         caption: 'Mini-Golf Scorekeeper',
@@ -56,11 +56,7 @@ export default function PhotosBoard({ controls = true }: { controls?: boolean } 
         caption: 'Favorite Food: Spaghetti & Meatballs',
         url: '/photos/photo-16.webp',
       },
-      {
-        title: 'The Other Side of New York',
-        caption: 'The Other Side of New York',
-        url: '/photos/photo-17.webp',
-      },
+
       {
         title: 'A Job Well Done',
         caption: 'A Job Well Done',

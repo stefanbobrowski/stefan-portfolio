@@ -93,14 +93,16 @@ export default function DesktopWindow() {
 
         <main className={styles.desktopWindowMain}>
           {activeTab === 'home' && (
-            <div>
+            <div
+              style={{
+                backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="glow1" cx="20%25" cy="30%25"><stop offset="0%25" stop-color="%236b5fff" stop-opacity="0.8"/><stop offset="50%25" stop-color="%233d2a7f" stop-opacity="0.4"/><stop offset="100%25" stop-color="%230a0a1a" stop-opacity="0"/></radialGradient><radialGradient id="glow2" cx="75%25" cy="60%25"><stop offset="0%25" stop-color="%234d7fff" stop-opacity="0.6"/><stop offset="60%25" stop-color="%232a4a7f" stop-opacity="0.3"/><stop offset="100%25" stop-color="%230a0a1a" stop-opacity="0"/></radialGradient></defs><rect width="1200" height="600" fill="%230a0a1a"/><circle cx="150" cy="200" r="280" fill="url(%23glow1)"/><circle cx="950" cy="350" r="320" fill="url(%23glow2)"/></svg>')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+              className={styles.homeImage}
+            >
               <h2 style={{ textTransform: 'none' }}>Welcome to StefanOS</h2>
               <p>Click the tabs on the left to explore content.</p>
-              <img
-                src="/backgrounds/futuristic-city-bg.svg"
-                alt="Futuristic City Background"
-                className={styles.homeImage}
-              />
             </div>
           )}
 

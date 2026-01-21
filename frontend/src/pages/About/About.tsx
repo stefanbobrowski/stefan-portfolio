@@ -7,7 +7,7 @@ export function About() {
       <h2>About</h2>
       <div className={styles.flexWrap}>
         <div className={styles.info}>
-          <p>This is the portfolio website of Stefan Bobrowski, Full-Stack AI Engineer. </p>
+          <p>This is the portfolio website of Stefan Bobrowski, Full-Stack Engineer. </p>
           <p>Built with a modern 2026 full-stack toolset:</p>
 
           <table>
@@ -57,7 +57,7 @@ export function About() {
             <p>
               The immersive Room experience is built with Three.js with react-three/fiber and
               react-three/drei. It's mostly primitive geometries with some image textures, lighting,
-              shadows, OrbitControls for camera navigation.
+              shadows, OrbitControls for camera navigation. And plenty of
             </p>
           </div>
         </div>
