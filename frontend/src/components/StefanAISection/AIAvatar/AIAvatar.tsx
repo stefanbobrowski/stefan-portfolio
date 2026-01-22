@@ -10,6 +10,8 @@ export default function BotAvatar() {
       style={{
         // width: 200,
         // height: 200,
+        minWidth: 100,
+        minHeight: 100,
         filter: 'drop-shadow(0 0 10px #00eaff50)',
       }}
     />

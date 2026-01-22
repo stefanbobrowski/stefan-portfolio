@@ -6,7 +6,7 @@ const ResumeViewer = () => (
     <h2>Resume</h2>
     <div className={styles.resumeContainer}>
       <iframe
-        src="/StefanBobrowskiResume.pdf#zoom=page-fit"
+        src="/StefanBobrowskiResume.pdf#view=FitH"
         title="Stefan Bobrowski Resume"
         className={styles.iframe}
         loading="lazy"

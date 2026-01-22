@@ -111,7 +111,7 @@ export default function SkillBoard() {
           className={styles.categorySection}
           style={{ borderColor: data.color, backgroundColor: data.color + '90' }}
         >
-          <h2 className={styles.categoryTitle} style={{ color: data.color }}>
+          <h2 className={styles.categoryTitle} style={{ color: 'var(--text)' }}>
             {category.toUpperCase()}
           </h2>
 

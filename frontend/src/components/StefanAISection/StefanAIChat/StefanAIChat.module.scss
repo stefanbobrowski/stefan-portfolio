@@ -3,6 +3,10 @@
   flex-direction: column;
   width: 100%;
   max-width: 420px;
+
+  @media screen and (max-width: 700px) {
+    max-width: 320px;
+  }
 }
 
 .bubbleFrame {
@@ -56,6 +60,11 @@
   color: white;
   white-space: pre-wrap;
   word-break: break-word;
+  font-size: 1rem;
+
+  @media screen and (max-width: 700px) {
+    font-size: 0.7rem;
+  }
 }
 
 .userMessage {
