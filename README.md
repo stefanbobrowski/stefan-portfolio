@@ -1,1 +1,18 @@
-# Sound Effect by <a href="https://pixabay.com/users/rescopicsound-45188866/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=230473">Rescopic Sound</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=230473">Pixabay</a>
+# Stefan Portfolio
+
+The portfolio website of Full-Stack Web Developer Stefan Bobrowski. Built with React, Three.js, and TypeScript.
+
+## Features
+
+- **Interactive 3D Room**: Explore an immersive 3D environment showcasing projects and skills
+- **AI Assistant**: Chat with Stefan AI powered by Vertex AI
+- **Project Showcase**: Browse through featured projects with detailed descriptions
+- **Skills Visualization**: Interactive display of technical skills and expertise
+- **Theme Toggle**: Light/dark mode support
+
+## Tech Stack
+
+- **Frontend**: React, TypeScript, Vite, Three.js, SCSS
+- **Backend**: Node.js, Express
+- **AI**: Google Vertex AI
+- **Deployment**: Google Cloud Platform, Docker

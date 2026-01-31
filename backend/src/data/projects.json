@@ -1,10 +1,22 @@
 [
   {
+    "title": "Astro Starter",
+    "slug": "astro-starter",
+    "type": "external",
+    "description": "Astro starter template for SEO-powered websites. Includes TypeScript, SCSS component design system with tokens, and SEO best practices for a multi-page website.",
+    "tech": ["Astro", "TypeScript", "SCSS", "SEO"],
+    "links": {
+      "live": "",
+      "github": "https://github.com/stefanbobrowski/astro-stefan-starter"
+    },
+    "thumbnail": "/projectThumbs/astro-starter-thumb.png"
+  },
+  {
     "title": "Video Searcher",
     "slug": "video-searcher",
     "type": "external",
     "description": "Upload a video and let AI find the exact moments you're looking for. Get precise timestamps for headshots, kills, scores, and more.",
-    "tech": ["TypeScript", "OAuth2", "Rate Limiting", "Cloud Run", "Cloud Storage", "Vertex AI"],
+    "tech": ["TypeScript", "OAuth2", "Rate Limiting", "Vertex AI"],
     "links": {
       "live": "https://video-searcher-frontend-637174041158.us-central1.run.app/",
       "github": "https://github.com/stefanbobrowski/VideoSearcher"
@@ -55,6 +67,7 @@
     "description": "Makeup and Photography business hosted on GCP.",
     "tech": ["Vite", "React", "TypeScript", "Cloud Build", "Cloud Storage"],
     "links": {
+      "live": "https://www.susie-jetta.com/",
       "github": "https://github.com/stefanbobrowski/susie-jetta-gcp"
     },
     "thumbnail": "/projectThumbs/susie-thumb.png"
