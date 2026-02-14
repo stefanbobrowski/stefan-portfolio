@@ -138,12 +138,11 @@ export default function Cat({ position = [6.2, -0.46, -8.5], images, index, scal
             <div className={styles.catGalleryNameDrogo}>Drogo</div>
             <img src={imgs[0]} className={styles.catGalleryImg} alt="Drogo the cat" />
             <ul className={styles.catGalleryList}>
-              <li>Named after the Dothraki warlord Khal Drogo from Game of Thrones.</li>
+              <li>Named after Khal Drogo from Game of Thrones.</li>
               <li>Clouded Jack: Savannah, Bengal, PixeBob hybrid.</li>
-              <li>Natural fighter, hunter, and explorer.</li>
-              <li>Curious and rambunctious. Likes to open doors.</li>
-              <li>Enjoys being outdoors and getting into trouble around the neighborhood.</li>
-              <li>Loves eating his favorite meal, Tuna Fillet with Sea Weed.</li>
+              <li>Curious and rambunctious. Likes to enter cabinets.</li>
+              <li>Loves being outdoors and getting into trouble around the neighborhood.</li>
+              <li>Enjoys eating his favorite dinner, Tuna Fillet with Sea Weed.</li>
             </ul>
           </div>
           <div className={styles.catGalleryCol}>
@@ -152,13 +151,9 @@ export default function Cat({ position = [6.2, -0.46, -8.5], images, index, scal
             <ul className={styles.catGalleryList}>
               <li>Her name means "forest" or "spirit of the wood" in Latin.</li>
               <li>Super agile and playful. Will chase anything moving.</li>
-              <li>Hyper-vigilant and timid.</li>
-              <li>Likes being outside and watching the birds and squirrels.</li>
-              <li>
-                Prefers being inside and sunbathing by the window, or being a mushy lump on the
-                bed/sofa.
-              </li>
-              <li>Highly vocal and affectionate.</li>
+              <li>Highly vocal, hyper-vigilant, timid, and affectionate. </li>
+              <li>Only likes being outside for a little while to watch the birds and squirrels.</li>
+              <li>Prefers sunbathing by the window, or being a lump on the bed.</li>
             </ul>
           </div>
         </div>

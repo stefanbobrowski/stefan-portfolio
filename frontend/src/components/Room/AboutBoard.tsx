@@ -1,3 +1,4 @@
+import profilePic from '../../assets/StefanBobrowskiAvatar.jpeg';
 export default function AboutBoard() {
   const about = {
     name: 'Stefan Bobrowski',
@@ -18,7 +19,7 @@ export default function AboutBoard() {
       >
         <div>
           <img
-            src="/photos/photo-1.webp"
+            src={profilePic}
             alt="Stefan Bobrowski"
             style={{ width: 150, marginBottom: '1rem', borderRadius: '50%' }}
           />

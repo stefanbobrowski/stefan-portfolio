@@ -12,8 +12,6 @@ export default function PhotosBoard({ controls = true }: { controls?: boolean } 
 
   const photos = useMemo(
     () => [
-      { title: 'Profile Photo', caption: 'Profile Photo', url: '/photos/photo-1.webp' },
-
       {
         title: 'Mini-Golf Scorekeeper',
         caption: 'Mini-Golf Scorekeeper',
@@ -25,7 +23,6 @@ export default function PhotosBoard({ controls = true }: { controls?: boolean } 
         caption: '"You Ready?" - The Origin of BallHouse',
         url: '/photos/photo-5.webp',
       },
-      { title: 'Arizona', caption: 'Arizona', url: '/photos/photo-6.webp' },
       {
         title: 'Nerding Out @ The Arcade',
         caption: 'Nerding Out @ The Arcade',
@@ -42,7 +39,6 @@ export default function PhotosBoard({ controls = true }: { controls?: boolean } 
         url: '/photos/photo-9.webp',
       },
       { title: 'Gotham City', caption: 'Gotham City', url: '/photos/photo-10.webp' },
-      { title: 'Climbed a Tree', caption: 'Climbed a Tree', url: '/photos/photo-11.webp' },
       { title: 'Spain', caption: 'Spain', url: '/photos/photo-12.webp' },
       { title: 'Focused & On Track', caption: 'Focused & On Track', url: '/photos/photo-13.webp' },
       {
