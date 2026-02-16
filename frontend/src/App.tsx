@@ -4,6 +4,7 @@ import Projects from './pages/Projects/Projects';
 import Resume from './pages/Resume/Resume';
 import SkillsPage from './pages/Skills/Skills';
 import { About } from './pages/About/About';
+import { NotFound } from './pages/NotFound/NotFound';
 import { Routes, Route } from 'react-router-dom';
 
 export function App() {
@@ -15,6 +16,7 @@ export function App() {
         <Route path="projects" element={<Projects />} />
         <Route path="resume" element={<Resume />} />
         <Route path="about" element={<About />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

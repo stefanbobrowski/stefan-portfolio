@@ -1,2 +1,21 @@
+# Google Bot permissions
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+
+# Sitemaps
+Sitemap: https://stefanbobrowski.com/sitemap.xml
+
+# Crawl delay (be nice to Google's crawlers)
+Crawl-delay: 1
+
+# Specific rules for other bots
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Googlebot
+Allow: /

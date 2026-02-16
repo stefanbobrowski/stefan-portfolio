@@ -93,6 +93,21 @@
       { "name": "WebGL", "url": "https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" }
     ]
   },
+  "analytics": {
+    "color": "#6B4E3D",
+    "skills": [
+      {
+        "name": "Google Analytics 4",
+        "url": "https://support.google.com/analytics/answer/10089681"
+      },
+      { "name": "Google Search Console", "url": "https://search.google.com/search-console/" },
+      {
+        "name": "SEO Optimization",
+        "url": "https://developers.google.com/search/docs/beginner/seo-starter-guide"
+      },
+      { "name": "Core Web Vitals", "url": "https://web.dev/vitals/" }
+    ]
+  },
   "ai_tools": {
     "color": "#32514D",
     "skills": [

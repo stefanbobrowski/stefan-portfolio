@@ -27,9 +27,36 @@
     />
     <meta name="twitter:image" content="https://stefanbobrowski.com/StefanBobrowskiAvatar.jpeg  " />
 
+    <!-- Canonical URL - Tells Google which version to index -->
+    <link rel="canonical" href="https://stefanbobrowski.com" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8CGYGKTFD0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-8CGYGKTFD0');
+    </script>
+
     <!-- Preload critical fonts -->
-    <link rel="preload" href="/fonts/GoogleSans/GoogleSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="/fonts/GoogleSans/GoogleSans-Bold.ttf" as="font" type="font/ttf" crossorigin>
+    <link
+      rel="preload"
+      href="/fonts/GoogleSans/GoogleSans-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/GoogleSans/GoogleSans-Bold.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
 
     <title>Stefan Bobrowski - Full-Stack Engineer</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

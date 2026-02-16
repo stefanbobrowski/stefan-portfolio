@@ -1,7 +1,7 @@
 {
   "name": "Stefan Bobrowski",
-  "title": "Senior Frontend / Full-Stack Developer",
-  "summary": "Full-stack engineer with 10+ years of experience building React, TypeScript, Node.js, and cloud-native systems on Google Cloud Platform. Strong focus on performance, developer experience, and scalable architectures.",
+  "title": "Full-Stack Engineer & Growth-Focused Developer",
+  "summary": "Full-stack engineer with 10+ years building high-performance web applications using React, TypeScript, Node.js, and Google Cloud Platform. I help businesses scale their digital presence through conversion-optimized development, SEO implementation, and analytics-driven insights.",
   "experience": [
     {
       "company": "Sharper Image",
@@ -17,15 +17,21 @@
     }
   ],
   "projects": [
+    "Video Searcher",
+    "Astro Starter",
     "GGList",
     "Upload Center",
-    "Stock AI Analysis",
-    "Nerd by Day, Nerd by Night",
-    "Soul Garden",
-    "Trinity Raiders"
+    "Nerd by Day, Nerd by Night"
   ],
   "skills": {
-    "primary": ["React", "TypeScript", "GCP", "Node.js"],
-    "secondary": ["3D visualization", "Three.js", "Data analysis", "CI/CD pipelines"]
+    "primary": ["React", "TypeScript", "GCP", "Node.js", "GA4 Analytics"],
+    "secondary": [
+      "3D visualization",
+      "Three.js",
+      "Data analysis",
+      "CI/CD pipelines",
+      "SEO",
+      "Google Search Console"
+    ]
   }
 }
