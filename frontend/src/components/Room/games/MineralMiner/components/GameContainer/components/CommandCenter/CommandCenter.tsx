@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Context } from '../../../../context';
 import { Worker } from '../../../Worker/Worker';
-import commandCenter from '../../../../assets/command-center.png';
+import commandCenter from '../../../../assets/command-center.webp';
 
 import './CommandCenter.scss';
 
