@@ -63,7 +63,6 @@ export default function PhotosBoard({ controls = true }: { controls?: boolean } 
         caption: 'Drogo & Sylvia: Family',
         url: '/photos/photo-19.webp',
       },
-      { title: 'High-Six', caption: 'High-Six', url: '/photos/photo-20.webp' },
       { title: 'The Golden Throne', caption: 'The Golden Throne', url: '/photos/photo-21.webp' },
       { title: 'Peak Skiing', caption: 'Peak Skiing', url: '/photos/photo-22.webp' },
       {
