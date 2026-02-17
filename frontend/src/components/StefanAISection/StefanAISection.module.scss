@@ -1,19 +1,26 @@
 .stefanAISection {
   flex: 0 1 auto;
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   align-items: flex-start;
   max-width: 100%;
   padding-bottom: 1rem;
   overflow: auto;
+  @media screen and (max-width: 600px) {
+    flex-wrap: wrap;
+  }
 }
 
 .leftSide {
   position: relative;
-  width: 260px;
+  max-width: 260px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 .rightSide {
+  width: 100%;
 }
 
 .botCard {

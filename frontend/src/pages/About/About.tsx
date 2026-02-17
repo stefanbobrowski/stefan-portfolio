@@ -56,8 +56,7 @@ export function About() {
             <h3>Visualization & 3D</h3>
             <p>
               The immersive Room experience is built with Three.js with react-three/fiber and
-              react-three/drei. It's mostly primitive geometries with some image textures, lighting,
-              shadows, OrbitControls for camera navigation. And plenty of
+              react-three/drei.
             </p>
           </div>
         </div>
