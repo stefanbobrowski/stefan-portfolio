@@ -6,8 +6,8 @@
     "description": "Astro starter template for SEO-powered websites. Includes TypeScript, SCSS component design system with tokens, and SEO best practices for a multi-page website.",
     "tech": ["Astro", "TypeScript", "SCSS", "SEO"],
     "links": {
-      "live": "",
-      "github": "https://github.com/stefanbobrowski/astro-stefan-starter"
+      "live": "https://astro-stefan-starter-655521068881.us-central1.run.app",
+      "github": ""
     },
     "thumbnail": "/projectThumbs/astro-starter-thumb.png"
   },
