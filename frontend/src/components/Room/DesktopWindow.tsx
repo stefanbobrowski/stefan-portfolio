@@ -111,12 +111,14 @@ export default function DesktopWindow() {
           {activeTab === 'about' && <AboutBoard />}
           {activeTab === 'resume' && (
             <div className={resumeStyles.resumeContainer}>
-              <iframe
-                src="/StefanBobrowskiResume.pdf#view=FitH"
-                title="Stefan Bobrowski Resume"
-                className={resumeStyles.iframe}
-                loading="lazy"
-              />
+              <div className={resumeStyles.iframeWrapper}>
+                <iframe
+                  src="/StefanBobrowskiResume.pdf"
+                  title="Stefan Bobrowski Resume"
+                  className={resumeStyles.iframe}
+                  loading="lazy"
+                />
+              </div>
             </div>
           )}
           {activeTab === 'links' && <LinksBoard />}

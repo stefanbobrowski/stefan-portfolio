@@ -5,12 +5,14 @@ const ResumeViewer = () => (
   <div className={styles.resumePage}>
     <h2>Resume</h2>
     <div className={styles.resumeContainer}>
-      <iframe
-        src="/StefanBobrowskiResume.pdf#view=FitH"
-        title="Stefan Bobrowski Resume"
-        className={styles.iframe}
-        loading="lazy"
-      />
+      <div className={styles.iframeWrapper}>
+        <iframe
+          src="/StefanBobrowskiResume.pdf"
+          title="Stefan Bobrowski Resume"
+          className={styles.iframe}
+          loading="lazy"
+        />
+      </div>
     </div>
     <div className={styles.resumeLink}>
       <a href="/StefanBobrowskiResume.pdf" target="_blank" rel="noopener noreferrer" download>

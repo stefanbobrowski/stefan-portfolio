@@ -59,6 +59,13 @@ export function About() {
               react-three/drei.
             </p>
           </div>
+          <div style={{ marginTop: '1.5rem' }}>
+            <h3>Stefan AI</h3>
+            <p>
+              Stefan AI uses Vertex AI (via Express API calls to Google Cloud Platform) to generate
+              responses based on various data sources and a guiding prompt with strict rules.
+            </p>
+          </div>
         </div>
 
         <StefanAISection />

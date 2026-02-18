@@ -9,8 +9,17 @@ import { generateText } from '../lib/vertex.js';
 
 const router = Router();
 
+interface RateLimitRecord {
+  count: number;
+  resetTime: number;
+}
+
+interface AskStefanRequestBody {
+  question: string;
+}
+
 // Simple in-memory rate limiting
-const requestCounts = new Map<string, { count: number; resetTime: number }>();
+const requestCounts = new Map<string, RateLimitRecord>();
 
 function checkRateLimit(ip: string, maxRequests: number, windowMs: number): boolean {
   const now = Date.now();
@@ -36,7 +45,14 @@ router.post(
       .trim()
       .isString()
       .isLength({ min: 1, max: 500 })
-      .withMessage('Question must be between 1 and 500 characters'),
+      .withMessage('Question must be between 1 and 500 characters')
+      .custom((value: string) => {
+        // Reject if only whitespace
+        if (!value || !value.trim()) {
+          throw new Error('Question cannot be empty or whitespace only');
+        }
+        return true;
+      }),
   ],
   async (req: Request, res: Response) => {
     // Rate limiting - 10 requests per hour per IP
@@ -51,7 +67,7 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { question } = req.body;
+    const { question }: AskStefanRequestBody = req.body;
 
     // Ensure Vertex AI is configured in the environment before attempting a request
     const projectId = process.env.GOOGLE_CLOUD_PROJECT;

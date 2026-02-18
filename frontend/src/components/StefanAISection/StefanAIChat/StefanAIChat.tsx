@@ -2,6 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 import { apiEndpoints } from '../../../config/api';
 import styles from './StefanAIChat.module.scss';
 
+const MAX_QUESTION_LENGTH = 500;
+const SUBMIT_COOLDOWN_MS = 500;
+
 export default function StefanAIChat({
   onSendPreset,
 }: {
@@ -16,10 +19,19 @@ export default function StefanAIChat({
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const chatBoxRef = useRef<HTMLDivElement | null>(null);
+  const lastSubmitTimeRef = useRef<number>(0);
 
   async function askStefan(message?: string) {
     const text = message ?? input.trim();
-    if (!text) return;
+
+    // Validate input
+    if (!text || text.length === 0) return;
+    if (text.length > MAX_QUESTION_LENGTH) return;
+
+    // Prevent rapid-fire submissions
+    const now = Date.now();
+    if (now - lastSubmitTimeRef.current < SUBMIT_COOLDOWN_MS) return;
+    lastSubmitTimeRef.current = now;
 
     const userMessage = { role: 'user' as const, text };
     setMessages(prev => [...prev, userMessage]);
@@ -91,9 +103,16 @@ export default function StefanAIChat({
           value={input}
           placeholder="Ask Stefan AI anything…"
           onChange={e => setInput(e.target.value)}
-          onKeyDown={e => e.key === 'Enter' && askStefan()}
+          onKeyDown={e => !loading && e.key === 'Enter' && askStefan()}
+          disabled={loading}
+          maxLength={MAX_QUESTION_LENGTH}
         />
-        <button type="button" className={styles.sendButton} onClick={() => askStefan()}>
+        <button
+          type="button"
+          className={styles.sendButton}
+          onClick={() => askStefan()}
+          disabled={loading}
+        >
           Send
         </button>
       </div>
