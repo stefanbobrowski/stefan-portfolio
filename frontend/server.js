@@ -39,7 +39,7 @@ app.use((req, res, next) => {
 const validRoutes = ['/', '/about', '/projects', '/skills', '/resume'];
 
 // SPA fallback - serve index.html for valid routes, 404 for invalid ones
-app.get('/*', (req, res) => {
+app.get('*', (req, res) => {
   const pathname = req.path;
 
   // Check if the route is valid
