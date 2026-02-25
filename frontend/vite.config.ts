@@ -17,6 +17,26 @@ export default defineConfig({
   ssr: {
     noExternal: ['three', 'three-stdlib'],
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Split three.js and its ecosystem into separate chunk
+          'three-vendor': [
+            'three',
+            'three-stdlib',
+            '@react-three/fiber',
+            '@react-three/drei',
+            'postprocessing',
+          ],
+          // Split other heavy vendors
+          vendor: ['react', 'react-dom', 'react-router-dom', 'zustand'],
+          // Keep lottie separate since it's only on about page
+          lottie: ['lottie-react'],
+        },
+      },
+    },
+  },
   server: {
     proxy: {
       '/api': {

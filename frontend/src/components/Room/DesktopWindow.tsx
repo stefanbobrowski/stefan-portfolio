@@ -1,16 +1,18 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import { FiDownload } from 'react-icons/fi';
 import type { IconType } from 'react-icons';
-import SkillBoard from '../SkillBoard/SkillBoard';
-import ProjectsBoard from './ProjectsBoard';
-import AboutBoard from './AboutBoard';
-import LinksBoard from './LinksBoard';
-import PhotosBoard from './PhotosBoard';
-import VideosBoard from './VideosBoard';
-import GamesBoard from './GamesBoard';
-import MusicBoard from './MusicBoard';
 import styles from './DesktopWindow.module.scss';
 import resumeStyles from '../ResumeViewer.module.scss';
+
+// Lazy load board components to reduce initial bundle size
+const SkillBoard = lazy(() => import('../SkillBoard/SkillBoard'));
+const ProjectsBoard = lazy(() => import('./ProjectsBoard'));
+const AboutBoard = lazy(() => import('./AboutBoard'));
+const LinksBoard = lazy(() => import('./LinksBoard'));
+const PhotosBoard = lazy(() => import('./PhotosBoard'));
+const VideosBoard = lazy(() => import('./VideosBoard'));
+const GamesBoard = lazy(() => import('./GamesBoard'));
+const MusicBoard = lazy(() => import('./MusicBoard'));
 
 import {
   AiOutlineHome,
@@ -107,9 +109,21 @@ export default function DesktopWindow() {
             </div>
           )}
 
-          {activeTab === 'skills' && <SkillBoard />}
-          {activeTab === 'projects' && <ProjectsBoard />}
-          {activeTab === 'about' && <AboutBoard />}
+          {activeTab === 'skills' && (
+            <Suspense fallback={<div className={styles.desktopWindowLoadingPlaceholder} />}>
+              <SkillBoard />
+            </Suspense>
+          )}
+          {activeTab === 'projects' && (
+            <Suspense fallback={<div className={styles.desktopWindowLoadingPlaceholder} />}>
+              <ProjectsBoard />
+            </Suspense>
+          )}
+          {activeTab === 'about' && (
+            <Suspense fallback={<div className={styles.desktopWindowLoadingPlaceholder} />}>
+              <AboutBoard />
+            </Suspense>
+          )}
           {activeTab === 'resume' && (
             <div className={resumeStyles.resumeContainer}>
               <div className={resumeStyles.iframeWrapper}>
@@ -133,11 +147,31 @@ export default function DesktopWindow() {
               </div>
             </div>
           )}
-          {activeTab === 'links' && <LinksBoard />}
-          {activeTab === 'photos' && <PhotosBoard />}
-          {activeTab === 'videos' && <VideosBoard />}
-          {activeTab === 'games' && <GamesBoard />}
-          {activeTab === 'music' && <MusicBoard />}
+          {activeTab === 'links' && (
+            <Suspense fallback={<div className={styles.desktopWindowLoadingPlaceholder} />}>
+              <LinksBoard />
+            </Suspense>
+          )}
+          {activeTab === 'photos' && (
+            <Suspense fallback={<div className={styles.desktopWindowLoadingPlaceholder} />}>
+              <PhotosBoard />
+            </Suspense>
+          )}
+          {activeTab === 'videos' && (
+            <Suspense fallback={<div className={styles.desktopWindowLoadingPlaceholder} />}>
+              <VideosBoard />
+            </Suspense>
+          )}
+          {activeTab === 'games' && (
+            <Suspense fallback={<div className={styles.desktopWindowLoadingPlaceholder} />}>
+              <GamesBoard />
+            </Suspense>
+          )}
+          {activeTab === 'music' && (
+            <Suspense fallback={<div className={styles.desktopWindowLoadingPlaceholder} />}>
+              <MusicBoard />
+            </Suspense>
+          )}
         </main>
       </div>
     </div>

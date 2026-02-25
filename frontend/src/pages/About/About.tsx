@@ -1,6 +1,9 @@
+import { Suspense, lazy } from 'react';
 import { usePageMetaTags } from '../../hooks/usePageMetaTags';
-import StefanAISection from '../../components/StefanAISection/StefanAISection';
 import styles from './About.module.scss';
+
+// Lazy load StefanAISection since it imports lottie-react (heavy library)
+const StefanAISection = lazy(() => import('../../components/StefanAISection/StefanAISection'));
 
 export function About() {
   usePageMetaTags({
@@ -78,7 +81,9 @@ export function About() {
           </div>
         </div>
 
-        <StefanAISection />
+        <Suspense fallback={<div />}>
+          <StefanAISection />
+        </Suspense>
       </div>
     </div>
   );
