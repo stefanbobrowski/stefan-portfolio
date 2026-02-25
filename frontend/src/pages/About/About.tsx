@@ -1,7 +1,17 @@
+import { usePageMetaTags } from '../../hooks/usePageMetaTags';
 import StefanAISection from '../../components/StefanAISection/StefanAISection';
 import styles from './About.module.scss';
 
 export function About() {
+  usePageMetaTags({
+    title: 'About Stefan Bobrowski - Full-Stack Engineer',
+    description:
+      'Learn about Stefan Bobrowski, a full-stack engineer with 10+ years of experience building scalable web applications using React, TypeScript, Node.js, and Google Cloud Platform.',
+    ogTitle: 'About Stefan Bobrowski',
+    ogDescription:
+      'Full-Stack Engineer specializing in modern web technologies, AI integration, and cloud infrastructure.',
+  });
+
   return (
     <div className={styles.aboutContainer}>
       <h2>About</h2>
