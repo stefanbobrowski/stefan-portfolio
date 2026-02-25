@@ -1,19 +1,43 @@
 {
   "name": "Stefan Bobrowski",
   "title": "Full-Stack Engineer & Growth-Focused Developer",
-  "summary": "Full-stack engineer with 10+ years building high-performance web applications using React, TypeScript, Node.js, and Google Cloud Platform. I help businesses scale their digital presence through conversion-optimized development, SEO implementation, and analytics-driven insights.",
+  "summary": "Full-Stack Engineer with 10+ years developing professional web applications that attract more visitors and drive business growth. Expert in modern and classical JavaScript ecosystems, pragmatically selecting architecture based on project requirements: client-focused SPAs with Vite and TypeScript, server-rendered SEO-driven apps with Astro, or vanilla JavaScript websites with Web Components. Recently specialized in architecting cloud-native AI solutions using Google Cloud Platform and Vertex AI.",
   "experience": [
     {
-      "company": "Sharper Image",
-      "role": "Senior Frontend Developer",
-      "period": "2023-2024",
-      "summary": "Built modern customer-facing UI features using React and TypeScript."
+      "company": "Prepaire Labs",
+      "role": "Frontend Developer",
+      "period": "July 2025 - September 2025",
+      "summary": "Architected and developed Vite + React + TypeScript frontend application in close collaboration with UI/UX lead. Established CI/CD pipelines and managed repository infrastructure with GitHub Actions and Docker. Contributed to full-stack architectural decisions including cloud platform selection and API design."
+    },
+    {
+      "company": "Camelot SI LLC / SharperImage.com",
+      "role": "Frontend Developer",
+      "period": "Sep 2023 - Feb 2025",
+      "summary": "Implemented CRO-focused UI/UX redesigns across critical e-commerce flows (checkout, cart, login, returns) in a Next.js production environment serving thousands of users daily. Integrated feature flags and A/B tests via Contentful. Reduced frontend bundle size from ~50MB to ~12MB (~70% build time reduction). Consolidated GraphQL requests reducing API overhead and improving performance."
     },
     {
       "company": "The Home Depot",
-      "role": "Lead UI Engineer",
-      "period": "2019-2023",
-      "summary": "Owned large-scale UI architecture and design system work across major shopping flows."
+      "role": "Software Engineer",
+      "period": "May 2021 - Dec 2022",
+      "summary": "Led development of 'Questions & Answers' component redesign using Figma, React, and GraphQL, improving engagement and CTR. Served as Release Captain managing PRs, release notes, and production deployments. Increased test coverage to 100% for multiple components by transitioning from Enzyme to RTL + Jest. Mentored new engineers on best practices."
+    },
+    {
+      "company": "Vibrant Software",
+      "role": "Software Engineer",
+      "period": "July 2020 - May 2021",
+      "summary": "Architected and led development of Nomad Portal, a digital asset management platform with React, Redux-Saga, Node.js/Express, and AWS AI services for facial recognition and metadata tagging. Built VEP Virtual Stage, a live-streaming platform featuring multi-stream viewing, WebSockets-based live chat, and configurable JSON-based theming."
+    },
+    {
+      "company": "Hat Trick Designs LLC",
+      "role": "Full-Stack Web Developer",
+      "period": "June 2019 - July 2020",
+      "summary": "Developed full-stack applications using the MERN stack (MongoDB, Express, React, Node.js). Converted React Class Components to Hooks with useContext state management. Built REST APIs with Express and Mongoose."
+    },
+    {
+      "company": "Direct Wines",
+      "role": "Frontend Web Developer",
+      "period": "February 2019 - May 2019",
+      "summary": "Developed product microsites and checkout component for payment API integration. Improved SEO and accessibility with metadata and Structured Data markup. Researched emerging technologies including Web Components and Vue.js for future architecture."
     }
   ],
   "projects": [
@@ -24,14 +48,25 @@
     "Nerd by Day, Nerd by Night"
   ],
   "skills": {
-    "primary": ["React", "TypeScript", "GCP", "Node.js", "GA4 Analytics"],
+    "primary": [
+      "React",
+      "TypeScript",
+      "GCP",
+      "Node.js",
+      "Web Components",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
     "secondary": [
       "3D visualization",
       "Three.js",
       "Data analysis",
       "CI/CD pipelines",
       "SEO",
-      "Google Search Console"
+      "Google Search Console",
+      "Core Web Vitals",
+      "GA4 Analytics"
     ]
   }
 }

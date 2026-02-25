@@ -1,10 +1,12 @@
 import { useEffect, useState, useRef, useMemo } from 'react';
 import * as THREE from 'three';
 import { useUIStore } from '../../store/uiStore';
+import { useGA4 } from '../../hooks/useGA4';
 import DesktopWindow from './DesktopWindow';
 
 export default function Desk() {
   const { showTooltip, hideTooltip, openModal } = useUIStore();
+  const { trackEvent } = useGA4();
 
   const keyboardTexture = useMemo(() => {
     const loader = new THREE.TextureLoader();
@@ -116,6 +118,10 @@ export default function Desk() {
           onClick={() => {
             hideTooltip();
             openModal(<DesktopWindow />, true);
+            trackEvent('monitor_opened_stefanos', {
+              event_category: 'engagement',
+              event_label: 'opened_stefanos_desktop',
+            });
             if (monitorSound.current) monitorSound.current.play();
           }}
         >
@@ -269,28 +275,6 @@ export default function Desk() {
           />
         </mesh>
       </group>
-
-      {/* Under-desk RGB strip */}
-      {/* <mesh position={[0, 0.8, 1]}>
-        <boxGeometry args={[5.6, 0.05, 0.05]} />
-        <meshStandardMaterial color="#020910" emissive="#00f5ff" emissiveIntensity={1.5} />
-      </mesh> */}
-
-      {/* Wall neon strips (left/right) */}
-      {/* <mesh position={[-9.8, 2.5, -2]}>
-        <boxGeometry args={[0.08, 3, 0.08]} />
-        <meshStandardMaterial color="#200020" emissive="#ff33ff" emissiveIntensity={1.3} />
-      </mesh>
-      <mesh position={[9.8, 2.5, -2]}>
-        <boxGeometry args={[0.08, 3, 0.08]} />
-        <meshStandardMaterial color="#200020" emissive="#33aaff" emissiveIntensity={1.3} />
-      </mesh> */}
-
-      {/* Ceiling strip near window */}
-      {/* <mesh position={[0, 6.9, -4]}>
-        <boxGeometry args={[10, 0.08, 0.08]} />
-        <meshStandardMaterial color="#200020" emissive="#ff66ff" emissiveIntensity={1.2} />
-      </mesh> */}
     </group>
   );
 }

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FiDownload } from 'react-icons/fi';
 import type { IconType } from 'react-icons';
 import SkillBoard from '../SkillBoard/SkillBoard';
 import ProjectsBoard from './ProjectsBoard';
@@ -118,6 +119,17 @@ export default function DesktopWindow() {
                   className={resumeStyles.iframe}
                   loading="lazy"
                 />
+              </div>
+              <div className={resumeStyles.resumeLink}>
+                <a
+                  href="/StefanBobrowskiResume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                >
+                  <FiDownload className={resumeStyles.resumeIcon} />
+                  Download Resume
+                </a>
               </div>
             </div>
           )}

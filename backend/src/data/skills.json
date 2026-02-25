@@ -7,6 +7,10 @@
       { "name": "React", "url": "https://react.dev/" },
       { "name": "Vite", "url": "https://vitejs.dev/" },
       { "name": "Astro", "url": "https://astro.build/" },
+      {
+        "name": "Web Components",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_components"
+      },
       { "name": "TanStack Query", "url": "https://tanstack.com/query" },
       { "name": "Zustand", "url": "https://zustand-demo.pmnd.rs/" },
       { "name": "Axios", "url": "https://axios-http.com/" },

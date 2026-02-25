@@ -24,6 +24,9 @@ const ResumeViewer = () => {
           />
         </div>
       </div>
+      <div className={styles.mobileNotice}>
+        <p>📱 For best results on mobile, download and view the PDF</p>
+      </div>
       <div className={styles.resumeLink}>
         <a href="/StefanBobrowskiResume.pdf" target="_blank" rel="noopener noreferrer" download>
           <FiDownload className={styles.resumeIcon} />
