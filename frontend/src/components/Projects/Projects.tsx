@@ -3,6 +3,7 @@ import { FaGithub } from 'react-icons/fa';
 import { FiGlobe } from 'react-icons/fi';
 import styles from './Projects.module.scss';
 import { useProjectsStore } from '../../store/projectsStore';
+import { useGA4 } from '../../hooks/useGA4';
 import { apiEndpoints } from '../../config/api';
 
 interface ProjectsProps {
@@ -10,6 +11,7 @@ interface ProjectsProps {
 }
 
 export default function Projects({ variant = 'page' }: ProjectsProps) {
+  const { trackEvent } = useGA4();
   const projects = useProjectsStore(state => state.projects);
   const setProjects = useProjectsStore(state => state.setProjects);
   const loading = useProjectsStore(state => state.loading);
@@ -31,6 +33,20 @@ export default function Projects({ variant = 'page' }: ProjectsProps) {
         setLoading(false);
       });
   }, [projects, setProjects, setLoading]);
+
+  const handleProjectLinkClick = (
+    projectTitle: string,
+    linkType: 'live' | 'github',
+    url: string
+  ) => {
+    trackEvent('project_link_clicked', {
+      event_category: 'engagement',
+      event_label: `project_${linkType}`,
+      project_name: projectTitle,
+      link_type: linkType,
+      link_url: url,
+    });
+  };
 
   if (loading) {
     return (
@@ -61,7 +77,12 @@ export default function Projects({ variant = 'page' }: ProjectsProps) {
 
             <div className={styles.links}>
               {project.links.live && (
-                <a href={project.links.live} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={project.links.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => handleProjectLinkClick(project.title, 'live', project.links.live!)}
+                >
                   <FiGlobe style={{ marginRight: 6, verticalAlign: 'middle' }} />
                   Live Site
                 </a>
@@ -72,6 +93,9 @@ export default function Projects({ variant = 'page' }: ProjectsProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.githubLink}
+                  onClick={() =>
+                    handleProjectLinkClick(project.title, 'github', project.links.github!)
+                  }
                 >
                   <FaGithub style={{ marginRight: 6, verticalAlign: 'middle' }} />
                   GitHub

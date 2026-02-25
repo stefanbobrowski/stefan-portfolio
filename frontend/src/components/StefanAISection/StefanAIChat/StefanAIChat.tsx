@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { apiEndpoints } from '../../../config/api';
+import { useGA4 } from '../../../hooks/useGA4';
 import styles from './StefanAIChat.module.scss';
 
 const MAX_QUESTION_LENGTH = 500;
@@ -10,6 +11,7 @@ export default function StefanAIChat({
 }: {
   onSendPreset?: (fn: (msg: string) => void) => void;
 }) {
+  const { trackEvent } = useGA4();
   const [messages, setMessages] = useState<{ role: 'user' | 'assistant'; text: string }[]>([
     {
       role: 'assistant',
@@ -50,11 +52,31 @@ export default function StefanAIChat({
       if (!res.ok) {
         const errorMessage = data.error || 'An error occurred. Please try again.';
         setMessages(prev => [...prev, { role: 'assistant', text: errorMessage }]);
+
+        // Track AI error
+        trackEvent('stefan_ai_error', {
+          event_category: 'engagement',
+          event_label: 'ai_error',
+          error_message: errorMessage,
+        });
       } else {
         setMessages(prev => [...prev, { role: 'assistant', text: data.answer ?? 'No response.' }]);
+
+        // Track successful AI question
+        trackEvent('stefan_ai_question', {
+          event_category: 'engagement',
+          event_label: 'ai_question_success',
+          question_length: text.length,
+        });
       }
-    } catch {
+    } catch (error) {
       setMessages(prev => [...prev, { role: 'assistant', text: 'Error contacting Stefan AI.' }]);
+
+      // Track network error
+      trackEvent('stefan_ai_error', {
+        event_category: 'engagement',
+        event_label: 'ai_network_error',
+      });
     }
 
     setInput('');
