@@ -128,7 +128,7 @@ export default function DesktopWindow() {
             <div className={resumeStyles.resumeContainer}>
               <div className={resumeStyles.iframeWrapper}>
                 <iframe
-                  src="/StefanBobrowskiResume.pdf"
+                  src="/StefanBobrowskiResume.pdf#view=FitH&zoom=page-fit"
                   title="Stefan Bobrowski Resume"
                   className={resumeStyles.iframe}
                   loading="lazy"

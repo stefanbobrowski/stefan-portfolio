@@ -17,7 +17,7 @@ const ResumeViewer = () => {
       <div className={styles.resumeContainer}>
         <div className={styles.iframeWrapper}>
           <iframe
-            src="/StefanBobrowskiResume.pdf"
+            src="/StefanBobrowskiResume.pdf#view=FitH&zoom=page-fit"
             title="Stefan Bobrowski Resume"
             className={styles.iframe}
             loading="lazy"
