@@ -3,7 +3,7 @@
     "title": "Astro Starter",
     "slug": "astro-starter",
     "type": "external",
-    "description": "Astro starter template for SEO-powered websites. Includes TypeScript, SCSS component design system with tokens, and SEO best practices for a multi-page website.",
+    "description": "Production-ready Astro template built to rank. Ships with a TypeScript-first architecture, SCSS design token system, structured data, and Core Web Vitals optimizations, so new content sites start with strong SEO foundations out of the box.",
     "tech": ["Astro", "TypeScript", "SCSS", "SEO"],
     "links": {
       "live": "https://astro-stefan-starter-655521068881.us-central1.run.app",
@@ -15,7 +15,7 @@
     "title": "Video Searcher",
     "slug": "video-searcher",
     "type": "external",
-    "description": "Upload a video and let AI find the exact moments you're looking for. Get precise timestamps for headshots, kills, scores, and more.",
+    "description": "AI-powered video analysis tool that turns long-form video into searchable, timestamped moments. Users upload any video, enter a natural-language query, and the app returns the exact scenes that match, powered by Vertex AI video intelligence with OAuth2-secured access and rate limiting.",
     "tech": ["TypeScript", "OAuth2", "Rate Limiting", "Vertex AI"],
     "links": {
       "live": "https://video-searcher-frontend-637174041158.us-central1.run.app/",
@@ -27,7 +27,7 @@
     "title": "GGList",
     "slug": "gglist",
     "type": "external",
-    "description": "Pokémon card favorites & rating site using Google OAuth, Cloud SQL, and a full Vite + Node.js stack.",
+    "description": "Full-stack web app with Google OAuth authentication, Cloud SQL persistence, and interactive data visualization via Chart.js. Users can save, rate, and analyze their collections. It demonstrates end-to-end auth, relational data modeling, and a modern React + Node.js architecture deployed on GCP.",
     "tech": ["Vite", "React", "TypeScript", "Node", "CloudSQL", "OAuth2", "Chart.js"],
     "links": {
       "live": "https://gglist-frontend-177352903615.us-central1.run.app/",
@@ -39,7 +39,7 @@
     "title": "Upload Center",
     "slug": "upload-center",
     "type": "external",
-    "description": "A GCP-native app for AI analysis of text sentiments, images, and data files using VertexAI and Gemini models.",
+    "description": "GCP-native multi-modal AI platform that extracts structured insights from unstructured content. Supports text sentiment analysis, image recognition, and CSV data profiling, all processed through Vertex AI and Gemini models with results stored and queryable in BigQuery.",
     "tech": ["GCP", "Cloud Run", "BigQuery", "VertexAI", "Gemini"],
 
     "links": {
@@ -52,7 +52,7 @@
     "title": "Nerd by Day, Nerd by Night",
     "slug": "nerd-by-day",
     "type": "external",
-    "description": "Brand + merch project with a custom e-commerce stack on GCP.",
+    "description": "End-to-end e-commerce platform built from scratch on GCP. Handles product catalog, Stripe payment processing, order management, and Cloud SQL persistence with no third-party storefront and full control over the stack.",
     "tech": ["Vite", "React", "Stripe", "Cloud SQL", "Cloud Run"],
 
     "links": {
@@ -64,7 +64,7 @@
     "title": "Susie Jetta",
     "slug": "susie-jetta",
     "type": "external",
-    "description": "Makeup and Photography business hosted on GCP.",
+    "description": "Client site for a small business owner, designed, built, and deployed to production on GCP. Includes Cloud Build CI/CD, Cloud Storage for media assets, and a performant React frontend optimized for local SEO and mobile conversion.",
     "tech": ["Vite", "React", "TypeScript", "Cloud Build", "Cloud Storage"],
     "links": {
       "live": "https://www.susie-jetta.com/",
