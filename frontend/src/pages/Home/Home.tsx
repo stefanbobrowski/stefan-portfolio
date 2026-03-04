@@ -1,4 +1,5 @@
 import { Suspense, lazy } from 'react';
+import { Link } from 'react-router-dom';
 import { usePageMetaTags } from '../../hooks/usePageMetaTags';
 import RoomInstructions from '../../components/Room/RoomInstructions';
 import styles from './Home.module.scss';
@@ -17,6 +18,33 @@ export function Home() {
 
   return (
     <div className={styles.homeWrapper}>
+      <section className={styles.hero}>
+        <div className={styles.heroContent}>
+          <p className={styles.heroEyebrow}>Available for new opportunities</p>
+          <h1 className={styles.heroName}>Stefan Bobrowski</h1>
+          <h2 className={styles.heroTitle}>
+            Full Stack Web Developer
+            <span className={styles.heroStack}>
+              React &nbsp;·&nbsp; Node &nbsp;·&nbsp; TypeScript
+            </span>
+          </h2>
+          <p className={styles.heroTagline}>I build scalable, production-ready web applications.</p>
+          <ul className={styles.heroStats}>
+            <li>10+ years shipping full-stack apps in production</li>
+            <li>AI-powered integrations, 3D experiences &amp; modern tooling</li>
+            <li>React, Node.js, TypeScript, Google Cloud &amp; more</li>
+            <li>SEO strategy, analytics &amp; Astro-powered content sites that actually rank</li>
+          </ul>
+          <div className={styles.heroCtas}>
+            <Link to="/projects" className={styles.ctaPrimary}>
+              View Projects
+            </Link>
+            <Link to="/resume" className={styles.ctaSecondary}>
+              View Resume
+            </Link>
+          </div>
+        </div>
+      </section>
       <Suspense fallback={<div>Loading...</div>}>
         <Room />
       </Suspense>
