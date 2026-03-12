@@ -31,10 +31,11 @@ export function Home() {
           </h2>
           <p className={styles.heroTagline}>I build scalable, production-ready web applications.</p>
           <ul className={styles.heroStats}>
-            <li>10+ years shipping full-stack apps in production</li>
-            <li>AI-powered integrations, 3D experiences &amp; modern tooling</li>
-            <li>React, Node.js, TypeScript, Google Cloud &amp; more</li>
-            <li>SEO strategy, analytics &amp; Astro-powered content sites that actually rank</li>
+            <li>10+ years shipping full-stack applications in production</li>
+            <li>AI integrations, 3D experiences, and modern developer tooling</li>
+            <li>React, TypeScript, Node.js, JavaScript, Google Cloud Platform, and more</li>
+            <li>SEO strategy, analytics, and Astro-powered content sites that rank</li>
+            <li>Component design systems with CSS design tokens</li>
           </ul>
           <div className={styles.heroActions}>
             <div className={styles.heroCtas}>
