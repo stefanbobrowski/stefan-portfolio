@@ -1,5 +1,6 @@
 import { Suspense, lazy } from 'react';
 import { Link } from 'react-router-dom';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { usePageMetaTags } from '../../hooks/usePageMetaTags';
 import RoomInstructions from '../../components/Room/RoomInstructions';
 import styles from './Home.module.scss';
@@ -35,13 +36,35 @@ export function Home() {
             <li>React, Node.js, TypeScript, Google Cloud &amp; more</li>
             <li>SEO strategy, analytics &amp; Astro-powered content sites that actually rank</li>
           </ul>
-          <div className={styles.heroCtas}>
-            <Link to="/projects" className={styles.ctaPrimary}>
-              View Projects
-            </Link>
-            <Link to="/resume" className={styles.ctaSecondary}>
-              View Resume
-            </Link>
+          <div className={styles.heroActions}>
+            <div className={styles.heroCtas}>
+              <Link to="/projects" className={styles.ctaPrimary}>
+                View Projects
+              </Link>
+              <Link to="/resume" className={styles.ctaSecondary}>
+                View Resume
+              </Link>
+            </div>
+            <div className={styles.heroSocials}>
+              <a
+                href="https://github.com/stefanbobrowski"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialLink}
+                aria-label="GitHub"
+              >
+                <FaGithub />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/stefanbobrowski"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialLink}
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin />
+              </a>
+            </div>
           </div>
         </div>
       </section>
