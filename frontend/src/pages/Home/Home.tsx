@@ -32,18 +32,24 @@ export function Home() {
           <p className={styles.heroTagline}>I build scalable, production-ready web applications.</p>
           <ul className={styles.heroStats}>
             <li>10+ years shipping full-stack applications in production</li>
-            <li>AI integrations, 3D experiences, and modern developer tooling</li>
-            <li>React, TypeScript, Node.js, JavaScript, Google Cloud Platform, and more</li>
-            <li>SEO strategy, analytics, and Astro-powered content sites that rank</li>
+            <li>React, TypeScript, JavaScript, Node.js, Next.js, and more</li>
+            <li>AI integrations with Claude, Gemini, and Vertex AI</li>
+            <li>Cloud architecture and services on Google Cloud Platform</li>
+            <li>
+              SEO strategy, analytics, and content sites built with Astro or Next.js that rank
+            </li>
             <li>Component design systems with CSS design tokens</li>
           </ul>
           <div className={styles.heroActions}>
             <div className={styles.heroCtas}>
-              <Link to="/projects" className={styles.ctaPrimary}>
-                View Projects
+              <Link to="/skills" className={styles.ctaPrimary}>
+                <span>View Skills</span>
+              </Link>
+              <Link to="/projects" className={styles.ctaSecondary}>
+                <span>View Projects</span>
               </Link>
               <Link to="/resume" className={styles.ctaSecondary}>
-                View Resume
+                <span>View Resume</span>
               </Link>
             </div>
             <div className={styles.heroSocials}>

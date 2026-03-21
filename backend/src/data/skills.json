@@ -5,16 +5,17 @@
       { "name": "JavaScript", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
       { "name": "TypeScript", "url": "https://www.typescriptlang.org/" },
       { "name": "React", "url": "https://react.dev/" },
+      { "name": "Next.js", "url": "https://nextjs.org/" },
       { "name": "Vite", "url": "https://vitejs.dev/" },
       { "name": "Astro", "url": "https://astro.build/" },
       {
         "name": "Web Components",
         "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_components"
       },
-      { "name": "TanStack Query", "url": "https://tanstack.com/query" },
       { "name": "Zustand", "url": "https://zustand-demo.pmnd.rs/" },
+      { "name": "React Query", "url": "https://tanstack.com/query" },
       { "name": "Axios", "url": "https://axios-http.com/" },
-      { "name": "SASS/SCSS", "url": "https://sass-lang.com/" },
+      { "name": "SASS", "url": "https://sass-lang.com/" },
       { "name": "CSS Modules", "url": "https://github.com/css-modules/css-modules" },
       {
         "name": "Responsive Design",
@@ -29,9 +30,20 @@
       { "name": "Node.js", "url": "https://nodejs.org/" },
       { "name": "Express", "url": "https://expressjs.com/" },
       { "name": "REST APIs", "url": "https://restfulapi.net/" },
+      { "name": "GraphQL", "url": "https://graphql.org/" },
       { "name": "PostgreSQL", "url": "https://www.postgresql.org/" },
-      { "name": "Passport.js", "url": "https://www.passportjs.org/" },
-      { "name": "Multer", "url": "https://github.com/expressjs/multer" }
+      { "name": "Redis", "url": "https://redis.io/" },
+      { "name": "Upstash", "url": "https://upstash.com/" }
+    ]
+  },
+  "ai_tools": {
+    "color": "#32514D",
+    "skills": [
+      { "name": "GitHub Copilot", "url": "https://github.com/features/copilot" },
+      { "name": "Claude", "url": "https://www.anthropic.com/claude" },
+      { "name": "Gemini", "url": "https://ai.google.dev/" },
+      { "name": "Vertex AI", "url": "https://cloud.google.com/vertex-ai" },
+      { "name": "ChatGPT", "url": "https://openai.com/chatgpt" }
     ]
   },
   "cloud": {
@@ -39,11 +51,12 @@
     "skills": [
       { "name": "Google Cloud Platform", "url": "https://cloud.google.com/" },
       { "name": "Cloud Run", "url": "https://cloud.google.com/run" },
+      { "name": "Cloud Build", "url": "https://cloud.google.com/build" },
       { "name": "Cloud Storage", "url": "https://cloud.google.com/storage" },
-      { "name": "Artifact Registry", "url": "https://cloud.google.com/artifact-registry" },
       { "name": "Cloud SQL", "url": "https://cloud.google.com/sql" },
       { "name": "BigQuery", "url": "https://cloud.google.com/bigquery" },
-      { "name": "Vertex AI", "url": "https://cloud.google.com/vertex-ai" }
+      { "name": "Vertex AI", "url": "https://cloud.google.com/vertex-ai" },
+      { "name": "Firebase", "url": "https://firebase.google.com/" }
     ]
   },
   "security": {
@@ -68,9 +81,7 @@
       { "name": "Git", "url": "https://git-scm.com/" },
       { "name": "GitHub", "url": "https://github.com/" },
       { "name": "GitHub Actions", "url": "https://github.com/features/actions" },
-      { "name": "Docker", "url": "https://www.docker.com/" },
-      { "name": "Cloud Build", "url": "https://cloud.google.com/build" },
-      { "name": "Kubernetes", "url": "https://kubernetes.io/" }
+      { "name": "Docker", "url": "https://www.docker.com/" }
     ]
   },
   "design": {
@@ -111,16 +122,7 @@
       { "name": "Core Web Vitals", "url": "https://web.dev/vitals/" }
     ]
   },
-  "ai_tools": {
-    "color": "#32514D",
-    "skills": [
-      { "name": "GitHub Copilot", "url": "https://github.com/features/copilot" },
-      { "name": "Claude", "url": "https://www.anthropic.com/claude" },
-      { "name": "Gemini", "url": "https://ai.google.dev/" },
-      { "name": "Vertex AI", "url": "https://cloud.google.com/vertex-ai" },
-      { "name": "ChatGPT", "url": "https://openai.com/chatgpt" }
-    ]
-  },
+
   "game_dev": {
     "color": "#443C66",
     "skills": [
