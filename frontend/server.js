@@ -42,13 +42,19 @@ const validRoutes = ['/', '/about', '/projects', '/skills', '/resume'];
 app.get('/{*splat}', (req, res) => {
   const pathname = req.path;
 
+  // Set Cache-Control: no-store for index.html to prevent caching
+  const sendIndex = (status = 200) => {
+    res.set('Cache-Control', 'no-store');
+    res.status(status).sendFile(path.join(distPath, 'index.html'));
+  };
+
   // Check if the route is valid
   if (validRoutes.includes(pathname)) {
-    res.sendFile(path.join(distPath, 'index.html'));
+    sendIndex();
   } else {
     // Return 404 for invalid routes - still serve index.html for SPA routing
     // but with 404 status code so Google doesn't index these pages
-    res.status(404).sendFile(path.join(distPath, 'index.html'));
+    sendIndex(404);
   }
 });
 
