@@ -2,8 +2,8 @@ import profilePic from '../../assets/StefanBobrowskiAvatar.jpeg';
 export default function AboutBoard() {
   const about = {
     name: 'Stefan Bobrowski',
-    title: 'Full-Stack Engineer',
-    bio: 'Full-Stack Engineer with over 10 years of experience building intelligent, scalable web applications. Recently specialized in integrating cutting-edge AI capabilities in production systems using Claude, Gemini, and Vertex AI. Expert in React, TypeScript, and modern JavaScript development, with hands-on experience implementing Cloud Architecture and AI-powered features. Skilled in architecting secure, cloud-native solutions on Google Cloud Platform, developing both elegant user interfaces and robust backend APIs with Node.js/Express. Passionate about solving real-world problems, writing clean and maintainable code, and delivering innovative solutions that provide measurable business value.',
+    title: 'Frontend Engineer',
+    bio: 'Frontend Engineer with 11+ years of professional experience building fast, polished web applications that drive measurable business growth across e-commerce, media platforms, and enterprise products. My core stack is JavaScript, React, TypeScript, Vite, SCSS, and API development with Node.js and Express. Throughout my career I’ve had a solid eye for UI/UX, performance, and accessibility. Currently expanding into cloud architecture on Google Cloud Platform and pursuing Associate Cloud Engineer certification.',
   };
 
   return (

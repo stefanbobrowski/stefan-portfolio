@@ -7,12 +7,12 @@ const StefanAISection = lazy(() => import('../../components/StefanAISection/Stef
 
 export function About() {
   usePageMetaTags({
-    title: 'About Stefan Bobrowski - Full-Stack Engineer',
+    title: 'About Stefan Bobrowski - Frontend Engineer',
     description:
-      'Learn about Stefan Bobrowski, a full-stack engineer with 10+ years of experience building scalable web applications using React, TypeScript, Node.js, and Google Cloud Platform.',
+      'Learn about Stefan Bobrowski, a Frontend engineer with 10+ years of experience building scalable web applications using JavaScript,React, TypeScript, Node.js, and Google Cloud Platform.',
     ogTitle: 'About Stefan Bobrowski',
     ogDescription:
-      'Full-Stack Engineer specializing in modern web technologies, AI integration, and cloud infrastructure.',
+      'Frontend Engineer specializing in modern web technologies, AI integration, and cloud infrastructure.',
   });
 
   return (
@@ -20,8 +20,8 @@ export function About() {
       <h2>About</h2>
       <div className={styles.flexWrap}>
         <div className={styles.info}>
-          <p>This is the portfolio website of Stefan Bobrowski, Full-Stack Engineer. </p>
-          <p>Built with a modern 2026 full-stack toolset:</p>
+          <p>This is the portfolio website of Stefan Bobrowski, Frontend Engineer. </p>
+          <p>Built with a modern 2026 Frontend toolset:</p>
 
           <table>
             <thead>

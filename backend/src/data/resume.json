@@ -1,7 +1,7 @@
 {
   "name": "Stefan Bobrowski",
-  "title": "Full-Stack Engineer & Growth-Focused Developer",
-  "summary": "Full-Stack Engineer with 10+ years developing professional web applications that attract more visitors and drive business growth. Expert in modern and classical JavaScript ecosystems, pragmatically selecting architecture based on project requirements: client-focused SPAs with Vite and TypeScript, server-rendered SEO-driven apps with Astro, or vanilla JavaScript websites with Web Components. Recently specialized in architecting cloud-native AI solutions using Google Cloud Platform and Vertex AI.",
+  "title": "Frontend Engineer",
+  "summary": "Frontend Engineer with 11+ years of professional experience building fast, polished web applications that drive measurable business growth across e-commerce, media platforms, and enterprise products. My core stack is JavaScript, React, TypeScript, Vite, SCSS, and API development with Node.js and Express. Throughout my career I’ve had a solid eye for UI/UX, performance, and accessibility. Currently expanding into cloud architecture on Google Cloud Platform and pursuing Associate Cloud Engineer certification. ",
   "experience": [
     {
       "company": "Prepaire Labs",

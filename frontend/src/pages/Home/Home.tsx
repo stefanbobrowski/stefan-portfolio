@@ -9,12 +9,12 @@ const Room = lazy(() => import('../../components/Room/Room'));
 
 export function Home() {
   usePageMetaTags({
-    title: 'Stefan Bobrowski - Full-Stack Engineer & SEO Specialist',
+    title: 'Stefan Bobrowski - Frontend Engineer & SEO Specialist',
     description:
-      'Full-Stack Engineer with 10+ years building scalable web applications. AI-powered systems, React, TypeScript, Node.js. Help small businesses implement SEO strategies.',
-    ogTitle: 'Stefan Bobrowski - Full-Stack Engineer',
+      'Frontend Engineer with 10+ years building scalable web applications. AI-powered systems, React, TypeScript, Node.js. Help small businesses implement SEO strategies.',
+    ogTitle: 'Stefan Bobrowski - Frontend Engineer',
     ogDescription:
-      'Explore my interactive portfolio featuring AI integrations, 3D visualizations, and modern full-stack projects.',
+      'Explore my interactive portfolio featuring AI integrations, 3D visualizations, and modern Frontend projects.',
   });
 
   return (
@@ -24,21 +24,18 @@ export function Home() {
           <p className={styles.heroEyebrow}>Available for new opportunities</p>
           <h1 className={styles.heroName}>Stefan Bobrowski</h1>
           <h2 className={styles.heroTitle}>
-            Full Stack Web Developer
+            Frontend Engineer
             <span className={styles.heroStack}>
-              React &nbsp;·&nbsp; Node &nbsp;·&nbsp; TypeScript
+              JavaScript &nbsp;·&nbsp; TypeScript &nbsp;·&nbsp; React &nbsp;·&nbsp; Node.js
             </span>
           </h2>
           <p className={styles.heroTagline}>I build scalable, production-ready web applications.</p>
           <ul className={styles.heroStats}>
-            <li>10+ years shipping full-stack applications in production</li>
-            <li>React, TypeScript, JavaScript, Node.js, Next.js, and more</li>
-            <li>AI integrations with Claude, Gemini, and Vertex AI</li>
+            <li>10+ years shipping Frontend applications in production</li>
+            <li>JavaScript, TypeScript, React, SCSS, Vite, and more</li>
+            <li>API Development with Node.js and Express</li>
             <li>Cloud architecture and services on Google Cloud Platform</li>
-            <li>
-              SEO strategy, analytics, and content sites built with Astro or Next.js that rank
-            </li>
-            <li>Component design systems with CSS design tokens</li>
+            <li>AI integrations with Claude, Gemini, and Vertex AI</li>
           </ul>
           <div className={styles.heroActions}>
             <div className={styles.heroCtas}>

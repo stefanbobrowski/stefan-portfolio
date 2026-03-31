@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerInner}>
-        <p>Stefan Bobrowski - Full-Stack Engineer</p>
+        <p>Stefan Bobrowski - Frontend Engineer</p>
         <div className={styles.socialLinks}>
           <a
             href="mailto:stefanbobrowski1@gmail.com"

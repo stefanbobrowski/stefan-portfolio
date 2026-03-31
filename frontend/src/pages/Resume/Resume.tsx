@@ -4,11 +4,11 @@ import styles from '../../../src/components/ResumeViewer.module.scss';
 
 const ResumeViewer = () => {
   usePageMetaTags({
-    title: 'Resume - Stefan Bobrowski | Full-Stack Engineer',
+    title: 'Resume - Stefan Bobrowski | Frontend Engineer',
     description:
-      "Download Stefan Bobrowski's resume. 10+ years of full-stack engineering experience with expertise in React, TypeScript, Node.js, and Google Cloud Platform.",
+      "Download Stefan Bobrowski's resume. 10+ years of Frontend engineering experience with expertise in React, TypeScript, Node.js, and Google Cloud Platform.",
     ogTitle: 'Resume - Stefan Bobrowski',
-    ogDescription: 'Professional resume of Stefan Bobrowski, Full-Stack Engineer.',
+    ogDescription: 'Professional resume of Stefan Bobrowski, Frontend Engineer.',
   });
 
   return (
