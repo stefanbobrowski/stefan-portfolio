@@ -1,6 +1,6 @@
 # Stefan Portfolio
 
-The portfolio website of Full-Stack Engineer Stefan Bobrowski. Built with Vite, React, TypeScript, Three.js, and Vertex AI.
+The portfolio website of Frontend Engineer Stefan Bobrowski. Built with Vite, React, TypeScript, Three.js, and Vertex AI.
 
 ## Features
 
