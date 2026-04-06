@@ -6,9 +6,10 @@
   width: 100%;
   max-width: 1440px;
   aspect-ratio: 16 / 10;
-  max-height: calc(100vh - 105px); // header height
+  // max-height: calc(100vh - 105px); // header height
+  overflow: hidden;
   margin: 0 auto;
-  // padding: 1rem;
+  /* padding: 1rem; */
   outline: 1px solid #222; // debug
   background: #0a0a0a;
 

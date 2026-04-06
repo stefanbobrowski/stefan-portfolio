@@ -72,7 +72,13 @@ export function Home() {
           </div>
         </div>
       </section>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense
+        fallback={
+          <div className={styles.suspenseFallback}>
+            <span className={styles.spinner} aria-label="Loading" />
+          </div>
+        }
+      >
         <Room />
       </Suspense>
       <RoomInstructions />
