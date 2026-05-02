@@ -79,7 +79,7 @@
     "description": "Client site for a small business owner, designed, built, and deployed to production on GCP. Includes Cloud Build CI/CD, Cloud Storage for media assets, and a performant React frontend optimized for local SEO and mobile conversion.",
     "tech": ["Vite", "React", "TypeScript", "Cloud Build", "Cloud Storage"],
     "links": {
-      "live": "https://www.susie-jetta.com/",
+      "live": "https://susie-jetta.com/",
       "github": "https://github.com/stefanbobrowski/susie-jetta-gcp"
     },
     "thumbnail": "/projectThumbs/susie-thumb.png"
