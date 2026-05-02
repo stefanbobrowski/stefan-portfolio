@@ -1,5 +1,17 @@
 [
   {
+    "title": "Doodle Market",
+    "slug": "doodle-market",
+    "type": "external",
+    "description": "A full-stack Vite, React, TypeScript, Express app for uploading, selling, and rating doodles. Demonstrates backend concepts like JWT authentication, ownership-based authorization, purchase flow, transactional emails, audit logging, rate limiting, integration testing, and admin tooling.",
+    "tech": ["Vite", "React", "TypeScript", "Express", "JWT", "better-sqlite3"],
+    "links": {
+      "live": "",
+      "github": "https://github.com/stefanbobrowski/doodle-market"
+    },
+    "thumbnail": "/projectThumbs/doodle-market-thumb.png"
+  },
+  {
     "title": "Astro Starter",
     "slug": "astro-starter",
     "type": "external",
@@ -7,7 +19,7 @@
     "tech": ["Astro", "TypeScript", "SCSS", "SEO"],
     "links": {
       "live": "https://astro-stefan-starter-655521068881.us-central1.run.app",
-      "github": ""
+      "github": "https://github.com/stefanbobrowski/astro-stefan-starter"
     },
     "thumbnail": "/projectThumbs/astro-starter-thumb.png"
   },
