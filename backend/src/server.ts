@@ -31,6 +31,13 @@ app.use((_req, res, next) => {
   next();
 });
 
+app.use((req, res, next) => {
+  if (req.hostname === 'www.stefanbobrowski.com') {
+    return res.redirect(301, 'https://stefanbobrowski.com' + req.originalUrl);
+  }
+  next();
+});
+
 app.get('/api/status', (req, res) => {
   return res.json({ ok: true, message: 'Backend running' });
 });
