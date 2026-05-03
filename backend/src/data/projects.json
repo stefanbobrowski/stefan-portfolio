@@ -6,7 +6,7 @@
     "description": "A full-stack Vite, React, TypeScript, Express app for uploading, selling, and rating doodles. Demonstrates backend concepts like JWT authentication, ownership-based authorization, purchase flow, transactional emails, audit logging, rate limiting, integration testing, and admin tooling.",
     "tech": ["Vite", "React", "TypeScript", "Express", "JWT", "better-sqlite3"],
     "links": {
-      "live": "",
+      "live": "https://doodle-market-212973711449.us-central1.run.app/",
       "github": "https://github.com/stefanbobrowski/doodle-market"
     },
     "thumbnail": "/projectThumbs/doodle-market-thumb.png"
