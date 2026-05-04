@@ -9,6 +9,7 @@ export default function ProjectsPage() {
     ogTitle: 'Projects - Stefan Bobrowski',
     ogDescription:
       'A portfolio of innovative web applications showcasing modern web technologies and AI integration.',
+    ogUrl: 'https://stefanbobrowski.com/projects',
   });
 
   return <Projects variant="page" />;

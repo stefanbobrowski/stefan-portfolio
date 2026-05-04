@@ -15,6 +15,16 @@ console.log('📂 Serving dist from:', distPath);
 
 app.use(express.static(distPath));
 
+// Add SEO headers to help Google understand page status
+app.use((req, res, next) => {
+  // Add X-Robots-Tag to index all pages by default
+  res.set(
+    'X-Robots-Tag',
+    'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+  );
+  next();
+});
+
 // Middleware to redirect trailing slashes to non-trailing-slash versions
 // This prevents Google from indexing the same content twice
 app.use((req, res, next) => {

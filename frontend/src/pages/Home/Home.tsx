@@ -15,6 +15,7 @@ export function Home() {
     ogTitle: 'Stefan Bobrowski - Frontend Engineer',
     ogDescription:
       'Explore my interactive portfolio featuring AI integrations, 3D visualizations, and modern Frontend projects.',
+    ogUrl: 'https://stefanbobrowski.com/',
   });
 
   return (

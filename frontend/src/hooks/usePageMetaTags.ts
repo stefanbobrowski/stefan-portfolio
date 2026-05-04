@@ -3,9 +3,11 @@ import { useEffect } from 'react';
 export interface PageMetaTags {
   title: string;
   description: string;
+  canonical?: string;
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
+  ogUrl?: string;
   twitterTitle?: string;
   twitterDescription?: string;
   twitterImage?: string;
@@ -29,6 +31,11 @@ export const usePageMetaTags = (tags: PageMetaTags) => {
     }
     descriptionMeta.content = tags.description;
 
+    // Update canonical URL if provided
+    if (tags.canonical) {
+      updateCanonical(tags.canonical);
+    }
+
     // Update OG tags if provided
     if (tags.ogTitle) {
       updateMetaProperty('og:title', tags.ogTitle);
@@ -38,6 +45,9 @@ export const usePageMetaTags = (tags: PageMetaTags) => {
     }
     if (tags.ogImage) {
       updateMetaProperty('og:image', tags.ogImage);
+    }
+    if (tags.ogUrl) {
+      updateMetaProperty('og:url', tags.ogUrl);
     }
 
     // Update Twitter tags if provided
@@ -52,6 +62,19 @@ export const usePageMetaTags = (tags: PageMetaTags) => {
     }
   }, [tags]);
 };
+
+/**
+ * Helper to update or create canonical link tag
+ */
+function updateCanonical(href: string) {
+  let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+  if (!canonical) {
+    canonical = document.createElement('link');
+    canonical.rel = 'canonical';
+    document.head.appendChild(canonical);
+  }
+  canonical.href = href;
+}
 
 /**
  * Helper to update or create meta tags with property attribute (OG tags)

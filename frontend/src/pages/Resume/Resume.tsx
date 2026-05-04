@@ -9,6 +9,7 @@ const ResumeViewer = () => {
       "Download Stefan Bobrowski's resume. 10+ years of Frontend engineering experience with expertise in React, TypeScript, Node.js, and Google Cloud Platform.",
     ogTitle: 'Resume - Stefan Bobrowski',
     ogDescription: 'Professional resume of Stefan Bobrowski, Frontend Engineer.',
+    ogUrl: 'https://stefanbobrowski.com/resume',
   });
 
   return (

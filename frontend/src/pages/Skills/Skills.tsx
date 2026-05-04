@@ -9,6 +9,7 @@ export default function SkillsPage() {
     ogTitle: 'Technical Skills - Stefan Bobrowski',
     ogDescription:
       'Frontend engineer with expertise in modern JavaScript frameworks, cloud infrastructure, and AI systems.',
+    ogUrl: 'https://stefanbobrowski.com/skills',
   });
 
   return <SkillBoard />;

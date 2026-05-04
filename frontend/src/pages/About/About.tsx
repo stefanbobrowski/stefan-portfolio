@@ -13,6 +13,7 @@ export function About() {
     ogTitle: 'About Stefan Bobrowski',
     ogDescription:
       'Frontend Engineer specializing in modern web technologies, AI integration, and cloud infrastructure.',
+    ogUrl: 'https://stefanbobrowski.com/about',
   });
 
   return (
