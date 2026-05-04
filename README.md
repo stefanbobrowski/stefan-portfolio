@@ -1,6 +1,6 @@
 # Stefan Bobrowski Portfolio
 
-<pre style="color: #00ff00; background-color: #000000; font-family: monospace; padding: 10px; border-radius: 5px; font-size: 12px; line-height: 1.2;">
+```
                                                ..,.oooE777999V(;
                                   ...oooP779090(;''       ''''  I
                     ...ooB777979V;;''       .....=v}}=}=}=}}v==  5
@@ -36,13 +36,13 @@
                                       `L,  ~~`          _uuua''
                                         `L,:    _uuua''
                                           `LaE''
-</pre>
+```
 
 The portfolio website of Frontend Engineer Stefan Bobrowski. Built with Vite, React, TypeScript, SCSS, Express, Three.js, and Google Vertex AI. Hosted on Google Cloud Platform with Cloud Run.
 
 ## Features
 
-- **Interactive 3D Room**: Explore an immersive 3D room. Find my favorite books, games, music, my cats, and more.
+- **Interactive 3D Room**: Explore an immersive 3D room. Find my favorite books, music, games, cats, and more.
 - **AI Assistant**: Chat with Stefan AI powered by Vertex AI
 - **Project Showcase**: Browse through my recent featured projects. Live URLs and github repos included.
 - **Skills Visualization**: Detailed breakdown of my technical skills and expertise, color-coded.
