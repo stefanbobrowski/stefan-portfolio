@@ -39,14 +39,16 @@ The portfolio website of Frontend Engineer Stefan Bobrowski. Built with Vite, Re
 ## Features
 
 - **Interactive 3D Room**: Explore an immersive 3D room. Find my favorite books, music, games, cats, and more.
-- **AI Assistant**: Chat with Stefan AI powered by Vertex AI
-- **Project Showcase**: Browse through my recent featured projects. Live URLs and github repos included.
+- **AI Assistant**: Chat with Stefan AI on the About page, powered by Vertex AI.
+- **Project Showcase**: Browse through my featured projects. Live URLs and Github repos included.
 - **Skills Visualization**: Detailed breakdown of my technical skills and expertise, color-coded.
+- **Resume**: View and download my resume.
+- **Professional Links**: Links to my LinkedIn, Github, Stack Overflow, and more.
 - **Theme Toggle**: Light/dark mode support
 
 ## Tech Stack
 
-- **Frontend**: React, TypeScript, Vite, Three.js, SCSS
+- **Frontend**: Vite, React, TypeScript, SCSS, Three.js
 - **Backend**: Node.js, Express
 - **AI**: Google Vertex AI
 - **Deployment**: Google Cloud Platform, Cloud Run, Docker
