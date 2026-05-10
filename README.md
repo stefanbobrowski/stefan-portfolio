@@ -31,7 +31,6 @@
                   `!988888888899fT|!^"'
                     `!9899fT|!^"'
                       `!^"'
-
 ```
 
 The portfolio website of Frontend Engineer Stefan Bobrowski. Built with Vite, React, TypeScript, SCSS, Express, Three.js, and Google Vertex AI. Hosted on Google Cloud Platform with Cloud Run.
