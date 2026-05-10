@@ -51,3 +51,19 @@ The portfolio website of Frontend Engineer Stefan Bobrowski. Built with Vite, Re
 - **Backend**: Node.js, Express
 - **AI**: Google Vertex AI
 - **Deployment**: Google Cloud Platform, Cloud Run, Docker
+
+## Repo
+
+[github.com/stefanbobrowski/stefan-portfolio](github.com/stefanbobrowski/stefan-portfolio)
+
+## License
+
+See [LICENSE](LICENSE) file for details. All rights reserved.
+
+## Author
+
+**Stefan Bobrowski**
+
+Github: [https://github.com/stefanbobrowski](https://github.com/stefanbobrowski)  
+Portfolio: [https://stefanbobrowski.com](https://stefanbobrowski.com)  
+Email: stefanbobrowski1@gmail.com
