@@ -81,7 +81,14 @@
       { "name": "Git", "url": "https://git-scm.com/" },
       { "name": "GitHub", "url": "https://github.com/" },
       { "name": "GitHub Actions", "url": "https://github.com/features/actions" },
-      { "name": "Docker", "url": "https://www.docker.com/" }
+      { "name": "Docker", "url": "https://www.docker.com/" },
+      { "name": "CI/CD", "url": "https://www.redhat.com/en/topics/devops/what-is-ci-cd" },
+      { "name": "Vitest", "url": "https://vitest.dev/" },
+      {
+        "name": "React Testing Library",
+        "url": "https://testing-library.com/docs/react-testing-library/intro/"
+      },
+      { "name": "Terraform", "url": "https://www.terraform.io/" }
     ]
   },
   "design": {
