@@ -1,7 +1,7 @@
 {
   "name": "Stefan Bobrowski",
   "title": "Frontend Engineer",
-  "summary": "Frontend Engineer with 11+ years of professional experience building fast, polished web applications that drive measurable business growth across e-commerce, media platforms, and enterprise products. My core stack is JavaScript, React, TypeScript, Vite, SCSS, and API development with Node.js and Express. Throughout my career I’ve had a solid eye for UI/UX, performance, and accessibility. Currently expanding into cloud architecture on Google Cloud Platform and pursuing Associate Cloud Engineer certification. ",
+  "summary": "Frontend Engineer with 11+ years of professional experience building fast, polished web applications that drive measurable business growth across e-commerce, media platforms, and enterprise products. My core stack is JavaScript, React, TypeScript, Vite, SCSS, and API development with Node.js and Express. Throughout my career I’ve had a solid eye for UI/UX, performance, and accessibility. Currently expanding into cloud architecture on Google Cloud Platform and pursuing Associate Cloud Engineer certification.",
   "experience": [
     {
       "company": "Prepaire Labs",
@@ -53,17 +53,18 @@
       "TypeScript",
       "GCP",
       "Node.js",
-      "Web Components",
+      "Express",
+      "Vite",
       "HTML",
       "CSS",
-      "JavaScript"
+      "JavaScript",
+      "SEO"
     ],
     "secondary": [
       "3D visualization",
       "Three.js",
       "Data analysis",
       "CI/CD pipelines",
-      "SEO",
       "Google Search Console",
       "Core Web Vitals",
       "GA4 Analytics"
