@@ -18,7 +18,7 @@
   margin-bottom: 0.7rem;
   letter-spacing: 1px;
   font-weight: 600;
-  color: var(--text);
+  color: #fffae5;
 
   @media screen and (max-width: 768px) {
     font-size: 1.1rem;
@@ -36,7 +36,7 @@
   border-radius: 6px;
   font-size: 0.9rem;
   text-decoration: none;
-  color: var(--text);
+  color: #fffae5;
   background:
     linear-gradient(to bottom right, rgba(255, 255, 255, 0.14), rgba(0, 0, 0, 0.2)),
     var(--brick-color);

@@ -1,9 +1,21 @@
 [
   {
+    "title": "Arcade Ladder",
+    "slug": "arcade-ladder",
+    "type": "external",
+    "description": "A web-based arcade platform where every game has a ladder and every player has a rank.",
+    "tech": ["Vite", "React", "TypeScript", "Fastify", "Cloud SQL", "Google OAuth", "Firebase"],
+    "links": {
+      "live": "",
+      "github": "https://github.com/stefanbobrowski/arcade-ladder"
+    },
+    "thumbnail": "/projectThumbs/arcade-ladder-thumb.png"
+  },
+  {
     "title": "Doodle Market",
     "slug": "doodle-market",
     "type": "external",
-    "description": "A full-stack Vite, React, TypeScript, Express app for uploading, selling, and rating doodles. Demonstrates backend concepts like JWT authentication, ownership-based authorization, purchase flow, transactional emails, audit logging, rate limiting, integration testing, and admin tooling.",
+    "description": "Upload, sell, and rate doodles. Demonstrates backend concepts like ownership-based authorization, full purchase flow, transactional emails, audit logging, rate limiting, integration testing, and admin tooling.",
     "tech": ["Vite", "React", "TypeScript", "Express", "JWT", "better-sqlite3"],
     "links": {
       "live": "https://doodle-market-212973711449.us-central1.run.app/",
@@ -15,7 +27,7 @@
     "title": "Astro Starter",
     "slug": "astro-starter",
     "type": "external",
-    "description": "Production-ready Astro template built to rank. Ships with a TypeScript-first architecture, SCSS design token system, structured data, and Core Web Vitals optimizations, so new content sites start with strong SEO foundations out of the box.",
+    "description": "Production-ready Astro template built to rank with strong SEO foundations out of the box. Ships with a TypeScript-first architecture, SCSS design token system, structured data, and optimal Core Web Vitals.",
     "tech": ["Astro", "TypeScript", "SCSS", "SEO"],
     "links": {
       "live": "https://astro-stefan-starter-655521068881.us-central1.run.app",
@@ -27,7 +39,7 @@
     "title": "Video Searcher",
     "slug": "video-searcher",
     "type": "external",
-    "description": "AI-powered video analysis tool that turns long-form video into searchable, timestamped moments. Users upload any video, enter a natural-language query, and the app returns the exact scenes that match, powered by Vertex AI video intelligence with OAuth2-secured access and rate limiting.",
+    "description": "AI-powered video analysis tool that turns long-form video into searchable, timestamped moments. Users upload any video, enter a natural-language query, and the app returns the exact scenes that match.",
     "tech": ["TypeScript", "OAuth2", "Rate Limiting", "Vertex AI"],
     "links": {
       "live": "https://video-searcher-frontend-637174041158.us-central1.run.app/",
@@ -39,10 +51,9 @@
     "title": "GGList",
     "slug": "gglist",
     "type": "external",
-    "description": "Full-stack web app with Google OAuth authentication, Cloud SQL persistence, and interactive data visualization via Chart.js. Users can save, rate, and analyze their collections. It demonstrates end-to-end auth, relational data modeling, and a modern React + Node.js architecture deployed on GCP.",
+    "description": "Platform for voting and viewing top favorites for any collection. It demonstrates relational data modeling, Google OAuth authentication, Cloud SQL persistence, and data visualization.",
     "tech": ["Vite", "React", "TypeScript", "Node", "CloudSQL", "OAuth2", "Chart.js"],
     "links": {
-      "live": "https://gglist-frontend-177352903615.us-central1.run.app/",
       "github": "https://github.com/stefanbobrowski/gglist"
     },
     "thumbnail": "/projectThumbs/gglist-thumb.png"
@@ -51,11 +62,10 @@
     "title": "Upload Center",
     "slug": "upload-center",
     "type": "external",
-    "description": "GCP-native multi-modal AI platform that extracts structured insights from unstructured content. Supports text sentiment analysis, image recognition, and CSV data profiling, all processed through Vertex AI and Gemini models with results stored and queryable in BigQuery.",
-    "tech": ["GCP", "Cloud Run", "BigQuery", "VertexAI", "Gemini"],
+    "description": "GCP-native demonstrations of text sentiment analysis, image recognition, and JSONL/CSV data analysis.",
+    "tech": ["Google Cloud Platform", "Cloud Run", "BigQuery", "VertexAI", "Gemini", "React"],
 
     "links": {
-      "live": "https://upload-center-177749780343.us-central1.run.app/",
       "github": "https://github.com/stefanbobrowski/upload-center"
     },
     "thumbnail": "/projectThumbs/upload-center-thumb.png"
@@ -64,11 +74,11 @@
     "title": "Nerd by Day, Nerd by Night",
     "slug": "nerd-by-day",
     "type": "external",
-    "description": "End-to-end e-commerce platform built from scratch on GCP. Handles product catalog, Stripe payment processing, order management, and Cloud SQL persistence with no third-party storefront and full control over the stack.",
-    "tech": ["Vite", "React", "Stripe", "Cloud SQL", "Cloud Run"],
+    "description": "Small e-commerce store built from scratch on Google Cloud Platform with Cloud SQL persistence. Integrations for Stripe payment processing and order management included.",
+    "tech": ["Stripe", "Cloud SQL", "Cloud Run", "Google Cloud Platform", "React"],
 
     "links": {
-      "github": "https://github.com/yourrepo/nerdbyday"
+      "github": "https://github.com/stefanbobrowski/nerdbyday"
     },
     "thumbnail": "/projectThumbs/nerdbyday-thumb.png"
   },

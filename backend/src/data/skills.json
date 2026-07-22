@@ -133,7 +133,9 @@
   "game_dev": {
     "color": "#443C66",
     "skills": [
-      { "name": "Unreal Engine 5", "url": "https://www.unrealengine.com/en-US/unreal-engine-5" }
+      { "name": "Unreal Engine 5", "url": "https://www.unrealengine.com/en-US/unreal-engine-5" },
+      { "name": "GoDot", "url": "https://godotengine.org/" },
+      { "name": "Phaser", "url": "https://phaser.io/" }
     ]
   }
 }

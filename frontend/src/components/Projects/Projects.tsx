@@ -60,6 +60,10 @@ export default function Projects({ variant = 'page' }: ProjectsProps) {
   return (
     <div className={variant === 'page' ? styles.projectsPage : ''}>
       <h2>Projects</h2>
+      <p className={styles.excuse}>
+        Note: Some live demos are temporarily offline due to cloud service costs. <br /> The source
+        code for every project is still available on GitHub.
+      </p>
 
       <div className={styles.projectsGrid}>
         {projects.map(project => (
